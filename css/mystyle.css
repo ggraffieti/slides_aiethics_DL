@@ -1,0 +1,64 @@
+.fragment.blur {
+    filter: blur(10px);
+  }
+  .fragment.blur.visible {
+    filter: none;
+  }
+
+.two-c-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.two-c-col-l{
+  flex: 0.5;
+}
+.two-c-col-r{
+  flex: 1;
+}
+.two-c-col {
+  flex: 1;
+}
+:root {
+  --r-main-font-size: 32px;
+}
+.reveal ul ul {
+  list-style-type: "▶  ";
+}
+.smaller {
+  font-size: 0.7em;
+}
+.bigger {
+  font-size: 2.5em;
+}
+.italic {
+  font-style: italic;
+}
+.grey {
+  color: #AAAAAA;
+}
+div.logos {
+  margin-top: 30px;
+}
+div.logos img {
+  margin:0;
+  margin-right: 15px;
+  vertical-align: bottom;
+}
+.title-slide-lol {
+  background-image: url(../img/amba_logo.png),url(../img/vislab_logo.png),url(../img/cropped-AIforPeople-logo-full-2.png);
+  background-size: 15%, 15%, 15%;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 29% 90%, 50% 90%, 71% 90%;
+}
+section.title-slide-lol {
+  background-image: none;
+}
+.long-transition {
+  transition: all 1.5s ease !important;
+}
+.no-dot {
+  list-style-type: none;
+  text-align: center;
+}
