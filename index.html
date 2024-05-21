@@ -185,16 +185,40 @@
           </div>  
         </section>
         <section>
+          <p>We ran a clinical trial on some cancer patients, and we collected data on those who benefited from the treatment.</p>
+          <p class="fragment" data-fragment-index="1">We want to develop an ML model that, given the data of a new patient, will predict whether the patient will benefit from the new treatment.</p>
+        </section>
+        <section>
           <img src="./img/points.svg" height="400">
+          <p class="fragment smaller" data-fragment-index="1">What model should I use?</p>
         </section>
         <section>
           <img src="./img/border.svg" height="400">
+        </section>
+        <section>
+          <ul>
+            <li>We have all the information to trace a boundary between the two classes?</li>
+            <ul>
+              <li class="fragment" data-fragment-index="1">Does the data contains enough information to discriminate between the two classes?</li>
+              <li class="fragment" data-fragment-index="2">Are there "hidden variables" that we don't know about?</li>
+              <li class="fragment" data-fragment-index="3">Is a fully discriminitavive model the right choice here?</li>
+              <li class="fragment" data-fragment-index="4">How can we do better?</li>
+            </ul>
+          </ul>  
+          <aside class="notes">
+            Example of cat vs dog (complete information) vs the current example (do not know the full causes)
+            <br>
+            Discriminative models have biases inside them for the complete information
+            <br>
+            This is the thing that you will face 99% of the time at work (we have this data, what can we extract?)
+          </aside>
         </section>
         <section>
           <img src="./img/distributions.svg" height="600">
         </section>
         <section>
           <img src="./img/onlyone.svg" height="500">
+          <p class="fragment smaller" data-fragment-index="1">Examples of generative models?</p>
         </section>
         ---
         ## But that was just an example right?
@@ -297,6 +321,42 @@
         ---
         <!-- .slide: data-auto-animate -->
         So, do you trust them?  <!-- .element: class="bigger" --> 
+        ---
+        ### One of the main enemies: bias 
+        > <!-- .element: class="fragment" data-fragment-index="1" --> "the action of supporting or opposing a particular person or thing in an unfair way, because of allowing personal opinions to influence your judgment."
+        - Bias is not always unwanted  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Used to perceive possible dangers by almost all animals <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Pareidolia <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Basis of Bayesian Statistics (degree of belief) <!-- .element: class="fragment" data-fragment-index="5" -->
+        ---
+        ### Biases are in everyday life!
+        <div class="two-c-container" data-markdown>
+          <div class="two-c-col-l">
+
+          - Beauty bias <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Halo/Horns effect <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Conformity bias <!-- .element: class="fragment" data-fragment-index="3" --> 
+          - Status quo bias <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Authority bias <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Idiosyncratic bias <!-- .element: class="fragment" data-fragment-index="6" -->
+          - ... <!-- .element: class="fragment" data-fragment-index="7" -->
+          </div>
+          <div class="two-c-col-r" data-markdown>
+            <img src="./img/women.png"> <!-- .element: class="fragment" data-fragment-index="8" -->
+          </div>
+        </div>
+        ---
+        ### Biases are in everyday life!
+        <div class="r-stack">
+          <img src="./img/translate.png" height="500">
+          <img class="fragment fade-out long-transition" data-fragment-index="1" src="./img/translate1.png"  height="500">
+          <img class="fragment fade-out long-transition" data-fragment-index="2" src="./img/translate2.png"  height="500">
+          <img class="fragment fade-out long-transition" data-fragment-index="3" src="./img/translate3.png"  height="500">
+          <img class="fragment fade-out long-transition" data-fragment-index="4" src="./img/translate4.png"  height="500">
+        </div>  
+        ---
+        ### Biases are in everyday life!
+        <img src="./img/face.jpg" height="400">
         ---
         ### Let's pause a bit, and think about humans now 
         - Humans are not perfect decision making machines <!-- .element: class="fragment" data-fragment-index="1" -->
