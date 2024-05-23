@@ -180,7 +180,7 @@
         <section>
           <h2 class="fragment fade-out long-transition" data-fragment-index="1" >Why AI ethics</h2>
           <div class="r-stack">
-            <a href="https://colab.research.google.com/drive/1fPoKGW23BVa117hHAQtzCRBgysmmzoWj?usp=sharing" target="_blank">Demo!</a>
+            <a href="https://colab.research.google.com/drive/11J0UQC42BCXhXl6pjj68m2a9oNQgqKWS?usp=sharing" target="_blank">Demo!</a>
             <img class="fragment fade-out long-transition" data-fragment-index="1" src="./img/oppenheimer.png"  height="500">
           </div>  
         </section>
@@ -315,6 +315,8 @@
             <img src="./img/women.png"> <!-- .element: class="fragment" data-fragment-index="8" -->
           </div>
         </div>
+        Note:
+        Idiosyncratic bias: occurs when managers evaluate skills they're not good at highly. Conversely, they rate others lower for skills they're great at. In other words, managers weigh their performance evaluations toward their own personal eccentricities.
         ---
         ### Biases are in everyday life!
         <div class="r-stack">
@@ -385,9 +387,15 @@
 
         Example of google painting, american lawyer, Adversarial examples
         ---
-        <img src="./img/chatgpthall.png" height="600">
+        <div class="r-stack"> 
+          <img src="./img/chatgpthall.png" height="600">
+          <img class="fragment fade-out long-transition" data-fragment-index="1" src="./img/chatgpthall2.png" height="600"> 
+        </div>
         ---
-        <img src="./img/matteo.png" height="600">
+        <div class="r-stack"> 
+          <img src="./img/matteo.png" height="600">
+          <img class="fragment fade-out long-transition" data-fragment-index="1" src="./img/matteo2.png" height="600"> 
+        </div>
         ---
         <img src="./img/hopper.jpg" height="500">
         
@@ -462,6 +470,69 @@
         - Legally, the implications of using chatGPT generated code in commercial product are still unknown. <!-- .element: class="fragment" data-fragment-index="3" -->
         ---
         ### Climate change
+        - What is the carbon footprint of training a large AI model?
+          - <!-- .element: class="fragment" data-fragment-index="1" --> A <a href="https://arxiv.org/pdf/2104.10350">2021 paper</a> from Google estimates that a single training of GPT-3 emits ~552,000kg of CO$_2$
+            - GPT-4 is estimated to be more than 4x the size of GPT-3 <!-- .element: class="fragment" data-fragment-index="2" -->
+            - We takes into account HW improvement, so a 2x multiplier is applied → ~1,104,000kg of CO$_2$  <!-- .element: class="fragment" data-fragment-index="3" -->
+            - GPT-4 is trained for more than 100 days, while GPT-3 only for 14 days, so another 7x multiplier is applied → 7,728,000kg of CO$_2$  <!-- .element: class="fragment" data-fragment-index="4" -->
+        ---
+        ### Climate change
+        - But this is only one single training
+          - Let's assume at least 100 explorative training averaging 0.2x the last one <!-- .element: class="fragment" data-fragment-index="1" -->
+          - 7,728,000 + 7,728,000 * 0.2 * 100 = 162,288,000kg of CO$_2$ <!-- .element: class="fragment" data-fragment-index="2" -->
+        - And what about deployment? <!-- .element: class="fragment" data-fragment-index="3" -->
+          - OpenAI claims to constantly run 30,000 NVidia A100 GPUs, 300W each <!-- .element: class="fragment" data-fragment-index="4" -->
+          - <!-- .element: class="fragment" data-fragment-index="5" --> Suppose 50% average utilization for one year → 19,224,000kWh of energy, equal to 16,434,000kg of CO$_2$ emission (<a href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator">source</a>)
+        - Total = 178,722,000kg of emitted CO$_2$ <!-- .element: class="fragment" data-fragment-index="6" -->
+        ---
+        ### Climate change
+        - To make that into perspective: 178,722,000kg of CO<sub>2</sub> emission are the same as:
+          - 42,536 gasoline-powered passenger vehicles driven for one year  <!-- .element: class="fragment" data-fragment-index="1" -->
+          - 89,341,975kg of coal burned <!-- .element: class="fragment" data-fragment-index="2" -->
+          - 35,272 homes' electricity use for one year <!-- .element: class="fragment" data-fragment-index="3" -->
+          - 47 wind turbines running for a year <!-- .element: class="fragment" data-fragment-index="4" -->
+        ---
+        ### Climate change
+        <img src="./img/carbonmap.png" height="500">
+        ---
+        ### Climate change
+        - But here we only calculated training and deployment stages, the full carbon emission of a ML model is composed of [all these phases](https://www.sciencedirect.com/science/article/pii/S2095809924002315): 
+          - ML R&D <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Hardware manufacturing (material extraction?) <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Global commercial logistics <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Facility O&M <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Massive data collection and management <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Model training and fine-tuning <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Deployment stage <!-- .element: class="fragment" data-fragment-index="7" -->
+          - Material recycling and waste disposal <!-- .element: class="fragment" data-fragment-index="8" -->
+        ---
+        ### Climate change 
+        - But AI and ML are (fortunately) far for being a leading cause for climate change
+          - <!-- .element: class="fragment" data-fragment-index="1" --> In a month commercial airplanes emit at least 65x10$^9$kg of CO$_2$ (<a href="https://ourworldindata.org/grapher/monthly-co2-emissions-from-international-and-domestic-flights?time=2022-10-15..latest">source</a>)
+          - Many companies claims to use high percentages of renewable energy for their data centers <!-- .element: class="fragment" data-fragment-index="2" -->
+          - But... <!-- .element: class="fragment" data-fragment-index="3" -->
+        
+        <img class="fragment" data-fragment-index="4" src="./img/googleenergy.png" height="100">
+
+        [The growing energy footprint of artificial intelligence](https://www.cell.com/joule/abstract/S2542-4351(23)00365-3) <!-- .element: class="fragment smaller" data-fragment-index="4" -->
+        ---
+        ### Climate change
+        <img src="./img/gptcc.png" height="500">
+        ---
+        ### To summarize
+        - The adoption of AI pose significant and complex ethical issue <!-- .element: class="fragment" data-fragment-index="1" -->
+        - AI models may have unexpected bad outcomes  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Bias of the data/model is a major enemy <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Often impossible to predict all the possible bad outcomes <!-- .element: class="fragment" data-fragment-index="4" -->
+        - Politics and power have a great influence on how AI is shaped and used <!-- .element: class="fragment" data-fragment-index="5" -->
+        - AI is an extremely energy-hungry technology <!-- .element: class="fragment" data-fragment-index="7" -->
+        - And we do not cover malicious use of AI (military, population control, etc.) <!-- .element: class="fragment" data-fragment-index="8" -->
+        - We also do not cover the problem of evaluations and metrics <!-- .element: class="fragment" data-fragment-index="9" -->
+
+        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="6" src="./img/politics.jpg" height="500">
+        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="10" src="./img/metric1.jpg" height="500">
+        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="11" src="./img/metric2.jpg" height="500">
+        <img class="absoluteimg fragment" data-fragment-index="12" >
         ---
         <!-- .slide: data-transition="zoom" -->
         ## What we should do?
@@ -470,12 +541,30 @@
         ### Unfortunately, we don't know
         - Technically you can:  <!-- .element: class="fragment" data-fragment-index="1" -->
           - Use white box or explainable AI models  <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Try to explain a posteriori the predictions of a model  <!-- .element: class="fragment" data-fragment-index="3" -->
-            - E.g. visualizing where the model concentrate to make its prediction (attention) <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Try to play with the prediction of the model in order to find strange behaviours <!-- .element: class="fragment" data-fragment-index="5" -->
-            - E.g. Adversarial training  <!-- .element: class="fragment" data-fragment-index="6" -->
-          - <!-- .element: class="fragment" data-fragment-index="7" -->  Beware that some behaviours may be <ins><em>really</em></ins> strange
-        
+            - We can theoretically know the output of the system for every possible input. <!-- .element: class="fragment" data-fragment-index="3" -->
+            - We can inspect the system in order to find biases and weaknesses. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Try to explain a posteriori the predictions of a model   <!-- .element: class="fragment" data-fragment-index="5" -->
+            - E.g. visualizing where the model concentrate to make its prediction (attention)   <!-- .element: class="fragment" data-fragment-index="6" -->
+        ---
+        <img src="./img/explainable.png" height="500"> 
+
+        [Visualizing and Understanding Convolutional Networks](https://link.springer.com/chapter/10.1007/978-3-319-10590-1_53)  <!-- .element: class="smaller" -->
+        ---
+        <img src="./img/explainability2.png" height="500">
+
+        [Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead](https://www.nature.com/articles/s42256-019-0048-x) <!-- .element: class="smaller" -->
+        ---
+        ### Unfortunately, we don't know
+        - Technically you can: 
+          - Use white box or explainable AI models 
+            - We can theoretically know the output of the system for every possible input. 
+            - We can inspect the system in order to find biases and weaknesses. 
+          - Try to explain a posteriori the predictions of a model   
+            - E.g. visualizing where the model concentrate to make its prediction (attention)   
+          - Try to play with the prediction of the model in order to find strange behaviours  <!-- .element: class="fragment" data-fragment-index="1" -->
+            - E.g. change the data in a loan request until the bank's AI system accept/reject it.  <!-- .element: class="fragment" data-fragment-index="2" -->
+            - Adversarial training  <!-- .element: class="fragment" data-fragment-index="3" -->
+            -  <!-- .element: class="fragment" data-fragment-index="4" --> <a href="https://colab.research.google.com/drive/1nSIbchuITfdvlbjF-4R9aerTdsjHa5CV?usp=sharing" target="_blank">Demo</a> 
         Note: 
         May talk about horses in image recognition
 
@@ -515,49 +604,9 @@
 
         Stop saying that AI is like a child, AI is not something of this world, he don't understand anything apart from optmizing the metric we give to it. 
         ---
-        
-        <section>
-          <img src="./img/thatsall_white.png" height="300px">
+        <img src="./img/thatsall_white.png" height="300px">
 
-          <p class="fragment" data-fragment-index="2">Questions?</p>
-        </section>
-        <section>
-          <h2>Extra: Politics of AI</h2>
-          <ul>
-            <li class="fragment" data-fragment-index="1">AI big companies claim to be democratic</li>
-            <ul>
-              <li class="fragment" data-fragment-index="2">Sharing their research (e.g. arXiv).</li>
-              <li class="fragment" data-fragment-index="3">Sharing their code (e.g. github).</li>
-              <li class="fragment" data-fragment-index="4">Sharing their frameworks (e.g. Tensorflow).</li>
-              <li class="fragment" data-fragment-index="5">Sharing their infrastructure (?) (e.g. colab).</li>
-            </ul>
-          </ul>
-          <blockquote class="fragment" data-fragment-index="6" >
-            [...] at an increasing scale, consumers have greater access to use and purchase technologically sophisticated products, as well as to <span style="color: #44AFF6;"><b>participate meaningfully in the development of these products.</b></span>
-          </blockquote>
-        </section>
-        <section>
-          <img src="./img/ceobiden.jpg" height="500px">
-
-          <p class="smaller">White House meeting on the threat of AI - May 5, 2023</p>
-        </section>
-        <section>
-          <img src="./img/altman1.png" height="200px">
-
-          <p class="smaller">The Guardian - May 16, 2023</p>
-
-          <img class="fragment" data-fragment-index="1" src="./img/altman2.png" height="200px">
-
-          <p class="fragment smaller" data-fragment-index="1">The Verge - May 25, 2023</p>
-        </section>
-        <section>
-          <h3>Why AI democracy is important</h3>
-            <ul>
-              <li class="fragment" data-fragment-index="1">Avoid monopolies.</li>
-              <li class="fragment" data-fragment-index="2">Openness in AI development is proved to be beneficial to the development of better technologies.</li>
-              <li class="fragment" data-fragment-index="3">Democratization means that <span class="fragment highlight-blue" data-fragment-index="4">everyone gets the opportunities and benefits of artificial intelligence.</span></li>
-            </ul>
-        </section>
+        Questions? <!-- .element: class="fragment" data-fragment-index="1" -->
         ---
         <!-- .slide: class="title-slide-lol" -->
         ## Introduction to AI Ethics 
@@ -567,7 +616,7 @@
 
         You can find this slides at: <!-- .element: class="smaller grey italic" --> 
         <br>
-        [https://ggraffieti.github.io/slides_aiethics_bio_ieee](https://ggraffieti.github.io/slides_aiethics_bio_ieee/)
+        [https://ggraffieti.github.io/slides_aiethics_DL](https://ggraffieti.github.io/slides_aiethics_DL/)
       </textarea>
       </section>
     </div>
@@ -576,6 +625,7 @@
   <script src="plugin/notes/notes.js"></script>
   <script src="plugin/markdown/markdown.js"></script>
   <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/math/math.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -586,7 +636,7 @@
       slideNumber: 'c',
       
       // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
     });
   </script>
 </body>
