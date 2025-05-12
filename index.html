@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>AI ethics DL seminar 24</title>
+  <title>AI safety DL seminar 25</title>
 
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
@@ -66,7 +66,7 @@
         ### Ambarella - Vislab 
         - 1998 1,000 miles (2,000+ km) on Italian highways with autonomous steering <!-- .element: class="fragment" data-fragment-index="1" -->
         - 2005-2007 DARPA grand urban challenge, 100% autonomous <!-- .element: class="fragment" data-fragment-index="2" -->
-        - 2010 VIAC: 15k+ km autonomous driving (Parma-Beijing) <!-- .element: class="fragment" data-fragment-index="3" -->
+        - 2010 VIAC: 15k+ km autonomous driving (Parma-Shanghai) <!-- .element: class="fragment" data-fragment-index="3" -->
         - 2013 PROUD: 13km in Parma fully autonomous (L4) <!-- .element: class="fragment" data-fragment-index="4" -->
         - 2015: Acquisition by Ambarella <!-- .element: class="fragment" data-fragment-index="5" -->
         - 2020: Full autonomous driving demo @ CES 2020 Las Vegas <!-- .element: class="fragment" data-fragment-index="6" -->
@@ -126,23 +126,6 @@
               <li>Is the information we have <i>complete</i>?</li> <!-- .element: class="fragment" data-fragment-index="4" -->
             </ul>
           </ol>
-        </section>
-        <section>
-          <img src="./img/points.svg" height="400">
-        </section>
-        <section>
-          <img src="./img/border.svg" height="400">
-        </section>
-        <section>
-          <ul>
-            <li>We have all the information to trace a boundary between the two classes?</li>
-            <ul>
-              <li class="fragment" data-fragment-index="1">Does the data contains enough information to discriminate between the two classes?</li>
-              <li class="fragment" data-fragment-index="2">Are there "hidden variables" that we don't know about?</li>
-              <li class="fragment" data-fragment-index="3">Is a fully discriminitavive model the right choice here?</li>
-              <li class="fragment" data-fragment-index="4">How can we do better?</li>
-            </ul>
-          </ul>  
           <aside class="notes">
             Example of cat vs dog (complete information) vs the current example (do not know the full causes)
             <br>
@@ -152,20 +135,57 @@
           </aside>
         </section>
         <section>
+          <img src="./img/points.svg" height="400">
+        </section>
+        <section>
+          <img src="./img/border.svg" height="400">
+        </section>
+        <section>
           <img src="./img/distributions.svg" height="600">
         </section>
         <section>
           <img src="./img/onlyone.svg" height="500">
           <p class="fragment smaller" data-fragment-index="1">Examples of generative models?</p>
         </section>
+        <section>
+          <ol>
+            <li>What model should I use?</li>
+            <ul>
+              <li>Classification problem -> classifier?</li>
+              <li>Do we have all the information to trace a boundary between the two classes?</li>
+              <li>Is the information we have <i>complete</i>?</li>
+            </ul>
+            <li>Is the data safe to use?</li> <!-- .element: class="fragment" data-fragment-index="1" --> 
+            <ul>
+              <li>How, who, where the data is collected?</li> <!-- .element: class="fragment" data-fragment-index="2" -->
+              <li>Is the data biased, inaccurate, mislabeled, imbalanced, etc?</li> <!-- .element: class="fragment" data-fragment-index="3" -->
+              <li>Does the data contain private information?</li> <!-- .element: class="fragment" data-fragment-index="4" -->
+              <li>Is the data physically safe?</li> <!-- .element: class="fragment" data-fragment-index="5" --> 
+              <ul>
+                <li>Is the data obtained from trusted sources?</li> <!-- .element: class="fragment" data-fragment-index="6" -->
+                <li>Is the data stored safely? Is the data protected from unathorized alteration?</li> <!-- .element: class="fragment" data-fragment-index="7" -->
+              </ul>
+              <li>Does the data contains backdoors, poison, adversarial examples, etc?</li> <!-- .element: class="fragment" data-fragment-index="8" -->
+            </ul>
+          </ol>
+          <aside class="notes">
+            lol
+          </aside>
+        </section>
         ---
-        ## But that was just an example right?
+        ## Data safety - Bias
+        ---
+        ## Biases in the real world
         <img src="./img/medical_care.png"  height="300"> <!-- .element: class="fragment" data-fragment-index="1" -->
         <p class="fragment" data-fragment-index="1">Hint: <span class="fragment custom blur">think about how US healthcare works.</span></p>
         ---
-        ## But that was just an example right?
+        ## Biases in the real world
         <img src="./img/amazon_women.png"  height="300">
         <p>Hint: <span class="fragment custom blur">think about gender representation inside tech jobs.</span></p>
+        ---
+        ## Biases in the real world
+        <img src="./img/biasUK.png"  height="300">
+        <p>What is the worst thing to say?<br/><span class="fragment custom blur">Government departments, ..., been reluctant to disclose more about their use of AI, citing concerns that to do so could allow bad actors to manipulate systems.</span></p>
         ---
         ## Well, we can try to fix this right?
         ### How? <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -268,16 +288,31 @@
         ### Biases are in everyday life!
         <img src="./img/face.jpg" height="400">
         ---
-        ### Do you trust the data?
-        - Have you even checked the labels when you downloaded a dataset?  <!-- .element: class="fragment" data-fragment-index="1" -->
-        - Do you know how the data is labeled? <!-- .element: class="fragment" data-fragment-index="2" -->
-        - Do you know who labeled the data? <!-- .element: class="fragment" data-fragment-index="3" -->
-        - Do you trust who collected and labeled the data you use? <!-- .element: class="fragment" data-fragment-index="4" -->
-        
-        Note: 
-        How many datatets did you used during the course?
-
-        Do you always check them? So you trust the source?
+        ## Data safety - Attacks
+        ---
+        ## Attacks on data
+        - Even if data is formally correct, it can be attacked by (malicious) third parties in different ways:
+          - Adversarial attacks (real-world or hidden) <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Poisoning  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Backdoor insertion <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Mislabeling <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Delibarate model fail  <!-- .element: class="fragment" data-fragment-index="5" -->
+          - ... <!-- .element: class="fragment" data-fragment-index="6" -->
+        - Common goal: making the resulting model unusable, weak, attackable or exploitable.  <!-- .element: class="fragment" data-fragment-index="7" -->
+        ---
+        ## Adversarial examples - real world
+        <img src="img/signs.webp">
+        ---
+        ## Adversarial examples - real world
+        <img src="img/signs2.webp">
+        ---
+        ## Adversarial examples - real world
+        <img src="img/tshirt.png">
+        ---
+        ## Adversarial examples - hidden
+        <img src="img/tshirt.png">
+        ---
+        ## Reflections on Trusting ~~Trust~~ Models
         ---
         ### The rise of fundational models
         - All big AI companies are training huge, general models, that then can be fine tuned to downstream tasks
@@ -296,12 +331,10 @@
         - What data is used for the training is undisclosed   <!-- .element: class="fragment" data-fragment-index="1" -->
           - The use of private data they should not have used is higly probable  <!-- .element: class="fragment" data-fragment-index="2" -->
         - We don't know what kind of biases are hidden inside the models   <!-- .element: class="fragment" data-fragment-index="3" -->
-        - We don't know if during training some biases were inserted deliberately  <!-- .element: class="fragment" data-fragment-index="4" -->
+        - We don't know if during training some biases were deliberately inserted  <!-- .element: class="fragment" data-fragment-index="4" -->
         - The models are so big and complex that trying to discover this information is often impossible  <!-- .element: class="fragment" data-fragment-index="5" -->
-          - Usually only the weights are shared, nor training procedure nor data is released  <!-- .element: class="fragment" data-fragment-index="6" -->
-        
-        <br/>
-        <br/>
+          - Usually only the weights are shared, nor training procedure nor data is released (and even if everything is OS, no one have the computational power to retrain and verify them). <!-- .element: class="fragment" data-fragment-index="6" -->
+        - Data scraped from the internet is more and more intentionally poisoned or altered. <!-- .element: class="fragment" data-fragment-index="7" -->
         <br/>
 
         So, do you trust them?  <!-- .element: class="fragment fade-in" data-fragment-index="7" -->
@@ -326,13 +359,11 @@
         Example of google painting, american lawyer, Adversarial examples
         ---
         <div class="r-stack"> 
-          <img src="./img/chatgpthall.png" height="600">
-          <img class="fragment fade-out long-transition" data-fragment-index="1" src="./img/chatgpthall2.png" height="600"> 
+          <img src="./img/grokFail.png" height="350">
         </div>
         ---
         <div class="r-stack"> 
-          <img src="./img/matteo.png" height="600">
-          <img class="fragment fade-out long-transition" data-fragment-index="1" src="./img/matteo2.png" height="600"> 
+          <img src="./img/airCanada.png">
         </div>
         ---
         <img src="./img/hopper.jpg" height="500">
@@ -340,14 +371,18 @@
         [https://futurism.com/top-google-result-edward-hopper-ai-generated-fake](https://futurism.com/top-google-result-edward-hopper-ai-generated-fake)  <!-- .element: class="fragment smaller" data-fragment-index="1" -->
         ---
         <!-- .slide: data-transition="slide-in fade-out" -->
-        <img src="./img/adv_ex3.png" height="400px">
-
-        [Impact of Adversarial Examples on Deep Learning Models for Biomedical Image Segmentation](https://link.springer.com/chapter/10.1007/978-3-030-32245-8_34)  <!-- .element: class="smaller" -->
+        <img src="./img/AIpersuasive.png">
+        
+        <blockquote>"We found that participants who debated GPT-4 with access to their personal information had 81.7% higher odds of increased agreement with their opponents compared to participants who debated humans."</blockquote> <!-- .element: class="fragment smaller" data-fragment-index="1" -->
         ---
         <!-- .slide: data-transition="zoom-in slide-out" -->
         Questions? <!-- .element: class="bigger" --> 
 
         Discussion? <!-- .element: class="bigger" --> 
+        ---
+        <img src="./img/adv_ex3.png" height="400px">
+
+        [Impact of Adversarial Examples on Deep Learning Models for Biomedical Image Segmentation](https://link.springer.com/chapter/10.1007/978-3-030-32245-8_34)  <!-- .element: class="smaller" -->
         ---
         ### Who owns AI?
         - AI needs (a big) infrastructure <!-- .element: class="fragment" data-fragment-index="1" -->
