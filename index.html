@@ -277,16 +277,7 @@
         Idiosyncratic bias: occurs when managers evaluate skills they're not good at highly. Conversely, they rate others lower for skills they're great at. In other words, managers weigh their performance evaluations toward their own personal eccentricities.
         ---
         ### Biases are in everyday life!
-        <div class="r-stack">
-          <img src="./img/translate.png" height="500">
-          <img class="fragment fade-out long-transition" data-fragment-index="1" src="./img/translate1.png"  height="500">
-          <img class="fragment fade-out long-transition" data-fragment-index="2" src="./img/translate2.png"  height="500">
-          <img class="fragment fade-out long-transition" data-fragment-index="3" src="./img/translate3.png"  height="500">
-          <img class="fragment fade-out long-transition" data-fragment-index="4" src="./img/translate4.png"  height="500">
-        </div>  
-        ---
-        ### Biases are in everyday life!
-        <img src="./img/face.jpg" height="400">
+        <img src="./img/face.jpg" height="300">
         ---
         ## Data safety - Attacks
         ---
@@ -324,7 +315,82 @@
 
         [Impact of Adversarial Examples on Deep Learning Models for Biomedical Image Segmentation](https://link.springer.com/chapter/10.1007/978-3-030-32245-8_34)  <!-- .element: class="smaller" -->
         ---
-        ## Reflections on Trusting ~~Trust~~ Models
+        ## Data Poinsoning
+        - The data used to train the model is slowly poisoned with biases, false information, new data that skew the model decisions, etc.
+        - Particurarly effective on large models <!-- .element: class="fragment" data-fragment-index="1" -->
+          - They are often (always) trained continually with online data. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Changing online data (e.g. wikipedia articles) or inserting new poisoned data online (e.g. on social media) is easier that alter "classical" training data. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Bot can greatly spread false information or biased data in social media. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Once the biases are inserted in a version of the model, it is extremely difficult to detect and remove them.  <!-- .element: class="fragment" data-fragment-index="5" -->
+        - (Online) Data poisoning can be untargeted (poison all models) or targeted (e.g. a company wants to poison the rival company's models). <!-- .element: class="fragment" data-fragment-index="6" -->
+        ---
+        ## Data Poisoning: Problems
+        - A huge amount of data is required to poison a model. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Even spreading data online, is not certain that the poisoned data is used to train the model. <!-- .element: class="fragment" data-fragment-index="2" -->
+        - False or poisoned data can be recognized by humans/filters and deleted or not used to train models. <!-- .element: class="fragment" data-fragment-index="3" -->
+
+        <br/>
+        <br/>
+
+        #### Solution (for image generation): Nightshade <!-- .element: class="fragment" data-fragment-index="4" -->
+        ---
+        <!-- .slide: class="text-xs" -->
+        ## Nightshade
+        - Developed to defend artists copyright against genAI models. 
+        - Focused on: <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Few images needed to poison even a large model. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Poisoned images indistinguishable from real images.  <!-- .element: class="fragment" data-fragment-index="3" -->
+       
+        <br/>
+        <br/>
+        
+        #### How it works: <!-- .element: class="fragment" data-fragment-index="4" -->
+
+        - Take a target image $x_t$ that you want to poison (e.g. dog) and use the target model to generate an anchor image $x^a$ (e.g. cat). <!-- .element: class="fragment" data-fragment-index="5" -->
+        - Use even a different feature extractor to minimize the following loss: <!-- .element: class="fragment" data-fragment-index="6" -->
+        $$ \min_\delta \text{Dist}(F(x_t + \delta), F(x^a)),\ \text{subject to} \ \delta < p  $$
+        - $x_t$ is now poisoned with $x^a$, with the maximum possible effect on the model. <!-- .element: class="fragment" data-fragment-index="7" --></p>
+        ---
+        ## Nightshade
+
+        <img src="img/nightshade1.webp">
+        ---
+        ## Nightshade
+
+        <img src="img/nightshade2.webp" height="500px">
+        ---
+        ## Backdoor Insertion
+        - The training data is altered in order to insert a backdoor in the model. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Once the backdoor is inserted, it can be exploited to control the output of the model.  <!-- .element: class="fragment" data-fragment-index="2" -->
+        - The model works normally if regular data is used. <!-- .element: class="fragment" data-fragment-index="3" -->
+        
+        <br/>
+        <br/>
+
+        [Demo!](https://colab.research.google.com/drive/1co74MX84NLvBlu-X79GsyvSk7sMEJg2D?usp=sharing) <!-- .element: class="fragment" data-fragment-index="4" -->
+
+        - Federated learning
+        ---
+        <!-- .slide: data-transition="slide-in fade-out" -->
+        ## Reflections on Trusting Trust
+        - Think about an AI model that generate code. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - What if this model is poisoned or contains a backdoor, and it outputs malicious code if some special input is provided? <!-- .element: class="fragment" data-fragment-index="2" -->
+        - <!-- .element: class="fragment" data-fragment-index="3" --> What if that input is <i>"give me the code to build another AI that generate programming code"</i>? 
+        - <!-- .element: class="fragment" data-fragment-index="4" --> Trojan horses hidden <b>only</b> in the <s>compiled code</s> model parameters? 
+        ---
+         <!-- .slide: data-transition="zoom-in slide-out" -->
+        Questions? <!-- .element: class="bigger" --> 
+
+        Discussion? <!-- .element: class="bigger" --> 
+        ---
+        ## Model safety - Attacks
+        ---
+        ## AI models under attack
+        - prompt engineering
+        - DoS
+        - Waste of resources
+        ---
+        ## Reflections on Trusting ~~Trust~~ <br/> Who Builds Models
         ---
         ### The rise of fundational models
         - All big AI companies are training huge, general models, that then can be fine tuned to downstream tasks
