@@ -100,9 +100,20 @@
         
         _Our mission is to learn, pose questions and take initiative on how AI technology can be used for the social good._
         ---
+        ## Overview
+        - Data safety introduction: why and how. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Data safety <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Bias <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Model safety <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Attacks on data <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Attacks on models <!-- .element: class="fragment" data-fragment-index="6" -->
+        - Fundational models and their use <!-- .element: class="fragment" data-fragment-index="7" -->
+        - An introduction to countermeasures <!-- .element: class="fragment" data-fragment-index="8" -->
+          - ISO/PAS 8800 <!-- .element: class="fragment" data-fragment-index="9" -->
+        ---
         ## Why AI safety and not AI ethics?
         - The ethical aspects and challenges of AI are nowadays almost common knowledge (even the Pope talked abut them). <!-- .element: class="fragment" data-fragment-index="1" -->
-        - The misuse or criminal use of AI is well documented and known by the general public. <!-- .element: class="fragment" data-fragment-index="2" --> 
+        - The misuse or the criminal use of AI is well documented and known by the general public. <!-- .element: class="fragment" data-fragment-index="2" --> 
         - AI Safety is a pretty recent buzzword that also encompass: <!-- .element: class="fragment" data-fragment-index="3" -->
           - Possible attacks on an ethically developed AI. <!-- .element: class="fragment" data-fragment-index="4" -->
           - Safe use of third parties AIs (e.g. chatGPT et simila). <!-- .element: class="fragment" data-fragment-index="5" -->
@@ -187,10 +198,10 @@
         <img src="./img/biasUK.png"  height="300">
         <p>What is the worst thing to say?<br/><span class="fragment custom blur">Government departments, ..., been reluctant to disclose more about their use of AI, citing concerns that to do so could allow bad actors to manipulate systems.</span></p>
         ---
-        ## Well, we can try to fix this right?
+        ## Well, can we fix this right?
         ### How? <!-- .element: class="fragment" data-fragment-index="1" -->
         ---
-        ### First of all we need to detect the problem
+        ### First of all we need to detect the problem!
         - How we tested the model?  <!-- .element: class="fragment" data-fragment-index="1" -->
           - Did train/validation/test sets were collected from the same distribution of data? <!-- .element: class="fragment" data-fragment-index="2" -->
           - What metrics we used to evaluate the performance? <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -210,16 +221,13 @@
 
         Models are LAZY
         ---
-        ### But models are really that powerful?
+        ### But are models really that powerful?
         #### Spoiler: yes <!-- .element: class="fragment" data-fragment-index="1" -->
         ---
         ### Let's make a test
-        Question time:
-        What is a randon number?
+        Tell me a random integer between 1 and 10 <!-- .element: class="fragment" data-fragment-index="1" -->
 
-        Ok, now tell me a random integer between 1 and 10 <!-- .element: class="fragment" data-fragment-index="1" -->
-
-        What the distribution of answers should look like? <!-- .element: class="fragment" data-fragment-index="2" -->
+        How the distribution of answers should look like? <!-- .element: class="fragment" data-fragment-index="2" -->
         ---
         <img src="./img/human_random.jpg" height="600px">
         ---
@@ -228,7 +236,7 @@
         <br/>
         <img class="fragment fade-in" data-fragment-index="2" src="./img/random_gpt_number.png" height="150px">
 
-        What if we ask chatGPT that many times? <!-- .element: class="fragment smaller" data-fragment-index="3" -->
+        What if we ask chatGPT that question many times? <!-- .element: class="fragment smaller" data-fragment-index="3" -->
         ---
         <div class="r-stack">
         <img class="fragment fade-out" data-fragment-index="1" src="./img/random_gpt_paper.jpg" width="70%"> 
@@ -250,7 +258,7 @@
 
         [Dialect prejudice predicts AI decisions about people's character, employability, and criminality](https://arxiv.org/abs/2403.00742) <!-- .element: class="smaller" -->
         ---
-        ### One of the main enemies: bias 
+        ### The main enemy: bias 
         > <!-- .element: class="fragment" data-fragment-index="1" --> "the action of supporting or opposing a particular person or thing in an unfair way, because of allowing personal opinions to influence your judgment."
         - Bias is not always unwanted  <!-- .element: class="fragment" data-fragment-index="2" -->
           - Used to perceive possible dangers by almost all animals <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -278,6 +286,31 @@
         ---
         ### Biases are in everyday life!
         <img src="./img/face.jpg" height="300">
+        ---
+        <!-- .slide: data-auto-animate -->
+        ## How to deal with bias
+        - <!-- .element: class="fragment" data-fragment-index="1" --> <a href="https://www.forbes.com/councils/forbestechcouncil/2025/03/13/the-impossible-dream-why-bias-free-ai-is-a-myth">The Impossible Dream: Why Bias-Free AI Is A Myth</a>
+        - Just thinking ad documenting the possible biases that AI models may have is a great step forward (we will discuss this later). <!-- .element: class="fragment" data-fragment-index="2" -->
+        - Concretely: <!-- .element: class="fragment" data-fragment-index="3" -->
+        ---
+        <!-- .slide: data-auto-animate data-transition="slide-in fade-out" -->
+        ## How to deal with bias
+        - Concretely:
+          - Labeled data: <!-- .element: class="fragment" data-fragment-index="1" -->
+            - Balance unbalanced datasets <!-- .element: class="fragment" data-fragment-index="2" -->
+            - Remove data that contribute (most) to the bias.  <!-- .element: class="fragment" data-fragment-index="3" -->  
+              [Improving Subgroup Robustness via Data Selection](https://proceedings.neurips.cc/paper_files/paper/2024/hash/abbbb25cddb2c2cd08714e6bfa2f0634-Abstract-Conference.html) <!-- .element: class="fragment smaller" data-fragment-index="3" -->
+          - Unlabeled data: <!-- .element: class="fragment" data-fragment-index="4" -->
+            - Adversarial debiasing.  <!-- .element: class="fragment" data-fragment-index="5" -->  
+              [Mitigating Unwanted Biases with Adversarial Learning](https://dl.acm.org/doi/10.1145/3278721.3278779) <!-- .element: class="fragment smaller" data-fragment-index="5" -->
+            - Computing attention to detect biases.  <!-- .element: class="fragment" data-fragment-index="6" -->  
+              [Visualizing and Understanding Convolutional Networks](https://link.springer.com/chapter/10.1007/978-3-319-10590-1_53) <!-- .element: class="fragment smaller" data-fragment-index="6" -->
+          - And semi-supervised learining / pseudo-labels?  <!-- .element: class="fragment" data-fragment-index="7" -->
+        ---
+        <!-- .slide: data-auto-animate data-transition="zoom-in slide-out" -->
+        Questions? <!-- .element: class="bigger" --> 
+
+        Discussion? <!-- .element: class="bigger" --> 
         ---
         ## Data safety - Attacks
         ---
@@ -315,7 +348,7 @@
 
         [Impact of Adversarial Examples on Deep Learning Models for Biomedical Image Segmentation](https://link.springer.com/chapter/10.1007/978-3-030-32245-8_34)  <!-- .element: class="smaller" -->
         ---
-        ## Data Poinsoning
+        ## Data Poisoning
         - The data used to train the model is slowly poisoned with biases, false information, new data that skew the model decisions, etc.
         - Particurarly effective on large models <!-- .element: class="fragment" data-fragment-index="1" -->
           - They are often (always) trained continually with online data. <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -368,8 +401,12 @@
         <br/>
 
         [Demo!](https://colab.research.google.com/drive/1co74MX84NLvBlu-X79GsyvSk7sMEJg2D?usp=sharing) <!-- .element: class="fragment" data-fragment-index="4" -->
+        ---
+        ## Poisoning and Backdoors in Federated Learning
 
-        - Federated learning
+        <img src="img/federated_learning.png" >
+
+        [How To Backdoor Federated Learning](https://proceedings.mlr.press/v108/bagdasaryan20a.html) <!-- .element: class="fragment smaller" data-fragment-index="1" -->
         ---
         <!-- .slide: data-transition="slide-in fade-out" -->
         ## Reflections on Trusting Trust
@@ -389,6 +426,11 @@
         - prompt engineering
         - DoS
         - Waste of resources
+        - Model inversion
+        ---
+        ### Privacy and ownership
+        <img src="./img/gptprivacy.png" height="150">
+        <img src="./img/extractingdata.png" class="fragment" data-fragment-index="1" height="400">
         ---
         ## Reflections on Trusting ~~Trust~~ <br/> Who Builds Models
         ---
@@ -458,113 +500,155 @@
 
         Discussion? <!-- .element: class="bigger" --> 
         ---
-        ### Who owns AI?
-        - AI needs (a big) infrastructure <!-- .element: class="fragment" data-fragment-index="1" -->
-          - The algorithm is just a small part of the product. <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Computational capabilities (computational power and memory) are fundamental. <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Only the biggest companies have the workforce to maintain a solid infrastructure. <!-- .element: class="fragment" data-fragment-index="4" -->
-            - Substantial advantage over smaller companies or academia. <!-- .element: class="fragment" data-fragment-index="5" -->
+        ## Countermeasure
         ---
-        ### Who owns AI?
-        - AI needs (a lot of) data
-          - Data is essential to reproduce results. <!-- .element: class="fragment" data-fragment-index="1" -->
-          - Data is often more important than algorithm (who owns data?) <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Big tech companies have the possibility to acquire a huge amount of data daily. <!-- .element: class="fragment" data-fragment-index="3" -->
-            - Substantial advantage over smaller companies or academia. <!-- .element: class="fragment" data-fragment-index="4" -->
-        ---
+        <section>
+
+          ## Bonus: AI Democratization
+        </section>
+        <section>
+
+          ### Who owns AI?
+          - AI needs (a big) infrastructure <!-- .element: class="fragment" data-fragment-index="1" -->
+            - The algorithm is just a small part of the product. <!-- .element: class="fragment" data-fragment-index="2" -->
+            - Computational capabilities (computational power and memory) are fundamental. <!-- .element: class="fragment" data-fragment-index="3" -->
+            - Only the biggest companies have the workforce to maintain a solid infrastructure. <!-- .element: class="fragment" data-fragment-index="4" -->
+              - Substantial advantage over smaller companies or academia. <!-- .element: class="fragment" data-fragment-index="5" -->
+        </section>
+        <section>
+
+          ### Who owns AI?
+          - AI needs (a lot of) data
+            - Data is essential to reproduce results. <!-- .element: class="fragment" data-fragment-index="1" -->
+            - Data is often more important than algorithm (who owns data?) <!-- .element: class="fragment" data-fragment-index="2" -->
+            - Big tech companies have the possibility to own or acquire a huge amount of data. <!-- .element: class="fragment" data-fragment-index="3" -->
+              - Substantial advantage over smaller companies or academia. <!-- .element: class="fragment" data-fragment-index="4" -->
+        </section>
+        <section>
+        
         ### The myth of AI Democratization
         - AI big companies claim to be democratic
-          - Sharing their research (e.g. arXiv).
-          - Sharing their code (e.g. github).
-          - Sharing their frameworks (e.g. Tensorflow).
-          - Sharing their infrastructure (?) (e.g. colab).
+          - Sharing their research (e.g. arXiv). <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Sharing their code (e.g. github). <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Sharing their frameworks (e.g. Tensorflow). <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Sharing their infrastructure (?) (e.g. colab). <!-- .element: class="fragment" data-fragment-index="4" -->
         
-        >  <!-- .element: class="fragment" data-fragment-index="1" --> [...] at an increasing scale, consumers have greater access to use and purchase technologically sophisticated products, <span style="color:#44AFF6">as well as to participate meaningfully in the development of these products.
-        ---
-        ### The myth of AI Democratization
-        <img src="./img/ceobiden.jpg" height="500px">
-
-        White House meeting on the threat of AI - May 5, 2023  <!-- .element: class="smaller" -->
-        ---
-        <img src="./img/altman1.png" height="200px">
-
-        The Guardian - May 16, 2023 <!-- .element: class="smaller" -->
-
-        <img class="fragment" data-fragment-index="1" src="./img/altman2.png" height="200px">
-
-        The Verge - May 25, 2023 <!-- .element: class="smaller fragment" data-fragment-index="1" -->
-        ---
-        ### The myth of AI Democratization
-        - AI is currently owned by few companies
-          - They have access to a huge amount of data. <!-- .element: class="fragment" data-fragment-index="1" -->
-          - They attract top AI scientists (huge salaries, freedom). <!-- .element: class="fragment" data-fragment-index="2" -->
-          - They have the power to transform research ideas into products. <!-- .element: class="fragment" data-fragment-index="3" -->
-        ---
-        ### Why a democratic AI is important
-        - Avoid monopolies. <!-- .element: class="fragment" data-fragment-index="1" -->
-        - <!-- .element: class="fragment" data-fragment-index="2" --> Democratization means that everyone gets the <span style="color:#44AFF6">opportunities and benefits of artificial intelligence.</span> 
-        - Openness in AI development is proved to be beneficial to the development of better technologies. <!-- .element: class="fragment" data-fragment-index="3" -->
-        ---
-        ### Privacy and ownership
-        <img src="./img/gptprivacy.png" height="150">
-        <img src="./img/extractingdata.png" class="fragment" data-fragment-index="1" height="400">
-        ---
-        ### Privacy and ownership
-        <img src="./img/aiart.png" height="150">
-
-        - What about code? <!-- .element: class="fragment" data-fragment-index="1" -->
-        - What kind of license applies to ChatGPT generated code is still not clear. <!-- .element: class="fragment" data-fragment-index="2" -->
-        - Legally, the implications of using chatGPT generated code in commercial product are still unknown. <!-- .element: class="fragment" data-fragment-index="3" -->
-        ---
-        ### Climate change
-        - What is the carbon footprint of training a large AI model?
-          - <!-- .element: class="fragment" data-fragment-index="1" --> A <a href="https://arxiv.org/pdf/2104.10350">2021 paper</a> from Google estimates that a single training of GPT-3 emits ~552,000kg of CO$_2$
-            - GPT-4 is estimated to be more than 4x the size of GPT-3 <!-- .element: class="fragment" data-fragment-index="2" -->
-            - We takes into account HW improvement, so a 2x multiplier is applied → ~1,104,000kg of CO$_2$  <!-- .element: class="fragment" data-fragment-index="3" -->
-            - GPT-4 is trained for more than 100 days, while GPT-3 only for 14 days, so another 7x multiplier is applied → 7,728,000kg of CO$_2$  <!-- .element: class="fragment" data-fragment-index="4" -->
-        ---
-        ### Climate change
-        - But this is only one single training
-          - Let's assume at least 100 explorative training averaging 0.2x the last one <!-- .element: class="fragment" data-fragment-index="1" -->
-          - 7,728,000 + 7,728,000 * 0.2 * 100 = 162,288,000kg of CO$_2$ <!-- .element: class="fragment" data-fragment-index="2" -->
-        - And what about deployment? <!-- .element: class="fragment" data-fragment-index="3" -->
-          - OpenAI claims to constantly run 30,000 NVidia A100 GPUs, 300W each <!-- .element: class="fragment" data-fragment-index="4" -->
-          - <!-- .element: class="fragment" data-fragment-index="5" --> Suppose 50% average utilization for one year → 19,224,000kWh of energy, equal to 16,434,000kg of CO$_2$ emission (<a href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator">source</a>)
-        - Total = 178,722,000kg of emitted CO$_2$ <!-- .element: class="fragment" data-fragment-index="6" -->
-        ---
-        ### Climate change
-        - To make that into perspective: 178,722,000kg of CO<sub>2</sub> emission are the same as:
-          - 42,536 gasoline-powered passenger vehicles driven for one year  <!-- .element: class="fragment" data-fragment-index="1" -->
-          - 89,341,975kg of coal burned <!-- .element: class="fragment" data-fragment-index="2" -->
-          - 35,272 homes' electricity use for one year <!-- .element: class="fragment" data-fragment-index="3" -->
-          - 47 wind turbines running for a year <!-- .element: class="fragment" data-fragment-index="4" -->
-        ---
-        ### Climate change
-        <img src="./img/carbonmap.png" height="500">
-        ---
-        ### Climate change
-        - But here we only calculated training and deployment stages, the full carbon emission of a ML model is composed of [all these phases](https://www.sciencedirect.com/science/article/pii/S2095809924002315): 
-          - ML R&D <!-- .element: class="fragment" data-fragment-index="1" -->
-          - Hardware manufacturing (material extraction?) <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Global commercial logistics <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Facility O&M <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Massive data collection and management <!-- .element: class="fragment" data-fragment-index="5" -->
-          - Model training and fine-tuning <!-- .element: class="fragment" data-fragment-index="6" -->
-          - Deployment stage <!-- .element: class="fragment" data-fragment-index="7" -->
-          - Material recycling and waste disposal <!-- .element: class="fragment" data-fragment-index="8" -->
-        ---
-        ### Climate change 
-        - But AI and ML are (fortunately) far for being a leading cause for climate change
-          - <!-- .element: class="fragment" data-fragment-index="1" --> In a month commercial airplanes emit at least 65x10$^9$kg of CO$_2$ (<a href="https://ourworldindata.org/grapher/monthly-co2-emissions-from-international-and-domestic-flights?time=2022-10-15..latest">source</a>)
-          - Many companies claims to use high percentages of renewable energy for their data centers <!-- .element: class="fragment" data-fragment-index="2" -->
-          - But... <!-- .element: class="fragment" data-fragment-index="3" -->
+        >  <!-- .element: class="fragment" data-fragment-index="5" --> [...] at an increasing scale, consumers have greater access to use and purchase technologically sophisticated products, <span style="color:#44AFF6">as well as to participate meaningfully in the development of these products.
+        </section>
+        <section>
         
-        <img class="fragment" data-fragment-index="4" src="./img/googleenergy.png" height="100">
+          ### The myth of AI Democratization
+          <img src="./img/ceobiden.jpg" height="500px">
 
-        [The growing energy footprint of artificial intelligence](https://www.cell.com/joule/abstract/S2542-4351(23)00365-3) <!-- .element: class="fragment smaller" data-fragment-index="4" -->
+          White House meeting on the threat of AI - May 5, 2023  <!-- .element: class="smaller" -->
+        </section>
+        <section>
+
+          <img src="./img/altman1.png" height="200px">
+
+          The Guardian - May 16, 2023 <!-- .element: class="smaller" -->
+
+          <img class="fragment" data-fragment-index="1" src="./img/altman2.png" height="200px">
+
+          The Verge - May 25, 2023 <!-- .element: class="smaller fragment" data-fragment-index="1" -->
+        </section>
+        <section>
+        
+          ### The myth of AI Democratization
+          - AI is currently owned by few companies
+            - They have access to a huge amount of data. <!-- .element: class="fragment" data-fragment-index="1" -->
+            - They attract top AI scientists (huge salaries, freedom). <!-- .element: class="fragment" data-fragment-index="2" -->
+            - They have the power to transform research ideas into products. <!-- .element: class="fragment" data-fragment-index="3" -->
+        </section>
+        <section>
+
+          ### Why a democratic AI is important
+          - Avoid monopolies. <!-- .element: class="fragment" data-fragment-index="1" -->
+          - <!-- .element: class="fragment" data-fragment-index="2" --> Democratization means that everyone gets the <span style="color:#44AFF6">opportunities and benefits of artificial intelligence.</span> 
+          - Openness in AI development is proved to be beneficial to the development of better technologies. <!-- .element: class="fragment" data-fragment-index="3" -->
+        </section>
+        <section>
+
+          ### AI ownership
+          - Who owns the outputs produced by a generative AI model? Output of AI models are copyrightable? <!-- .element: class="fragment" data-fragment-index="1" -->
+
+          <img src="./img/aiart.png" height="150"> <!-- .element: class="fragment" data-fragment-index="2" -->
+
+          - What about code? <!-- .element: class="fragment" data-fragment-index="3" -->
+          - What kind of license applies to ChatGPT generated code is still not clear. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Legally, the implications of using ChatGPT generated code in commercial product are still unknown. <!-- .element: class="fragment" data-fragment-index="5" -->
+        </section>
         ---
-        ### Climate change
-        <img src="./img/gptcc.png" height="500">
+        <section>
+
+          ## Bonus: AI and Climate Change 
+        </section>
+        <section>
+
+          ### Climate change
+          - What is the carbon footprint of training a large AI model?
+            - <!-- .element: class="fragment" data-fragment-index="1" --> A <a href="https://arxiv.org/pdf/2104.10350">2021 paper</a> from Google estimates that a single training of GPT-3 emits ~552,000kg of CO$_2$
+              - GPT-4 is estimated to be more than 4x the size of GPT-3 <!-- .element: class="fragment" data-fragment-index="2" -->
+              - We takes into account HW improvement, so a 2x multiplier is applied → ~1,104,000kg of CO$_2$  <!-- .element: class="fragment" data-fragment-index="3" -->
+              - GPT-4 is trained for more than 100 days, while GPT-3 only for 14 days, so another 7x multiplier is applied → 7,728,000kg of CO$_2$  <!-- .element: class="fragment" data-fragment-index="4" -->
+        </section>
+        <section>
+
+          ### Climate change
+          - But this is only one single training
+            - Let's assume at least 100 explorative training averaging 0.2x the last one <!-- .element: class="fragment" data-fragment-index="1" -->
+            - 7,728,000 + (7,728,000 $\cdot$ 0.2 $\cdot$ 100) = 162,288,000kg of CO$_2$ <!-- .element: class="fragment" data-fragment-index="2" -->
+          - And what about deployment? <!-- .element: class="fragment" data-fragment-index="3" -->
+            - OpenAI claims to constantly run 30,000 NVidia A100 GPUs, 300W each <!-- .element: class="fragment" data-fragment-index="4" -->
+            - <!-- .element: class="fragment" data-fragment-index="5" --> Suppose 70% average utilization for one year → 55,188,000kWh of energy, equal to 21,718,000kg of CO$_2$ emission (<a href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator">source</a>)
+          - Total = 184,006,000kg of emitted CO$_2$ <!-- .element: class="fragment" data-fragment-index="6" -->
+        </section>
+        <section>
+
+          ### Climate change
+          - To make that into perspective: 184,006,000kg of CO<sub>2</sub> emission are the same as:
+            - 42,920 gasoline-powered passenger vehicles driven for one year  <!-- .element: class="fragment" data-fragment-index="1" -->
+            - 162,505 electric-powered passenger vehicles driven for one year  <!-- .element: class="fragment" data-fragment-index="2" -->
+            - 92,712,741kg of coal burned <!-- .element: class="fragment" data-fragment-index="3" -->
+            - 38,346 homes' electricity use for one year <!-- .element: class="fragment" data-fragment-index="4" -->
+            - 55 wind turbines running for a year <!-- .element: class="fragment" data-fragment-index="5" -->
+            - Carbon sequestred from 747km$^2$ of US forests. <!-- .element: class="fragment" data-fragment-index="6" -->
+        </section>
+        <section>
+
+          ### Climate change
+          <img src="./img/carbonmap.png" height="400">
+        </section>
+        <section>
+
+          ### Climate change
+          - But here we only calculated training and deployment stages, the full carbon emission of a ML model is composed of [all these phases](https://www.sciencedirect.com/science/article/pii/S2095809924002315): 
+            - ML R&D <!-- .element: class="fragment" data-fragment-index="1" -->
+            - Hardware manufacturing (material extraction?) <!-- .element: class="fragment" data-fragment-index="2" -->
+            - Global commercial logistics <!-- .element: class="fragment" data-fragment-index="3" -->
+            - Facility O&M <!-- .element: class="fragment" data-fragment-index="4" -->
+            - Massive data collection and management <!-- .element: class="fragment" data-fragment-index="5" -->
+            - Model training and fine-tuning <!-- .element: class="fragment" data-fragment-index="6" -->
+            - Deployment stage <!-- .element: class="fragment" data-fragment-index="7" -->
+            - Material recycling and waste disposal <!-- .element: class="fragment" data-fragment-index="8" -->
+        </section>
+        <section>
+
+          ### Climate change 
+          - But AI and ML are (fortunately) far for being a leading cause for climate change
+            - <!-- .element: class="fragment" data-fragment-index="1" --> In a month commercial airplanes emit at least 65x10$^9$kg of CO$_2$ (<a href="https://ourworldindata.org/grapher/monthly-co2-emissions-from-international-and-domestic-flights?time=2022-10-15..latest">source</a>)
+            - Many companies claims to use high percentages of renewable energy for their data centers <!-- .element: class="fragment" data-fragment-index="2" -->
+            - But... <!-- .element: class="fragment" data-fragment-index="3" -->
+          
+          <img class="fragment" data-fragment-index="4" src="./img/googleenergy.png" height="100">
+
+          [The growing energy footprint of artificial intelligence](https://www.cell.com/joule/abstract/S2542-4351(23)00365-3) <!-- .element: class="fragment smaller" data-fragment-index="4" -->
+        </section>
+        <section>
+
+          ### Climate change
+          <img src="./img/gptcc.png" height="500">
+        </section>
         ---
         ### To summarize
         - The adoption of AI pose significant and complex ethical issue <!-- .element: class="fragment" data-fragment-index="1" -->
