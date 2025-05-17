@@ -176,7 +176,7 @@
                 <li>Is the data obtained from trusted sources?</li> <!-- .element: class="fragment" data-fragment-index="6" -->
                 <li>Is the data stored safely? Is the data protected from unathorized alteration?</li> <!-- .element: class="fragment" data-fragment-index="7" -->
               </ul>
-              <li>Does the data contains backdoors, poison, adversarial examples, etc?</li> <!-- .element: class="fragment" data-fragment-index="8" -->
+              <li>Does the data contains poison, backdoors, adversarial examples, etc?</li> <!-- .element: class="fragment" data-fragment-index="8" -->
             </ul>
           </ol>
           <aside class="notes">
@@ -420,19 +420,8 @@
 
         Discussion? <!-- .element: class="bigger" --> 
         ---
-        ## Model safety - Attacks
-        ---
-        ## AI models under attack
-        - prompt engineering
-        - DoS
-        - Waste of resources
-        - Model inversion
-        ---
-        ### Privacy and ownership
-        <img src="./img/gptprivacy.png" height="150">
-        <img src="./img/extractingdata.png" class="fragment" data-fragment-index="1" height="400">
-        ---
-        ## Reflections on Trusting ~~Trust~~ <br/> Who Builds Models
+        ## Model safety
+        ### Reflections on Trusting ~~Trust~~ <br/> Who Builds Models
         ---
         ### The rise of fundational models
         - All big AI companies are training huge, general models, that then can be fine tuned to downstream tasks
@@ -500,7 +489,100 @@
 
         Discussion? <!-- .element: class="bigger" --> 
         ---
-        ## Countermeasure
+        ## Model Safety - Attacks
+        ---
+        ## AI models under attack
+        - prompt engineering
+        - DoS
+        - Waste of resources
+        - Model inversion
+        ---
+        ### Privacy and ownership
+        <img src="./img/gptprivacy.png" height="150">
+        <img src="./img/extractingdata.png" class="fragment" data-fragment-index="1" height="400">
+        ---
+        ## How to Build Safe AI
+        ---
+        ### The long and winding road
+        - Buld a 100% safe AI is impossible and beyound our control. <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Biases hidden in the data, bad labeling, etc. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Security flaws in HHDs where the data is stored, libraries/frameworks used, etc. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Adversarial examples, model inversion, flawed third party AIs, etc. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - But we can do as better as we can!  <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Following guidelines to build safe AIs in the particular domain.   <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Have a critical and objective view of the possible problems of the AI you are building.  <!-- .element: class="fragment" data-fragment-index="7" -->
+          - Mind that every phase of AI development is important to the overall safety! <!-- .element: class="fragment" data-fragment-index="8" -->
+            - From design to data acqusition, to development to end of life! <!-- .element: class="fragment" data-fragment-index="9" -->
+        ---
+        ### How to Improve Safety of AIs
+        - <!-- .element: class="fragment" data-fragment-index="1" --> Use at least 2 <u>totally different</u> AI models in safety critical applications. 
+          - Different data used to train them, different model architectures, different outputs, etc.  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Validate the output of each of them with one another.   <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Simulate before deploying.  <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Use simulations or simulated data to test the behavior of the model, especially in corner cases.  <!-- .element: class="fragment" data-fragment-index="5" -->
+          - If possile use human actions/decision to calibrate the model.   <!-- .element: class="fragment" data-fragment-index="6" -->
+        - Use adversarial models to find out flaws, biases and backdoors in the model.  <!-- .element: class="fragment" data-fragment-index="7" -->
+        - Explore model attention to understand possible biases.  <!-- .element: class="fragment" data-fragment-index="8" -->
+        ---
+        ### How to Improve Safety of AIS - ISO/PAS 8800
+        - Standard ISO that regulates "Road vehicles — Safety and Artificial Intelligence".  <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Published in Dec. 2024. <!-- .element: class="fragment" data-fragment-index="2" -->
+        - Covers all the use of AI in road vehicles, to driving assistant technologies do ADS (another ISO standard is currently under publication for ADS only). <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Many concepts can be applyied 1:1 to any safety critical domain. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - Full of references to other normatives/ISO standars, from SW/HW testing to IT infrastructure and cybersecurity. <!-- .element: class="fragment" data-fragment-index="5" -->
+        - No mention of possible attacks to AI models. <!-- .element: class="fragment" data-fragment-index="6" -->
+        ---
+        <!-- .slide: data-auto-animate class="text-xs" -->
+        ### ISO/PAS 8800
+        - <!-- .element: class="fragment" data-fragment-index="1" --> Based on the production of a huge amount of documentation, following the principle: <i>if I'm forced to think about safety, the final system will be safer</i>. 
+          - AI safety requirements. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Input space definition. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Known insufficiencies of the AI system and third parties SW used. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - AI component or AI system architecture. <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Data and data collection design specification. <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Dataset requirements and design specifications. <!-- .element: class="fragment" data-fragment-index="7" -->
+          - Dataset verification and validation reports. <!-- .element: class="fragment" data-fragment-index="8" -->
+          - Dataset safety analysis report. <!-- .element: class="fragment" data-fragment-index="9" -->
+          - AI system verification and validation reports.  <!-- .element: class="fragment" data-fragment-index="10" -->
+          - AI system safety analysis report.  <!-- .element: class="fragment" data-fragment-index="11" -->
+        ---
+        <!-- .slide: data-auto-animate class="text-xs" -->
+        ### ISO/PAS 8800
+        - <u>AI safety requirements.</u>
+        - Input space definition.
+        - <u>Known insufficiencies of the AI system and third parties SW used.</u>
+        - AI component or AI system architecture.
+        - <u>Data and data collection design specification.</u>
+        - Dataset requirements and design specifications.
+        - Dataset verification and validation reports.
+        - <u>Dataset safety analysis report.</u>
+        - AI system verification and validation reports.
+        - <u>AI system safety analysis report.</u>
+        - <!-- .element: class="fragment" data-fragment-index="1" --> <b>Re-evaluate and change for all the lifecycle of the system</b>
+        ---
+        ### ISO/PAS 8800
+        - For being certified ISO/PAS 8800 compliant need to satisfy all the safety requirements (or at least have a strong justification if some requirement is not satisfied). <!-- .element: class="fragment" data-fragment-index="1" -->
+        - But same guidelines may greatly improve all the AI ecosystem! <!-- .element: class="fragment" data-fragment-index="2" -->
+          - There is no shame in a (possibly) unsafe AI system!  <!-- .element: class="fragment" data-fragment-index="3" -->
+          - <!-- .element: class="fragment" data-fragment-index="4" --> Just attach all the documentation and <u>clearly state</u> how the system may fail and in which occasions.
+          - Also include untested scenarios (e.g. I only tested my ADS in right-hand drive countries). <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Minimize the risk of misuse of AI systems by third parties. <!-- .element: class="fragment" data-fragment-index="6" -->
+            - Will you use ChatGPT to evaluate CVs if it is clearly stated that ChatGPT may contain biases against women, blacks, minorities, etc.? <!-- .element: class="fragment" data-fragment-index="7" -->
+        ---
+        ### To summarize
+        - The adoption of AI pose significant and complex ethical issue <!-- .element: class="fragment" data-fragment-index="1" -->
+        - AI models may have unexpected bad outcomes  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Bias of the data/model is a major enemy <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Often impossible to predict all the possible bad outcomes <!-- .element: class="fragment" data-fragment-index="4" -->
+        - Politics and power have a great influence on how AI is shaped and used <!-- .element: class="fragment" data-fragment-index="5" -->
+        - AI is an extremely energy-hungry technology <!-- .element: class="fragment" data-fragment-index="7" -->
+        - And we do not cover malicious use of AI (military, population control, etc.) <!-- .element: class="fragment" data-fragment-index="8" -->
+        - We also do not cover the problem of evaluations and metrics <!-- .element: class="fragment" data-fragment-index="9" -->
+
+        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="6" src="./img/politics.jpg" height="500">
+        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="10" src="./img/metric1.jpg" height="500">
+        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="11" src="./img/metric2.jpg" height="500">
+        <img class="absoluteimg fragment" data-fragment-index="12" >
         ---
         <section>
 
@@ -649,21 +731,6 @@
           ### Climate change
           <img src="./img/gptcc.png" height="500">
         </section>
-        ---
-        ### To summarize
-        - The adoption of AI pose significant and complex ethical issue <!-- .element: class="fragment" data-fragment-index="1" -->
-        - AI models may have unexpected bad outcomes  <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Bias of the data/model is a major enemy <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Often impossible to predict all the possible bad outcomes <!-- .element: class="fragment" data-fragment-index="4" -->
-        - Politics and power have a great influence on how AI is shaped and used <!-- .element: class="fragment" data-fragment-index="5" -->
-        - AI is an extremely energy-hungry technology <!-- .element: class="fragment" data-fragment-index="7" -->
-        - And we do not cover malicious use of AI (military, population control, etc.) <!-- .element: class="fragment" data-fragment-index="8" -->
-        - We also do not cover the problem of evaluations and metrics <!-- .element: class="fragment" data-fragment-index="9" -->
-
-        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="6" src="./img/politics.jpg" height="500">
-        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="10" src="./img/metric1.jpg" height="500">
-        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="11" src="./img/metric2.jpg" height="500">
-        <img class="absoluteimg fragment" data-fragment-index="12" >
         ---
         <!-- .slide: data-transition="zoom" -->
         ## What we should do?
