@@ -491,11 +491,54 @@
         ---
         ## Model Safety - Attacks
         ---
-        ## AI models under attack
-        - prompt engineering
-        - DoS
-        - Waste of resources
-        - Model inversion
+        ### AI models under attack
+        - Even if the data and the resulting AI model are safe, the former can be attacked by (malicious) third parties in different ways:
+          - (Malicious) Prompt engineering <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Denial of Service  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Waste or overuse of resources <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Model inversion <!-- .element: class="fragment" data-fragment-index="4" -->
+          - ... <!-- .element: class="fragment" data-fragment-index="5" -->
+        - Common goal: fooling the model into yielding wrong outputs, (mis)using the model beyond its design, extract hidden information.  <!-- .element: class="fragment" data-fragment-index="6" -->
+        ---
+        ### (Malicious) Prompt Engineering
+        - Prompt engineering:
+          - Process of carefully crafting input instructions to maximize the effectiveness and relevance of outputs of genAI models.
+          - The prompt engineer is (was?) the new [sexiest job title](https://www.technologyreview.com/2024/04/24/1091125/ai-prompt-engineer-generative-ai-job-titles).
+          - Billions dollars companies are based on few lines of highly engineered prompts ([if you want to have fun..](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)).
+        - Malicious prompt engineering:
+          - Using specific prompts or inserting token into regular prompt to:
+            - Bypass ethical filters of the model.
+            - Force the model to yield incorrect or wrong information.
+            - Pollute the context of the model, impacting every successive regular prompt. 
+        ---
+        ### (Malicious) Prompt Engineering
+
+        <img src="img/chatgpt-destroy-humanity.jpg" height="500px">
+
+        ["ChatGPT, Let’s Build A Bomb!" The cat-and-mouse game of AI alignment](https://generativeai.pub/chatgpt-lets-build-a-bomb-d0b56f3a1b63)  <!-- .element: class="smaller" -->
+        ---
+        ### (Malicious) Prompt Engineering
+
+        <img src="img/chatGPT_correct.png" height="500px">
+        ---
+        ### (Malicious) Prompt Engineering
+
+        <img src="img/chatGPT_wrong.png" height="400px">
+        <img src="img/chatGPT_wrong2.png" height="400px">
+
+        [Prompt Injection Attack on GPT-4](https://www.robustintelligence.com/blog-posts/prompt-injection-attack-on-gpt-4) <!-- .element: class="smaller" -->
+        ---
+        <!-- .slide: data-transition="slide-in fade-out" -->
+        ### (Malicious) Prompt Engineering
+
+        <img src="img/mitm.png" height="500px">
+        ---
+        <!-- .slide: data-transition="fade-in slide-out" -->
+        ### (Malicious) Prompt Engineering
+
+        <img src="img/mitm2.png" height="500px">
+        ---
+        ### Model inversion
         ---
         ### Privacy and ownership
         <img src="./img/gptprivacy.png" height="150">
