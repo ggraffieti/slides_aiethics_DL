@@ -33,6 +33,10 @@
 
         May 19, 2025 <!-- .element: class="smaller grey italic" --> 
 
+        You can find this slides at: <!-- .element: class="smaller grey italic" --> 
+        <br>
+        [https://ggraffieti.github.io/slides_aiethics_DL](https://ggraffieti.github.io/slides_aiethics_DL/)
+
         Note: 
         Interacion and questions
         </section> 
@@ -501,21 +505,21 @@
         - Common goal: fooling the model into yielding wrong outputs, (mis)using the model beyond its design, extract hidden information.  <!-- .element: class="fragment" data-fragment-index="6" -->
         ---
         ### (Malicious) Prompt Engineering
-        - Prompt engineering:
-          - Process of carefully crafting input instructions to maximize the effectiveness and relevance of outputs of genAI models.
-          - The prompt engineer is (was?) the new [sexiest job title](https://www.technologyreview.com/2024/04/24/1091125/ai-prompt-engineer-generative-ai-job-titles).
-          - Billions dollars companies are based on few lines of highly engineered prompts ([if you want to have fun..](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)).
-        - Malicious prompt engineering:
-          - Using specific prompts or inserting token into regular prompt to:
-            - Bypass ethical filters of the model.
-            - Force the model to yield incorrect or wrong information.
-            - Pollute the context of the model, impacting every successive regular prompt. 
+        - Prompt engineering:  <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Process of carefully crafting input instructions to maximize the effectiveness and relevance of outputs of genAI models. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - <!-- .element: class="fragment" data-fragment-index="3" --> The prompt engineer is (was?) the new <a href="https://www.technologyreview.com/2024/04/24/1091125/ai-prompt-engineer-generative-ai-job-titles">sexiest job title</a>.
+          - <!-- .element: class="fragment" data-fragment-index="4" --> Billions dollars companies are based on few lines of highly engineered prompts (<a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools">if you want to have fun..</a>).
+        - Malicious prompt engineering: <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Using specific prompts or inserting token into regular prompt to: <!-- .element: class="fragment" data-fragment-index="6" -->
+            - Bypass ethical filters of the model. <!-- .element: class="fragment" data-fragment-index="7" -->
+            - Force the model to yield incorrect or wrong information. <!-- .element: class="fragment" data-fragment-index="8" -->
+            - Pollute the context of the model, impacting every successive regular prompt.  <!-- .element: class="fragment" data-fragment-index="9" -->
         ---
         ### (Malicious) Prompt Engineering
 
         <img src="img/chatgpt-destroy-humanity.jpg" height="500px">
 
-        ["ChatGPT, Let’s Build A Bomb!" The cat-and-mouse game of AI alignment](https://generativeai.pub/chatgpt-lets-build-a-bomb-d0b56f3a1b63)  <!-- .element: class="smaller" -->
+        ["ChatGPT, Let's Build A Bomb!" The cat-and-mouse game of AI alignment](https://generativeai.pub/chatgpt-lets-build-a-bomb-d0b56f3a1b63)  <!-- .element: class="smaller" -->
         ---
         ### (Malicious) Prompt Engineering
 
@@ -539,8 +543,13 @@
         <img src="img/mitm2.png" height="500px">
         ---
         ### Model inversion
+        - Using the AI model outputs to infer parameters, architecture, and even the data it was trained on. 
+        - Access to the model internal structure is not necessary.
+        - Methods are mainly divided into: 
+          - Query-based: using specifically crafted input to produce model output that reveals information about model structure and parameters. 
+          - Membership inference attack: given a specific input, determine if a similar input was used in training just by analyzing the output. 
         ---
-        ### Privacy and ownership
+        ### Membership attack
         <img src="./img/gptprivacy.png" height="150">
         <img src="./img/extractingdata.png" class="fragment" data-fragment-index="1" height="400">
         ---
@@ -558,14 +567,15 @@
             - From design to data acqusition, to development to end of life! <!-- .element: class="fragment" data-fragment-index="9" -->
         ---
         ### How to Improve Safety of AIs
-        - <!-- .element: class="fragment" data-fragment-index="1" --> Use at least 2 <u>totally different</u> AI models in safety critical applications. 
-          - Different data used to train them, different model architectures, different outputs, etc.  <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Validate the output of each of them with one another.   <!-- .element: class="fragment" data-fragment-index="3" -->
-        - Simulate before deploying.  <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Use simulations or simulated data to test the behavior of the model, especially in corner cases.  <!-- .element: class="fragment" data-fragment-index="5" -->
-          - If possile use human actions/decision to calibrate the model.   <!-- .element: class="fragment" data-fragment-index="6" -->
-        - Use adversarial models to find out flaws, biases and backdoors in the model.  <!-- .element: class="fragment" data-fragment-index="7" -->
-        - Explore model attention to understand possible biases.  <!-- .element: class="fragment" data-fragment-index="8" -->
+        - <!-- .element: class="fragment" data-fragment-index="1" --> If it's possible use explainable AI models <span class="fragment" data-fragment-index="2">(spoiler: often not possible).</span> 
+        - <!-- .element: class="fragment" data-fragment-index="3" --> Use at least 2 <u>totally different</u> AI models in safety critical applications. 
+          - Different data used to train them, different model architectures, different outputs, etc.  <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Validate the output of each of them with one another.   <!-- .element: class="fragment" data-fragment-index="5" -->
+        - Simulate before deploying.  <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Use simulations or simulated data to test the behavior of the model, especially in corner cases.  <!-- .element: class="fragment" data-fragment-index="7" -->
+          - If possile use human actions/decision to calibrate the model.   <!-- .element: class="fragment" data-fragment-index="8" -->
+        - Use adversarial models to find out flaws, biases and backdoors in the model.  <!-- .element: class="fragment" data-fragment-index="9" -->
+        - Explore model attention to understand possible biases.  <!-- .element: class="fragment" data-fragment-index="10" -->
         ---
         ### How to Improve Safety of AIS - ISO/PAS 8800
         - Standard ISO that regulates "Road vehicles — Safety and Artificial Intelligence".  <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -611,21 +621,6 @@
           - Also include untested scenarios (e.g. I only tested my ADS in right-hand drive countries). <!-- .element: class="fragment" data-fragment-index="5" -->
           - Minimize the risk of misuse of AI systems by third parties. <!-- .element: class="fragment" data-fragment-index="6" -->
             - Will you use ChatGPT to evaluate CVs if it is clearly stated that ChatGPT may contain biases against women, blacks, minorities, etc.? <!-- .element: class="fragment" data-fragment-index="7" -->
-        ---
-        ### To summarize
-        - The adoption of AI pose significant and complex ethical issue <!-- .element: class="fragment" data-fragment-index="1" -->
-        - AI models may have unexpected bad outcomes  <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Bias of the data/model is a major enemy <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Often impossible to predict all the possible bad outcomes <!-- .element: class="fragment" data-fragment-index="4" -->
-        - Politics and power have a great influence on how AI is shaped and used <!-- .element: class="fragment" data-fragment-index="5" -->
-        - AI is an extremely energy-hungry technology <!-- .element: class="fragment" data-fragment-index="7" -->
-        - And we do not cover malicious use of AI (military, population control, etc.) <!-- .element: class="fragment" data-fragment-index="8" -->
-        - We also do not cover the problem of evaluations and metrics <!-- .element: class="fragment" data-fragment-index="9" -->
-
-        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="6" src="./img/politics.jpg" height="500">
-        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="10" src="./img/metric1.jpg" height="500">
-        <img class="absoluteimg fade-in-then-out fragment" data-fragment-index="11" src="./img/metric2.jpg" height="500">
-        <img class="absoluteimg fragment" data-fragment-index="12" >
         ---
         <section>
 
@@ -775,79 +770,63 @@
           <img src="./img/gptcc.png" height="500">
         </section>
         ---
-        <!-- .slide: data-transition="zoom" -->
-        ## What we should do?
-        # 😱
+        <!-- .slide: data-transition="slide-in fade-out" -->
+        ### To summarize
+        - The widespread adoption of AI in high risk applications pose significant safety risks. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - AI models may (and will) have unexpected bad outcomes  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Bias on the data/model is a major enemy <!-- .element: class="fragment" data-fragment-index="3" -->
+          - It is often impossible to predict a priori all the possible bad outcomes <!-- .element: class="fragment" data-fragment-index="4" -->
+        - Malicious individuals may (and will) attack AI models and the data they are trained on. <!-- .element: class="fragment" data-fragment-index="5" -->
+        - We do not cover: <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Politics of AI <!-- .element: class="fragment" data-fragment-index="7" -->
         ---
-        ### Unfortunately, we don't know
-        - Technically you can:  <!-- .element: class="fragment" data-fragment-index="1" -->
-          - Use white box or explainable AI models  <!-- .element: class="fragment" data-fragment-index="2" -->
-            - We can theoretically know the output of the system for every possible input. <!-- .element: class="fragment" data-fragment-index="3" -->
-            - We can inspect the system in order to find biases and weaknesses. <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Try to explain a posteriori the predictions of a model   <!-- .element: class="fragment" data-fragment-index="5" -->
-            - E.g. visualizing where the model concentrate to make its prediction (attention)   <!-- .element: class="fragment" data-fragment-index="6" -->
+        <!-- .slide: data-transition="fade-in fade-out" -->
+        <img src="./img/politics.jpg" height="500">
         ---
-        <img src="./img/explainable.png" height="500"> 
-
-        [Visualizing and Understanding Convolutional Networks](https://link.springer.com/chapter/10.1007/978-3-319-10590-1_53)  <!-- .element: class="smaller" -->
+        <!-- .slide: data-transition="fade-in fade-out" -->
+        ### To summarize
+        - The widespread adoption of AI in high risk applications pose significant safety risks.
+        - AI models may (and will) have unexpected bad outcomes 
+          - Bias on the data/model is a major enemy 
+          - It is often impossible to predict a priori all the possible bad outcomes 
+        - Malicious individuals may (and will) attack AI models and the data they are trained on. 
+        - We do not cover: 
+          - Politics of AI 
+          - Explicitly malicious use of AI (military, population control, etc.) <!-- .element: class="fragment" data-fragment-index="1" -->
+          - The problem of AI evaluation and metrics <!-- .element: class="fragment" data-fragment-index="2" -->
         ---
-        <img src="./img/explainability2.png" height="500">
-
-        [Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead](https://www.nature.com/articles/s42256-019-0048-x) <!-- .element: class="smaller" -->
+        <!-- .slide: data-transition="fade-in fade-out" -->
+        <img data-fragment-index="10" src="./img/metric1.jpg" height="500">
         ---
-        ### Unfortunately, we don't know
-        - Technically you can: 
-          - Use white box or explainable AI models 
-            - We can theoretically know the output of the system for every possible input. 
-            - We can inspect the system in order to find biases and weaknesses. 
-          - Try to explain a posteriori the predictions of a model   
-            - E.g. visualizing where the model concentrate to make its prediction (attention)   
-          - Try to play with the prediction of the model in order to find strange behaviours  <!-- .element: class="fragment" data-fragment-index="1" -->
-            - E.g. change the data in a loan request until the bank's AI system accept/reject it.  <!-- .element: class="fragment" data-fragment-index="2" -->
-            - Adversarial training  <!-- .element: class="fragment" data-fragment-index="3" -->
-            -  <!-- .element: class="fragment" data-fragment-index="4" --> <a href="https://colab.research.google.com/drive/1nSIbchuITfdvlbjF-4R9aerTdsjHa5CV?usp=sharing" target="_blank">Demo</a> 
-        Note: 
-        May talk about horses in image recognition
-
-        Number of cells in generative models
-
-        !! Apart from the technical side, there is something much more importat in order to guide the development and the use of AI in the right direction. You
-        ---
-        <img src="./img/wewantyou.png" height="500px">
-
-        Note: 
-        As a developer, manager, or simply user you have the power to shape AI in the right way
-
-        Do not stop at the initial enthusiasm, do not trust all the thing companies says to you
-
-        Is it more importat to publish a paper or do a study that beats the sota of a 0. something, or deeply analizing if something in the metric used, the model, the data is not right?
-
-        Think about the implication of using AI in a specific task, do not focus only on the results.
-
-        I think you all deeply want to make the world a better place, this is the occasion for each one of you
-
-        The best way to build a ship...the petit prince
+        <!-- .slide: data-transition="fade-in slide-out" -->
+        <img data-fragment-index="11" src="./img/metric2.jpg" height="500">
         ---
         <!-- .slide: data-auto-animate -->
-        ## To sum up
-        - Always think about the possible (ethical) problems of your AI system <!-- .element: class="fragment" data-fragment-index="1" -->
-        - Spend a lot of time to think about data, how it was acquired, how it was labeled, the level of generalization, ... <!-- .element: class="fragment" data-fragment-index="2" -->
-        - Do not fall for easy and fast enthusiasm: the possible bad outcomes are often hidden and difficult to spot. <!-- .element: class="fragment" data-fragment-index="3" -->
-        - Try to not become resistant, anti, or too critic to AI  <!-- .element: class="fragment" data-fragment-index="4" -->
-        - Be an advocate for ethical AI systems  <!-- .element: class="fragment" data-fragment-index="5" -->
-        - How AI take decisions is often totally different from how humans reason and think! <!-- .element: class="fragment" data-fragment-index="6" -->
+        ### My personal advice
+        - Always think about the possible safety problems of your AI system <!-- .element: class="fragment" data-fragment-index="1" -->
+          - From data aquisition to deployment (and beyond!) <!-- .element: class="fragment" data-fragment-index="2" -->
+        - Invest time analyzing training data, how and who acquired it, how it is stored, possible biases, ... <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Do not fall for easy and fast enthusiasm: the possible bad outcomes are often hidden and difficult to spot. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - On the other hand, try to not become resistant, anti, or too critic of AI  <!-- .element: class="fragment" data-fragment-index="5" -->
+        - Always remember that: 
+        
+        AIs are f*****g LAZY! <!-- .element: class="bigger fragment" data-fragment-index="6" -->
         ---
         <!-- .slide: data-auto-animate data-background-color="red" -->
-        - How AI take decisions is often totally different from how humans reason and think! <!-- .element: class="no-dot bigger" -->
+        AIs are f*****g LAZY! <!-- .element: class="bigger" -->
 
         Note: 
         AI only see what we give to it. 
 
         Stop saying that AI is like a child, AI is not something of this world, he don't understand anything apart from optmizing the metric we give to it. 
         ---
+        <!-- .slide: data-auto-animate -->
         <img src="./img/thatsall_white.png" height="300px">
+        ---
+        <!-- .slide: data-auto-animate" -->
+        Questions? <!-- .element: class="bigger" --> 
 
-        Questions? <!-- .element: class="fragment" data-fragment-index="1" -->
+        Discussion? <!-- .element: class="bigger" --> 
         ---
         <!-- .slide: class="title-slide-lol" -->
         ## Introduction to AI Ethics 
