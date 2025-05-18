@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>AI safety DL seminar 25</title>
+  <title>AI Safety DL Seminar 25</title>
 
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
@@ -105,23 +105,23 @@
         _Our mission is to learn, pose questions and take initiative on how AI technology can be used for the social good._
         ---
         ## Overview
-        - AI Safety Introduction: Why and How <!-- .element: class="fragment" data-fragment-index="1" -->
-        - Data Safety <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Bias <!-- .element: class="fragment" data-fragment-index="3" -->
-        - Model Safety <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Attacks on Data <!-- .element: class="fragment" data-fragment-index="5" -->
-          - Attacks on Models <!-- .element: class="fragment" data-fragment-index="6" -->
-        - Foundational Models and Their Use <!-- .element: class="fragment" data-fragment-index="7" -->
-        - An Introduction to Countermeasures <!-- .element: class="fragment" data-fragment-index="8" -->
-          - ISO/PAS 8800 <!-- .element: class="fragment" data-fragment-index="9" -->
+        - AI Safety Introduction: Why and How. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Data Safety. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Bias. <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Model Safety. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Attacks on Data. <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Attacks on Models. <!-- .element: class="fragment" data-fragment-index="6" -->
+        - Foundational Models and Their Use. <!-- .element: class="fragment" data-fragment-index="7" -->
+        - An Introduction to Countermeasures. <!-- .element: class="fragment" data-fragment-index="8" -->
+          - ISO/PAS 8800. <!-- .element: class="fragment" data-fragment-index="9" -->
         ---
         ## Why AI safety and not AI ethics?
         - The ethical aspects and challenges of AI are nowadays almost common knowledge (even the Pope talked abut them). <!-- .element: class="fragment" data-fragment-index="1" -->
-        - The misuse or the criminal use of AI is well documented and known by the general public. <!-- .element: class="fragment" data-fragment-index="2" --> 
+        - The misuse or the criminal use of AI is well documented and well known by the general public. <!-- .element: class="fragment" data-fragment-index="2" --> 
         - AI Safety is a pretty recent buzzword that also encompass: <!-- .element: class="fragment" data-fragment-index="3" -->
           - Possible attacks on an ethically developed AI. <!-- .element: class="fragment" data-fragment-index="4" -->
           - Safe use of third parties AIs (e.g. ChatGPT et simila). <!-- .element: class="fragment" data-fragment-index="5" -->
-          - Good practices of AI development (from data collection to AI dismissal). <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Good practices of AI development (from data collection to AI system dismissal). <!-- .element: class="fragment" data-fragment-index="6" -->
           - Focus on safety, a more concrete and measurable quality than ethics. <!-- .element: class="fragment" data-fragment-index="7" -->
         ---
         <section>
@@ -143,25 +143,31 @@
               - Is the information we have <i>complete</i>?</li> <!-- .element: class="fragment" data-fragment-index="3" -->
 
           <aside class="notes">
-            Example of cat vs dog (complete information) vs the current example (do not know the full causes)
+            Classification problem -> classifier, but I don't have complete indormation!
             <br>
-            Discriminative models have biases inside them for the complete information
-            <br>
-            This is the thing that you will face 99% of the time at work (we have this data, what can we extract?)
+            Discriminative models have an intrisic bias inside them for having complete information (being able to trace a boundary between the data starting from input data). 
+            <br/>
+            I dont know if I can correctly classify data with the input features I have.
           </aside>
         </section>
-        <section>
+        <section data-auto-animate>
           <img src="./img/points.svg" height="400">
         </section>
-        <section>
+        <section data-auto-animate>
           <img src="./img/border.svg" height="400">
+
+          Ideas? <!-- .element: class="fragment" data-fragment-index="1" -->
         </section>
-        <section>
+        <section data-auto-animate>
           <img src="./img/distributions.svg" height="600">
         </section>
-        <section>
+        <section data-auto-animate>
           <img src="./img/onlyone.svg" height="500">
-          <p class="fragment smaller" data-fragment-index="1">Examples of generative models?</p>
+
+          Examples of generative models? <!-- .element: class="fragment" data-fragment-index="1" -->
+          <aside class="notes">
+            Back to the demo
+          </aside>
         </section>
         <section>
           
@@ -177,10 +183,6 @@
                 - Is the data obtained from trusted sources? <!-- .element: class="fragment" data-fragment-index="6" -->
                 - Is the data stored safely? Is the data protected from unathorized alteration? <!-- .element: class="fragment" data-fragment-index="7" -->
               - Does the data contains poison, backdoors, adversarial examples, etc? <!-- .element: class="fragment" data-fragment-index="8" -->
-
-          <aside class="notes">
-            lol
-          </aside>
         </section>
         ---
         ## Data safety - Bias
@@ -208,6 +210,9 @@
           - Did train/validation/test sets were collected from the same distribution of data? <!-- .element: class="fragment" data-fragment-index="2" -->
           - What metrics we used to evaluate the performance? <!-- .element: class="fragment" data-fragment-index="3" -->
           - What we mean by performance? <!-- .element: class="fragment" data-fragment-index="4" -->
+
+        Note: 
+        Example of bad calibrated cameras in self-driving cars.
         ---
         ### But if we remove all gender, ethnicity, or unwanted information from the data?
         - The AI system can infer them from remaining information! <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -267,6 +272,11 @@
           - Pareidolia. <!-- .element: class="fragment" data-fragment-index="4" -->
           - Basis of Bayesian Statistics (degree of belief). <!-- .element: class="fragment" data-fragment-index="5" -->
           - Bias may be essential to ML and humans for decision making. <!-- .element: class="fragment" data-fragment-index="6" -->
+
+        Note:
+        Example of noise from bush, stick vs snake. 
+
+        If we were totally bias free, we would not take decision at all! We must evaluate all possible possibilities (even the most remote ones)
         ---
         ### (Bad) Biases are in everyday life!
         <div class="two-c-container" data-markdown>
@@ -350,6 +360,9 @@
         <img src="./img/adv_ex3.png" height="400px">
 
         [Impact of Adversarial Examples on Deep Learning Models for Biomedical Image Segmentation](https://link.springer.com/chapter/10.1007/978-3-030-32245-8_34)  <!-- .element: class="smaller" -->
+
+        Note:
+        Think about controlling the input pipeline of images (attack on the hospital system).
         ---
         ### Data Poisoning
         - The data used to train the model is slowly poisoned with biases, false information, new data that skew the model decisions, etc.
@@ -394,6 +407,8 @@
         ### Nightshade
 
         <img src="img/nightshade2.webp" height="500px">
+
+        Note: works also on concept near the poisoned concept
         ---
         ### Backdoor Insertion
         - The training data is altered in order to insert a backdoor in the model. <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -449,7 +464,7 @@
         - Data scraped from the internet is more and more intentionally poisoned or altered. <!-- .element: class="fragment" data-fragment-index="7" -->
         <br/>
 
-        So, do you trust them?  <!-- .element: class="fragment fade-in" data-fragment-index="7" -->
+        So, do you trust them?  <!-- .element: class="fragment fade-in" data-fragment-index="8" -->
         ---
         <!-- .slide: data-auto-animate -->
         So, do you trust them?  <!-- .element: class="bigger" --> 
@@ -528,6 +543,9 @@
         ### (Malicious) Prompt Engineering
 
         <img src="img/mitm.png" height="500px">
+
+        Note: 
+        Example of chatGPT used in court cases without checking. 
         ---
         <!-- .slide: data-transition="fade-in slide-out" -->
         ### (Malicious) Prompt Engineering
@@ -544,6 +562,11 @@
         ### Membership attack
         <img src="./img/gptprivacy.png" height="150">
         <img src="./img/extractingdata.png" class="fragment" data-fragment-index="1" height="400">
+
+        Note: 
+        Why be worried by chatGPT trained with private data? 
+
+        Because it can be reconstructed!
         ---
         ## How to Build Safe AI
         ---
@@ -568,6 +591,11 @@
           - If possile use human actions/decision to calibrate the model.   <!-- .element: class="fragment" data-fragment-index="8" -->
         - Use adversarial models to find out flaws, biases and backdoors in the model.  <!-- .element: class="fragment" data-fragment-index="9" -->
         - Explore model attention to understand possible biases.  <!-- .element: class="fragment" data-fragment-index="10" -->
+
+        Note: 
+        2 models -> example amba-aur
+
+        simulation -> self driving car system active but without control, to check with the driver decision real time. 
         ---
         ### How to Improve Safety of AIS - ISO/PAS 8800
         - Standard ISO that regulates "Road vehicles — Safety and Artificial Intelligence".  <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -590,6 +618,7 @@
           - Dataset safety analysis report. <!-- .element: class="fragment" data-fragment-index="9" -->
           - AI system verification and validation reports.  <!-- .element: class="fragment" data-fragment-index="10" -->
           - AI system safety analysis report.  <!-- .element: class="fragment" data-fragment-index="11" -->
+          - ...  <!-- .element: class="fragment" data-fragment-index="12" -->
         ---
         <!-- .slide: data-auto-animate class="text-xs" -->
         ### ISO/PAS 8800
@@ -803,6 +832,8 @@
         - And always remember that: <!-- .element: class="fragment" data-fragment-index="6" -->
         
         __AIs are f*****g LAZY!__ <!-- .element: class="fragment" data-fragment-index="7" -->
+
+        Note: example of 2023 summer conference Bertinoro
         ---
         <!-- .slide: data-auto-animate data-background-color="red" -->
         AIs are f*****g LAZY! <!-- .element: class="bigger" -->
