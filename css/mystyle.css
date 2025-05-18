@@ -71,4 +71,12 @@ section.title-slide-lol {
   margin-right: auto; 
 }
 
+.text-xs {
+  font-size: 0.9em;
+  line-height: 1rem;
+}
+
+i {
+  font-style: italic !important;
+}
 
