@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>AI ethics IEEE talk</title>
+  <title>AI Safety DL Seminar 25</title>
 
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
@@ -24,14 +24,18 @@
         <textarea data-template>
         <section class="title-slide-lol">
         
-        ## Introduction to AI Ethics 
+        ## Introduction to AI ~~Ethics~~ Safety 
         Gabriele Graffieti
         
         ---- 
 
-        IEEE Student Branch Seminar <!-- .element: class="smaller grey italic" --> 
+        Deep Learning Course Seminar <!-- .element: class="smaller grey italic" --> 
 
-        March 19, 2024 <!-- .element: class="smaller grey italic" --> 
+        May 19, 2025 <!-- .element: class="smaller grey italic" --> 
+
+        You can find this slides at: <!-- .element: class="smaller grey italic" --> 
+        <br>
+        [https://ggraffieti.github.io/slides_aiethics_DL](https://ggraffieti.github.io/slides_aiethics_DL/)
 
         Note: 
         Interacion and questions
@@ -44,11 +48,11 @@
           </div>
           <div class="two-c-col-r" data-markdown>
 
-          - Algorithm Engineer @ [Ambrella](https://www.ambarella.com)
+          - Sr. Algorithm Engineer @ [Ambrella](https://www.ambarella.com)
             - Deep Learning & Computer Vision
-          - Head of AI research @ [AI for People](https://www.aiforpeople.org)
-          - Past researche \& PhD Student @ [Unibo](https://www.unibo.it/en/homepage)
-            - Main research interests: Continual Learning, GenAI and Ethics
+          - Past Head of AI research @ [AI for People](https://www.aiforpeople.org)
+          - Past researcher \& PhD student @ [Unibo](https://www.unibo.it/en/homepage)
+            - Main research interests: Continual Learning, GenAI and AI Ethics
           </div>
         </div>
         ---
@@ -57,38 +61,39 @@
         </section>
         ---
         ### Ambarella - Vislab
-        - Research division of Ambarella on self-driving cars 
-          - 80+ people only in Parma <!-- .element: class="fragment" data-fragment-index="1" -->
-          - ~1,000 worldwide (US, TW, IT, CH, DE, ...) <!-- .element: class="fragment" data-fragment-index="2" -->
-          - On self-driving cars, our competitors are Tesla, Wayve, Waymo, Uber, etc  <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Research division of Ambarella on self-driving cars:
+          - 80+ people only in Parma. <!-- .element: class="fragment" data-fragment-index="1" -->
+          - ~1,000 worldwide (US, TW, IT, CN, DE, KR, ...). <!-- .element: class="fragment" data-fragment-index="2" -->
+          - On self-driving cars (sofware), our competitors are Tesla, Wayve, Waymo, Uber, etc.  <!-- .element: class="fragment" data-fragment-index="3" -->
+          - On self-driving cars (hardware), our competitors are Nvidia, Mobileye, etc.  <!-- .element: class="fragment" data-fragment-index="4" -->
         ---
         ### Ambarella - Vislab 
-        - 1998 1,000 miles (2,000+ km) on Italian highways with autonomous steering <!-- .element: class="fragment" data-fragment-index="1" -->
-        - 2005-2007 DARPA grand urban challenge, 100% autonomous <!-- .element: class="fragment" data-fragment-index="2" -->
-        - 2010 VIAC: 15k+ km autonomous driving (Parma-Beijing) <!-- .element: class="fragment" data-fragment-index="3" -->
-        - 2013 PROUD: 13km in Parma fully autonomous (L4) <!-- .element: class="fragment" data-fragment-index="4" -->
-        - 2015: Acquisition by Ambarella <!-- .element: class="fragment" data-fragment-index="5" -->
-        - 2020: Full autonomous driving demo @ CES 2020 Las Vegas <!-- .element: class="fragment" data-fragment-index="6" -->
-        - 2022-onwards: autonomous driving L4 in all environment with a single low power chip (no GPU, no high end CPU) <!-- .element: class="fragment" data-fragment-index="7" -->
+        - 1998 1,000 miles (2,000+ km) on Italian highways with autonomous steering. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - 2005-2007 DARPA grand urban challenge, 100% autonomous. <!-- .element: class="fragment" data-fragment-index="2" -->
+        - 2010 VIAC: 15k+ km autonomous driving (Parma-Shanghai). <!-- .element: class="fragment" data-fragment-index="3" -->
+        - 2013 PROUD: 13km in Parma fully autonomous (L4). <!-- .element: class="fragment" data-fragment-index="4" -->
+        - 2015: Acquisition by Ambarella. <!-- .element: class="fragment" data-fragment-index="5" -->
+        - 2020: Full autonomous driving demo @ CES 2020 Las Vegas. <!-- .element: class="fragment" data-fragment-index="6" -->
+        - 2022-onwards: autonomous driving L4 in all environment with a single low power chip (no GPU, no high end CPU). <!-- .element: class="fragment" data-fragment-index="7" -->
         ---
         <section>
           <iframe width="1120" height="630" src="https://www.youtube.com/embed/x1glAcRP1TM?t=28" VQ=hd1080 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
         ---
         ### Ambarella - Vislab
-        - What we do
-          - State-of-the-art research on autonomous driving <!-- .element: class="fragment" data-fragment-index="1" -->
-          - Only company in Italy (and one of the very few in Europe) to be allowed to test and drive in any road, at any time, with any traffic condition <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Both DL-based and classical approach to vehicle control, sensing, vision <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Sensing only based on cameras (1 stereo, 5 mono) + radars <!-- .element: class="fragment" data-fragment-index="4" -->
+        - What we do:
+          - State-of-the-art research on autonomous driving. <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Only company in Italy (and one of the very few in Europe) to be allowed to test and drive in any road, at any time, with any traffic condition. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Both DL-based and classical approach to vehicle control, sensing, vision, etc. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Sensing only based on cameras (1 stereo + 5 mono / 2 mono) + radars. <!-- .element: class="fragment" data-fragment-index="4" -->
         ---
         ### Ambarella - Vislab
-        - What we offer
-          - A unique international research environment in Italy <!-- .element: class="fragment" data-fragment-index="1" -->
-          - Ideas → development → deployment in T=0 <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Both industrial & academic research <!-- .element: class="fragment" data-fragment-index="3" -->
-          - (Very) competitive salary & lot of benefits <!-- .element: class="fragment" data-fragment-index="4" -->
-        - What we want <!-- .element: class="fragment" data-fragment-index="5" -->
+        - What we offer:
+          - A unique international research environment in Italy. <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Ideas → development → deployment in T=0. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Both industrial & academic research. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - (Very) competitive salary & lot of benefits. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - What we want? <!-- .element: class="fragment" data-fragment-index="5" -->
           - You! <!-- .element: class="fragment" data-fragment-index="6" -->
           - Opening for thesis, PhD, jobs! <!-- .element: class="fragment" data-fragment-index="7" -->
           - If interested contact me or <!-- .element: class="fragment" data-fragment-index="8" -->
@@ -99,112 +104,121 @@
         
         _Our mission is to learn, pose questions and take initiative on how AI technology can be used for the social good._
         ---
-        <!-- .slide: data-auto-animate -->
-        ## What are we doing?
-        The promises offered by AI/ML technologies can raise important <ins>ethical & policy concerns among the population</ins>, which trigger the need for a set of <ins>values</ins> to be identified by policy-makers to be ensured through a set of <ins>tools and actions by AI/ML practitioners</ins>.
+        ## Overview
+        - AI Safety Introduction: Why and How. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Data Safety. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Bias. <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Model Safety. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Attacks on Data. <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Attacks on Models. <!-- .element: class="fragment" data-fragment-index="6" -->
+        - Foundational Models and Their Use. <!-- .element: class="fragment" data-fragment-index="7" -->
+        - An Introduction to Countermeasures. <!-- .element: class="fragment" data-fragment-index="8" -->
+          - ISO/PAS 8800. <!-- .element: class="fragment" data-fragment-index="9" -->
         ---
-        <!-- .slide: data-auto-animate -->
-        ## Wath are we doing?
-        The promises offered by <span style="color: #44AFF6;">AI/ML technologies can raise important <ins>ethical & policy concerns among the population</ins></span>, which trigger the need for a set of <ins>values</ins> to be identified by policy-makers to be ensured through a set of <ins>tools and actions by AI/ML practitioners.</ins>
-        
-        <br>
-        <p style="color:#44AFF6">Education</p>
-
-        Note: 
-        Education is the most important thing for shaping AI around the need of people and not companies
-
-        A repository of different educational resources (e.g., books, articles, videos);
-        
-        Blog posts
-
-        Seminars, Lessons, Hackathon
-        
-        Podcast
+        ## Why AI safety and not AI ethics?
+        - The ethical aspects and challenges of AI are nowadays almost common knowledge (even the Pope talked abut them). <!-- .element: class="fragment" data-fragment-index="1" -->
+        - The misuse or the criminal use of AI is well documented and well known by the general public. <!-- .element: class="fragment" data-fragment-index="2" --> 
+        - AI Safety is a pretty recent buzzword that also encompass: <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Possible attacks on an ethically developed AI. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Safe use of third parties AIs (e.g. ChatGPT et simila). <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Good practices of AI development (from data collection to AI system dismissal). <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Focus on safety, a more concrete and measurable quality than ethics. <!-- .element: class="fragment" data-fragment-index="7" -->
         ---
-        <!-- .slide: data-auto-animate -->
-        ## Wath are we doing?
-        The promises offered by AI/ML technologies can raise important <ins>ethical & policy concerns among the population</ins>, which trigger the <span style="color: #44AFF6;">need for a set of <ins>values</ins> to be identified</span> by policy-makers to be ensured through a set of <ins>tools and actions by AI/ML practitioners.</ins>
-        
-        <br>
-        <p style="color:#44AFF6">Values</p>
+        <section>
 
-        Note:
-        We want to shapa AI around people, what values the development of AI should have
+          ## Why AI safety?
+          <a href="https://colab.research.google.com/drive/11J0UQC42BCXhXl6pjj68m2a9oNQgqKWS?usp=sharing" target="_blank">Demo!</a>
+        </section>
+        <section>
 
-        Principle for ethical AI
+          We ran a clinical trial on some cancer patients, and we collected data on those who benefited from the treatment.
 
-        eg Accuracy and robustness, Privacy, Accountability
+          We want to develop an ML model that, given the data of a new patient, will predict whether the patient will benefit from the new treatment. <!-- .element: class="fragment" data-fragment-index="1" -->
+        </section>
+        <section>
+          
+          1. What model should I use?
+              - Classification problem -> classifier? <!-- .element: class="fragment" data-fragment-index="1" -->
+              -  Do we have all the information to trace a boundary between the two classes? <!-- .element: class="fragment" data-fragment-index="2" -->
+              - Is the information we have <i>complete</i>?</li> <!-- .element: class="fragment" data-fragment-index="3" -->
 
-        For every principle we provide a brief description and a real-world example.
+          <aside class="notes">
+            Classification problem -> classifier, but I don't have complete indormation!
+            <br>
+            Discriminative models have an intrisic bias inside them for having complete information (being able to trace a boundary between the data starting from input data). 
+            <br/>
+            I dont know if I can correctly classify data with the input features I have.
+          </aside>
+        </section>
+        <section data-auto-animate>
+          <img src="./img/points.svg" height="400">
+        </section>
+        <section data-auto-animate>
+          <img src="./img/border.svg" height="400">
+
+          Ideas? <!-- .element: class="fragment" data-fragment-index="1" -->
+        </section>
+        <section data-auto-animate>
+          <img src="./img/distributions.svg" height="600">
+        </section>
+        <section data-auto-animate>
+          <img src="./img/onlyone.svg" height="500">
+
+          Examples of generative models? <!-- .element: class="fragment" data-fragment-index="1" -->
+          <aside class="notes">
+            Back to the demo
+          </aside>
+        </section>
+        <section>
+          
+          1. What model should I use?
+              - Classification problem -> classifier?
+              - Do we have all the information to trace a boundary between the two classes?
+              - Is the information we have <i>complete</i>?
+          2. Is the data safe to use? <!-- .element: class="fragment" data-fragment-index="1" --> 
+              - How, who, where the data is collected? <!-- .element: class="fragment" data-fragment-index="2" -->
+              - Is the data biased, inaccurate, mislabeled, imbalanced, etc? <!-- .element: class="fragment" data-fragment-index="3" -->
+              - Does the data contain private information? <!-- .element: class="fragment" data-fragment-index="4" -->
+              - Is the data physically safe? <!-- .element: class="fragment" data-fragment-index="5" --> 
+                - Is the data obtained from trusted sources? <!-- .element: class="fragment" data-fragment-index="6" -->
+                - Is the data stored safely? Is the data protected from unathorized alteration? <!-- .element: class="fragment" data-fragment-index="7" -->
+              - Does the data contains poison, backdoors, adversarial examples, etc? <!-- .element: class="fragment" data-fragment-index="8" -->
+        </section>
         ---
-        <!-- .slide: data-auto-animate -->
-        ## Wath are we doing?
-        The promises offered by AI/ML technologies can raise important <ins>ethical & policy concerns among the population</ins>, which trigger the need for a set of <ins>values</ins> to be identified by policy-makers to be ensured through a <span style="color: #44AFF6;">set of <ins>tools and actions by AI/ML practitioners.</ins></span>
-        
-        <br>
-        <p style="color:#44AFF6">Actions</p>
-
-        Note: 
-        For each principle we have a set of tools to be used to porsue that principle
-        
-        Conference
-
-        Projects (liguria, repository of high risk AI application)
+        ## Data safety - Bias
         ---
-        ## Interested? Join us!
-        - We are an open organization, we always welcome new interested people!
-        - We have periodic meetings open to everyone (∼ once a month)
-        - Best way to join us: join our [Slack channel!](https://join.slack.com/t/aiforpeople/shared_invite/zt-9v5d5b9w-hVmwbBuJua~0vaHEbVIzfA)
-        - Send an email to us (check the website)
-        - Reach us on social networks (we are on Twitter, Linkedin, Instagram, Facebook).
-        - If you are interested in our initiatives, sign to [our monthly newsletter!](https://mailchi.mp/5dd357b5efef/ai-for-people)
-        - <ins>We have openings for thesis/internships in collaboration with Unibo!</ins>
-          - Contact [research@aiforpeople.org](mailto:research@aiforpeople.org)
-        ---
-        <!-- .slide: data-auto-animate -->
-        ## Why AI ethics?
-        ---
-        <!-- .slide: data-auto-animate -->
-        ## Why AI ethics?
-        <img src="https://github.com/manuelperuzzi/evolutionary-cars/blob/master/examples/evo-cars_track03.gif?raw=true"  height="500">
-
-        [https://github.com/ggraffieti/evolutionary-cars](https://github.com/ggraffieti/evolutionary-cars) <!-- .element: class="smaller" -->
-
-        Note: 
-        Back in 2017 nobody talked about ethics in AI like when in the early 1900s nobody talked about ethics of quantuum mechanics
-
-        When ethics became important? When technology can greatly and badly influence the life of the whole humanking. Like the atomic bomb
-
-        Now we are there with AI
-        ---
-        ## Why AI ethics? <!-- .element: class="fragment fade-out long-transition" data-fragment-index="1" -->
-        <div class="r-stack">
-          <a href="https://colab.research.google.com/drive/1fPoKGW23BVa117hHAQtzCRBgysmmzoWj?usp=sharing" target="_blank">Demo!</a>
-          <img class="fragment fade-out long-transition" data-fragment-index="1" src="./img/oppenheimer.png"  height="500">
-        </div>  
-        ---
-        ## But that was just an example right?
+        ### Biases in the real world
         <img src="./img/medical_care.png"  height="300"> <!-- .element: class="fragment" data-fragment-index="1" -->
         <p class="fragment" data-fragment-index="1">Hint: <span class="fragment custom blur">think about how US healthcare works.</span></p>
         ---
-        ## But that was just an example right?
+        ### Biases in the real world
         <img src="./img/amazon_women.png"  height="300">
         <p>Hint: <span class="fragment custom blur">think about gender representation inside tech jobs.</span></p>
         ---
-        ## Well, we can try to fix this right?
+        ### Biases in the real world
+        <img src="./img/biasUK.png"  height="300">
+        
+        What is the worst thing they could have said?
+        
+        <blockquote class="fragment custom blur">Government departments, ..., been reluctant to disclose more about their use of AI, citing concerns that to do so could allow bad actors to manipulate systems.</blockquote></p>
+        ---
+        ## Well, can we fix this right?
         ### How? <!-- .element: class="fragment" data-fragment-index="1" -->
         ---
-        ### First of all we need to detect the problem
+        ### First of all we need to detect the problem!
         - How we tested the model?  <!-- .element: class="fragment" data-fragment-index="1" -->
           - Did train/validation/test sets were collected from the same distribution of data? <!-- .element: class="fragment" data-fragment-index="2" -->
           - What metrics we used to evaluate the performance? <!-- .element: class="fragment" data-fragment-index="3" -->
           - What we mean by performance? <!-- .element: class="fragment" data-fragment-index="4" -->
+
+        Note: 
+        Example of bad calibrated cameras in self-driving cars.
         ---
         ### But if we remove all gender, ethnicity, or unwanted information from the data?
-        - The AI system can infer them from remaining information <!-- .element: class="fragment" data-fragment-index="1" -->
-          - Gender from height/weight ratio <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Ethnicity from specific disorders  <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Level of weath from geographical information <!-- .element: class="fragment" data-fragment-index="4" -->
+        - The AI system can infer them from remaining information! <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Gender from height/weight ratio. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Ethnicity from specific disorders.  <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Level of weath from geographical information. <!-- .element: class="fragment" data-fragment-index="4" -->
           - ... <!-- .element: class="fragment" data-fragment-index="5" -->
 
         Note: 
@@ -214,16 +228,13 @@
 
         Models are LAZY
         ---
-        ### But models are really that powerful?
+        ### But are models really that powerful?
         #### Spoiler: yes <!-- .element: class="fragment" data-fragment-index="1" -->
         ---
         ### Let's make a test
-        Question time:
-        What is a randon number?
+        Tell me a random integer between 1 and 10. <!-- .element: class="fragment" data-fragment-index="1" -->
 
-        Ok, now tell me a random integer between 1 and 10 <!-- .element: class="fragment" data-fragment-index="1" -->
-
-        What the distribution of answers should look like? <!-- .element: class="fragment" data-fragment-index="2" -->
+        How the distribution of answers should look like? <!-- .element: class="fragment" data-fragment-index="2" -->
         ---
         <img src="./img/human_random.jpg" height="600px">
         ---
@@ -232,34 +243,210 @@
         <br/>
         <img class="fragment fade-in" data-fragment-index="2" src="./img/random_gpt_number.png" height="150px">
 
-        What if we ask chatGPT that many times? <!-- .element: class="fragment smaller" data-fragment-index="3" -->
+        What if we ask chatGPT that question many times? <!-- .element: class="fragment smaller" data-fragment-index="3" -->
         ---
         <div class="r-stack">
         <img class="fragment fade-out" data-fragment-index="1" src="./img/random_gpt_paper.jpg" width="70%"> 
         
         <div class="two-c-container">
           <div class="two-c-col">
-            <img class="fragment fade-in" data-fragment-index="1" src="./img/random_gpt.jpeg"> 
+            <img class="fragment fade-in" data-fragment-index="1" src="./img/human_random.jpg"> 
           </div>
           <div class="two-c-col">
-            <img class="fragment fade-in" data-fragment-index="2" src="./img/human_random.jpg">
+            <img class="fragment fade-in" data-fragment-index="2" src="./img/random_gpt.jpeg">
           </div>
         </div>
         </div>
 
         [Can LLMs Generate Random Numbers? Evaluating LLM Sampling in Controlled Domains](https://arxiv.org/abs/2403.00742) <!-- .element: class="fragment smaller fade-out" data-fragment-index="1" -->
         ---
-        #### And even more covertly
+        ### And even more covertly
         <img src="./img/dialect_gpt.png" height="300px">
 
         [Dialect prejudice predicts AI decisions about people's character, employability, and criminality](https://arxiv.org/abs/2403.00742) <!-- .element: class="smaller" -->
         ---
-        ### The rise of fundational models
-        - All big AI companies are training huge, general models, that then can be fine tuned to downstream tasks
-          - Apart from few big companies nobody have data and computing power to train them  <!-- .element: class="fragment" data-fragment-index="1" -->
-          - Rise of genAI with unbelivable performance and realism  <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Enviromental-friendly   <!-- .element: class="fragment" data-fragment-index="3" -->
-          - A big leap in a plethora of different tasks  <!-- .element: class="fragment" data-fragment-index="4" -->
+        ### The main enemy: bias 
+        > <!-- .element: class="fragment" data-fragment-index="1" --> "the action of supporting or opposing a particular person or thing in an unfair way, because of allowing personal opinions to influence your judgment."
+        - Bias is not always unwanted:  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Used to perceive possible dangers by almost all animals. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Pareidolia. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Basis of Bayesian Statistics (degree of belief). <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Bias may be essential to ML and humans for decision making. <!-- .element: class="fragment" data-fragment-index="6" -->
+
+        Note:
+        Example of noise from bush, stick vs snake. 
+
+        If we were totally bias free, we would not take decision at all! We must evaluate all possible possibilities (even the most remote ones)
+        ---
+        ### (Bad) Biases are in everyday life!
+        <div class="two-c-container" data-markdown>
+          <div class="two-c-col-l">
+
+          - Beauty bias <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Halo/Horns effect <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Conformity bias <!-- .element: class="fragment" data-fragment-index="3" --> 
+          - Status quo bias <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Authority bias <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Idiosyncratic bias <!-- .element: class="fragment" data-fragment-index="6" -->
+          - ... <!-- .element: class="fragment" data-fragment-index="7" -->
+          </div>
+          <div class="two-c-col-r" data-markdown>
+            <img src="./img/women.png"> <!-- .element: class="fragment" data-fragment-index="8" -->
+          </div>
+        </div>
+        Note:
+        Idiosyncratic bias: occurs when managers evaluate skills they're not good at highly. Conversely, they rate others lower for skills they're great at. In other words, managers weigh their performance evaluations toward their own personal eccentricities.
+        ---
+        ### (Bad) Biases are in everyday life!
+        <img src="./img/face.jpg" height="300">
+        ---
+        <!-- .slide: data-auto-animate -->
+        ### How to deal with bias
+        - <!-- .element: class="fragment" data-fragment-index="1" --> <a href="https://www.forbes.com/councils/forbestechcouncil/2025/03/13/the-impossible-dream-why-bias-free-ai-is-a-myth">The Impossible Dream: Why Bias-Free AI Is A Myth</a>
+        - Just thinking of and documenting the possible biases that AI models may have is a great step forward (we will discuss this later). <!-- .element: class="fragment" data-fragment-index="2" -->
+        - Concretely: <!-- .element: class="fragment" data-fragment-index="3" -->
+        ---
+        <!-- .slide: data-auto-animate data-transition="slide-in fade-out" -->
+        ### How to deal with bias
+        - Concretely:
+          - Labeled data: <!-- .element: class="fragment" data-fragment-index="1" -->
+            - Balance unbalanced datasets. <!-- .element: class="fragment" data-fragment-index="2" -->
+            - Remove data that contribute (most) to the bias.  <!-- .element: class="fragment" data-fragment-index="3" -->  
+              [Improving Subgroup Robustness via Data Selection](https://proceedings.neurips.cc/paper_files/paper/2024/hash/abbbb25cddb2c2cd08714e6bfa2f0634-Abstract-Conference.html) <!-- .element: class="fragment smaller" data-fragment-index="3" -->
+          - Unlabeled data: <!-- .element: class="fragment" data-fragment-index="4" -->
+            - Adversarial debiasing.  <!-- .element: class="fragment" data-fragment-index="5" -->  
+              [Mitigating Unwanted Biases with Adversarial Learning](https://dl.acm.org/doi/10.1145/3278721.3278779) <!-- .element: class="fragment smaller" data-fragment-index="5" -->
+            - Computing attention to detect biases.  <!-- .element: class="fragment" data-fragment-index="6" -->  
+              [Visualizing and Understanding Convolutional Networks](https://link.springer.com/chapter/10.1007/978-3-319-10590-1_53) <!-- .element: class="fragment smaller" data-fragment-index="6" -->
+          - And semi-supervised learining / pseudo-labels?  <!-- .element: class="fragment" data-fragment-index="7" -->
+        ---
+        <!-- .slide: data-auto-animate data-transition="zoom-in slide-out" -->
+        Questions? <!-- .element: class="bigger" --> 
+
+        Discussion? <!-- .element: class="bigger" --> 
+        ---
+        ## Data safety - Attacks
+        ---
+        ### Attacks on data
+        - Even if data is formally correct, it can be attacked by (malicious) third parties in different ways:
+          - Adversarial attacks (real-world or hidden) <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Poisoning  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Backdoor insertion <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Mislabeling <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Deliberate model fail  <!-- .element: class="fragment" data-fragment-index="5" -->
+          - ... <!-- .element: class="fragment" data-fragment-index="6" -->
+        - Common goal: making the resulting model unusable, weak, attackable or exploitable.  <!-- .element: class="fragment" data-fragment-index="7" -->
+        ---
+        ### Adversarial examples - real world
+        <img src="img/signs.webp">
+
+        [Robust Physical-World Attacks on Deep Learning Visual Classification](https://ieeexplore.ieee.org/document/8578273)  <!-- .element: class="smaller" -->
+        ---
+        ### Adversarial examples - real world
+        <img src="img/signs2.webp">
+
+        [Robust Physical-World Attacks on Deep Learning Visual Classification](https://ieeexplore.ieee.org/document/8578273)  <!-- .element: class="smaller" -->
+        ---
+        ### Adversarial examples - real world
+        <img src="img/tshirt.png">
+
+        [Adversarial T-Shirt! Evading Person Detectors in a Physical World](https://link.springer.com/chapter/10.1007/978-3-030-58558-7_39) <!-- .element: class="smaller" -->
+        ---
+        ### Adversarial examples - hidden
+        <img src="img/cat_guacamole.png">
+
+        [Obfuscated Gradients Give a False Sense of Security: Circumventing Defenses to Adversarial Examples](https://proceedings.mlr.press/v80/athalye18a/athalye18a.pdf)  <!-- .element: class="smaller" -->
+        ---
+        <img src="./img/adv_ex3.png" height="400px">
+
+        [Impact of Adversarial Examples on Deep Learning Models for Biomedical Image Segmentation](https://link.springer.com/chapter/10.1007/978-3-030-32245-8_34)  <!-- .element: class="smaller" -->
+
+        Note:
+        Think about controlling the input pipeline of images (attack on the hospital system).
+        ---
+        ### Data Poisoning
+        - The data used to train the model is slowly poisoned with biases, false information, new data that skew the model decisions, etc.
+        - Particurarly effective on large models: <!-- .element: class="fragment" data-fragment-index="1" -->
+          - They are often (always) trained continually using online data. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Changing online data (e.g. wikipedia articles) or inserting new poisoned data online (e.g. on social media) is easier than alter "classical" training DBs. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Bots can greatly spread false information or biased data on social media. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Once biases/false information are inserted in a version of the model, it is extremely difficult to detect and remove them.  <!-- .element: class="fragment" data-fragment-index="5" -->
+        - Data poisoning can be untargeted (poison all models) or targeted (e.g. a company wants to poison the rival company's models). <!-- .element: class="fragment" data-fragment-index="6" -->
+        ---
+        ### Data Poisoning: Problems
+        - A huge amount of data is required to poison a model. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Even if poisoned data is spread online, it is not certain that the poisoned data is used to train the target model. <!-- .element: class="fragment" data-fragment-index="2" -->
+        - False or poisoned data can be recognized by humans/filters and deleted or discarded during data collection. <!-- .element: class="fragment" data-fragment-index="3" -->
+
+        <br/>
+        <br/>
+
+        #### Solution (for image generation): Nightshade <!-- .element: class="fragment" data-fragment-index="4" -->
+        ---
+        <!-- .slide: class="text-xs" -->
+        ### Nightshade
+        - Developed to defend artists copyright against genAI models. 
+        - Strenghts: <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Few images needed to poison even a large model. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Poisoned images are indistinguishable from real images.  <!-- .element: class="fragment" data-fragment-index="3" -->
+       
+        <br/>
+        <br/>
+        
+        #### How it works: <!-- .element: class="fragment" data-fragment-index="4" -->
+
+        - Take a target image $x_t$ that you want to poison (e.g. dog) and use the target model to generate an anchor image $x^a$ (e.g. cat). <!-- .element: class="fragment" data-fragment-index="5" -->
+        - Use even a different feature extractor $F$ to minimize the following loss: <!-- .element: class="fragment" data-fragment-index="6" -->
+        $$ \min_\delta \text{Dist}(F(x_t + \delta), F(x^a)),\ \text{subject to} \ \delta < p  $$
+        - $x_t$ is now poisoned with $x^a$ features, and since $x^a$ was generated by the target model, the poisoned image have the maximum possible destructive power during the model training. <!-- .element: class="fragment" data-fragment-index="7" --></p>
+        ---
+        ### Nightshade
+
+        <img src="img/nightshade1.webp">
+        ---
+        ### Nightshade
+
+        <img src="img/nightshade2.webp" height="500px">
+
+        Note: works also on concept near the poisoned concept
+        ---
+        ### Backdoor Insertion
+        - The training data is altered in order to insert a backdoor in the model. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Once the backdoor is inserted, it can be exploited to control the output of the model.  <!-- .element: class="fragment" data-fragment-index="2" -->
+        - The model works normally if regular data is used. <!-- .element: class="fragment" data-fragment-index="3" -->
+        
+        <br/>
+        <br/>
+
+        [Demo!](https://colab.research.google.com/drive/1co74MX84NLvBlu-X79GsyvSk7sMEJg2D?usp=sharing) <!-- .element: class="fragment" data-fragment-index="4" -->
+        ---
+        ### Poisoning and Backdoors in Federated Learning
+
+        <img src="img/federated_learning.png" >
+
+        [How To Backdoor Federated Learning](https://proceedings.mlr.press/v108/bagdasaryan20a.html) <!-- .element: class="fragment smaller" data-fragment-index="1" -->
+        ---
+        <!-- .slide: data-transition="slide-in fade-out" -->
+        ### Reflections on Trusting Trust
+        - Think about an AI model that generate code. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - What if this model is poisoned or contains a backdoor, and it outputs malicious code if some special input is provided? <!-- .element: class="fragment" data-fragment-index="2" -->
+        - <!-- .element: class="fragment" data-fragment-index="3" --> What if that input is <i>"give me the code to build another AI that generate programming code"</i>? 
+        - <!-- .element: class="fragment" data-fragment-index="4" --> Trojan horses hidden <b>only</b> in the <s>compiled code</s> model parameters? 
+        ---
+         <!-- .slide: data-transition="zoom-in slide-out" -->
+        Questions? <!-- .element: class="bigger" --> 
+
+        Discussion? <!-- .element: class="bigger" --> 
+        ---
+        ## Model safety
+        ### Reflections on Trusting ~~Trust~~ <br/> Who Builds Models
+        ---
+        ### The rise of foundational models
+        - All big AI companies are training huge general AI models, that can then be fine tuned to downstream tasks.
+          - Apart from few big companies nobody have data and computing power to train them.  <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Rise of genAI with unbelivable performance and realism.  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Huge foundational models can be fine-tuned to specific tasks.  <!-- .element: class="fragment" data-fragment-index="3" -->
+          - A big leap in a plethora of different tasks.  <!-- .element: class="fragment" data-fragment-index="4" -->
         
         Note: 
         How many of you used pretrained models? 
@@ -268,137 +455,401 @@
         ---
         <!-- .slide: data-auto-animate -->
         ### Do you trust who trains those models?
-        - What data is used for the training is undisclosed   <!-- .element: class="fragment" data-fragment-index="1" -->
-          - The use of private data they should not have used is higly probable  <!-- .element: class="fragment" data-fragment-index="2" -->
-        - We don't know what kind of biases are hidden inside the models   <!-- .element: class="fragment" data-fragment-index="3" -->
-        - We don't know if during training some biases were inserted deliberately  <!-- .element: class="fragment" data-fragment-index="4" -->
-        - The models are so big and complex that trying to discover this information is often impossible  <!-- .element: class="fragment" data-fragment-index="5" -->
-          - Usually only the weights are shared, nor training procedure nor data is released  <!-- .element: class="fragment" data-fragment-index="6" -->
-        
-        <br/>
-        <br/>
+        - What data is used for the training is undisclosed.   <!-- .element: class="fragment" data-fragment-index="1" -->
+          - The use of private data they should not have used is higly probable.  <!-- .element: class="fragment" data-fragment-index="2" -->
+        - We don't know what kind of biases are hidden inside the models.   <!-- .element: class="fragment" data-fragment-index="3" -->
+        - We don't know if during training some biases were deliberately inserted.  <!-- .element: class="fragment" data-fragment-index="4" -->
+        - The models are so big and complex that trying to discover this information is often impossible.  <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Usually only the weights are shared, nor training procedure nor data is released (and even if everything is OS, no one have the computational power to retrain and verify them). <!-- .element: class="fragment" data-fragment-index="6" -->
+        - Data scraped from the internet is more and more intentionally poisoned or altered. <!-- .element: class="fragment" data-fragment-index="7" -->
         <br/>
 
-        So, do you trust them?  <!-- .element: class="fragment fade-in" data-fragment-index="7" -->
+        So, do you trust them?  <!-- .element: class="fragment fade-in" data-fragment-index="8" -->
         ---
         <!-- .slide: data-auto-animate -->
         So, do you trust them?  <!-- .element: class="bigger" --> 
         ---
         ### Let's pause a bit, and think about humans now 
         - Humans are not perfect decision making machines <!-- .element: class="fragment" data-fragment-index="1" -->
-        <span>(maybe you already noticed that 😄)</span> <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Juror decision are affected by sport results  <!-- .element: class="fragment" data-fragment-index="3" -->
-            - [Emotional Judges and Unlucky Juveniles](https://www.nber.org/papers/w22611?utm_campaign=ntw&utm_medium=email&utm_source=ntw) <!-- .element: class="fragment smaller" data-fragment-index="3" -->
-          - Self-driving cars may look scary, but: <!-- .element: class="fragment" data-fragment-index="4" -->
-            - [1.19M people die every year by crashes, 1st cause of death for people under 30](https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries) <!-- .element: class="fragment smaller" data-fragment-index="4" -->
-        - What about human-AI collaboration? <!-- .element: class="fragment" data-fragment-index="5" -->
-          - What if AI is right 99.999% of the time?  <!-- .element: class="fragment" data-fragment-index="6" -->
-          - What if AI is so convincing that persuade the human to take the wrong decision? <!-- .element: class="fragment" data-fragment-index="7" -->
+          - Juror decision are affected by sport results  <!-- .element: class="fragment" data-fragment-index="2" -->
+            - [Emotional Judges and Unlucky Juveniles](https://www.nber.org/papers/w22611?utm_campaign=ntw&utm_medium=email&utm_source=ntw) <!-- .element: class="fragment smaller" data-fragment-index="2" -->
+          - Self-driving cars may look scary, but: <!-- .element: class="fragment" data-fragment-index="3" -->
+            - [1.19M people die every year by crashes, 1st cause of death for people under 30](https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries) <!-- .element: class="fragment smaller" data-fragment-index="3" -->
+        - What about human-AI collaboration? <!-- .element: class="fragment" data-fragment-index="4" -->
+          - What if AI is right 99.999% of the time?  <!-- .element: class="fragment" data-fragment-index="5" -->
+          - What if AI is so convincing that persuade the human to take the wrong decision? <!-- .element: class="fragment" data-fragment-index="6" -->
 
         Note: 
         Example of the nerdy friends in high school who always get 10
 
-        Example of google painting, american lawyer, Adversarial examples
         ---
-        <img src="./img/adv_ex3.png" height="400px">
-
-        [Impact of Adversarial Examples on Deep Learning Models for Biomedical Image Segmentation](https://link.springer.com/chapter/10.1007/978-3-030-32245-8_34)  <!-- .element: class="smaller" -->
+        <div class="r-stack"> 
+          <img src="./img/grokFail.png" height="350">
+        </div>
         ---
-        <!-- .slide: data-transition="zoom" -->
-        ## What we should do?
-        # 😱
+        <div class="r-stack"> 
+          <img src="./img/airCanada.png">
+        </div>
         ---
-        ### Unfortunately, we don't know
-        - Technically you can:  <!-- .element: class="fragment" data-fragment-index="1" -->
-          - Use white box or explainable AI models  <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Try to explain a posteriori the predictions of a model  <!-- .element: class="fragment" data-fragment-index="3" -->
-            - E.g. visualizing where the model concentrate to make its prediction (attention) <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Try to play with the prediction of the model in order to find strange behaviours <!-- .element: class="fragment" data-fragment-index="5" -->
-            - E.g. Adversarial training  <!-- .element: class="fragment" data-fragment-index="6" -->
-          - <!-- .element: class="fragment" data-fragment-index="7" -->  Beware that some behaviours may be <ins><em>really</em></ins> strange
+        <img src="./img/hopper.jpg" height="500">
         
-        Note: 
-        May talk about horses in image recognition
-
-        Number of cells in generative models
-
-        !! Apart from the technical side, there is something much more importat in order to guide the development and the use of AI in the right direction. You
+        [https://futurism.com/top-google-result-edward-hopper-ai-generated-fake](https://futurism.com/top-google-result-edward-hopper-ai-generated-fake)  <!-- .element: class="fragment smaller" data-fragment-index="1" -->
         ---
-        <img src="./img/wewantyou.png" height="500px">
+        <!-- .slide: data-transition="slide-in fade-out" -->
+        <img src="./img/AIpersuasive.png">
+        
+        > "We found that participants who debated GPT-4 with access to their personal information had 81.7% higher odds of increased agreement with their opponents compared to participants who debated humans." <!-- .element: class="fragment smaller" data-fragment-index="1" -->
+        ---
+        ## Model Safety - Attacks
+        ---
+        ### AI models under attack
+        - Even if the data and the resulting AI model are safe, the former can be attacked by (malicious) third parties in different ways:
+          - (Malicious) Prompt engineering <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Denial of Service  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Waste or overuse of resources <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Model inversion <!-- .element: class="fragment" data-fragment-index="4" -->
+          - ... <!-- .element: class="fragment" data-fragment-index="5" -->
+        - Common goal: fooling the model into yielding wrong outputs, (mis)using the model beyond its design, extract hidden information.  <!-- .element: class="fragment" data-fragment-index="6" -->
+        ---
+        ### (Malicious) Prompt Engineering
+        - Prompt engineering:  <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Process of carefully crafting input instructions to maximize the effectiveness and relevance of outputs of genAI models. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - <!-- .element: class="fragment" data-fragment-index="3" --> The prompt engineer is (was?) the new <a href="https://www.technologyreview.com/2024/04/24/1091125/ai-prompt-engineer-generative-ai-job-titles">sexiest job title</a>.
+          - <!-- .element: class="fragment" data-fragment-index="4" --> Billions dollars companies are based on few lines of highly engineered prompts (<a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools">if you want to have fun...</a>).
+        - Malicious prompt engineering: <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Using specific prompts or inserting token into regular prompt to: <!-- .element: class="fragment" data-fragment-index="6" -->
+            - Bypass ethical filters of the model. <!-- .element: class="fragment" data-fragment-index="7" -->
+            - Force the model to yield incorrect or wrong information. <!-- .element: class="fragment" data-fragment-index="8" -->
+            - Pollute the context of the model, impacting every successive regular prompt.  <!-- .element: class="fragment" data-fragment-index="9" -->
+        ---
+        ### (Malicious) Prompt Engineering
+
+        <img src="img/chatgpt-destroy-humanity.jpg" height="500px">
+
+        ["ChatGPT, Let's Build A Bomb!" The cat-and-mouse game of AI alignment](https://generativeai.pub/chatgpt-lets-build-a-bomb-d0b56f3a1b63)  <!-- .element: class="smaller" -->
+        ---
+        ### (Malicious) Prompt Engineering
+
+        <img src="img/chatGPT_correct.png" height="500px">
+        ---
+        ### (Malicious) Prompt Engineering
+
+        <img src="img/chatGPT_wrong.png" height="400px">
+        <img src="img/chatGPT_wrong2.png" height="400px">
+
+        [Prompt Injection Attack on GPT-4](https://www.robustintelligence.com/blog-posts/prompt-injection-attack-on-gpt-4) <!-- .element: class="smaller" -->
+        ---
+        <!-- .slide: data-transition="slide-in fade-out" -->
+        ### (Malicious) Prompt Engineering
+
+        <img src="img/mitm.png" height="500px">
 
         Note: 
-        As a developer, manager, or simply user you have the power to shape AI in the right way
+        Example of chatGPT used in court cases without checking. 
+        ---
+        <!-- .slide: data-transition="fade-in slide-out" -->
+        ### (Malicious) Prompt Engineering
 
-        Do not stop at the initial enthusiasm, do not trust all the thing companies says to you
+        <img src="img/mitm2.png" height="500px">
+        ---
+        ### Model inversion
+        - Using the AI model outputs to infer parameters, architecture, and even the data it was trained on.  <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Access to the model internal structure is not necessary. <!-- .element: class="fragment" data-fragment-index="2" -->
+        - Methods are mainly divided into:  <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Query-based: using specifically crafted input to produce model output that reveals information about model structure and parameters.  <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Membership inference attack: given a specific input, determine if a similar input was used in training just by analyzing the output.  <!-- .element: class="fragment" data-fragment-index="5" -->
+        ---
+        ### Membership attack
+        <img src="./img/gptprivacy.png" height="150">
+        <img src="./img/extractingdata.png" class="fragment" data-fragment-index="1" height="400">
 
-        Is it more importat to publish a paper or do a study that beats the sota of a 0. something, or deeply analizing if something in the metric used, the model, the data is not right?
+        Note: 
+        Why be worried by chatGPT trained with private data? 
 
-        Think about the implication of using AI in a specific task, do not focus only on the results.
+        Because it can be reconstructed!
+        ---
+        ## How to Build Safe AI
+        ---
+        ### The long and winding road
+        - Buld a 100% safe AI is impossible and beyound our control. <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Biases hidden in the data, bad labeling, etc. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Security flaws in HHDs where the data is stored, libraries/frameworks used, etc. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Adversarial examples, model inversion, flawed third party AIs, etc. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - But we can do as better as we can!  <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Following guidelines to build safe AIs in the particular domain.   <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Have a critical and objective view of the possible problems of the AI you are building.  <!-- .element: class="fragment" data-fragment-index="7" -->
+          - Mind that every phase of AI development is important to the overall safety! <!-- .element: class="fragment" data-fragment-index="8" -->
+            - From design to data acqusition, to development to end of life! <!-- .element: class="fragment" data-fragment-index="9" -->
+        ---
+        ### How to Improve Safety of AIs
+        - <!-- .element: class="fragment" data-fragment-index="1" --> If it's possible use explainable AI models <span class="fragment" data-fragment-index="2">(spoiler: often not possible).</span> 
+        - <!-- .element: class="fragment" data-fragment-index="3" --> Use at least 2 <u>totally different</u> AI models in safety critical applications. 
+          - Different data used to train them, different model architectures, different outputs, etc.  <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Validate the output of each of them with one another.   <!-- .element: class="fragment" data-fragment-index="5" -->
+        - Simulate before deploying.  <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Use simulations or simulated data to test the behavior of the model, especially in corner cases.  <!-- .element: class="fragment" data-fragment-index="7" -->
+          - If possile use human actions/decision to calibrate the model.   <!-- .element: class="fragment" data-fragment-index="8" -->
+        - Use adversarial models to find out flaws, biases and backdoors in the model.  <!-- .element: class="fragment" data-fragment-index="9" -->
+        - Explore model attention to understand possible biases.  <!-- .element: class="fragment" data-fragment-index="10" -->
 
-        I think you all deeply want to make the world a better place, this is the occasion for each one of you
+        Note: 
+        2 models -> example amba-aur
 
-        The best way to build a ship...the petit prince
+        simulation -> self driving car system active but without control, to check with the driver decision real time. 
+        ---
+        ### How to Improve Safety of AIS - ISO/PAS 8800
+        - Standard ISO that regulates "Road vehicles — Safety and Artificial Intelligence".  <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Published in Dec. 2024. <!-- .element: class="fragment" data-fragment-index="2" -->
+        - Covers all the use of AI in road vehicles, to driving assistant technologies do ADS (another ISO standard is currently under publication for ADS only). <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Many concepts can be applyied 1:1 to any safety critical domain. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - Full of references to other normatives/ISO standars, from SW/HW testing to IT infrastructure and cybersecurity. <!-- .element: class="fragment" data-fragment-index="5" -->
+        - No mention of possible attacks to AI models. <!-- .element: class="fragment" data-fragment-index="6" -->
+        ---
+        <!-- .slide: data-auto-animate class="text-xs" -->
+        ### ISO/PAS 8800
+        - <!-- .element: class="fragment" data-fragment-index="1" --> Based on the production of a huge amount of documentation, following the principle: <i>if I'm forced to think about safety, the final system will be safer</i>. 
+          - AI safety requirements. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Input space definition. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Known insufficiencies of the AI system and third parties SW used. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - AI component or AI system architecture. <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Data and data collection design specification. <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Dataset requirements and design specifications. <!-- .element: class="fragment" data-fragment-index="7" -->
+          - Dataset verification and validation reports. <!-- .element: class="fragment" data-fragment-index="8" -->
+          - Dataset safety analysis report. <!-- .element: class="fragment" data-fragment-index="9" -->
+          - AI system verification and validation reports.  <!-- .element: class="fragment" data-fragment-index="10" -->
+          - AI system safety analysis report.  <!-- .element: class="fragment" data-fragment-index="11" -->
+          - ...  <!-- .element: class="fragment" data-fragment-index="12" -->
+        ---
+        <!-- .slide: data-auto-animate class="text-xs" -->
+        ### ISO/PAS 8800
+        - <u>AI safety requirements.</u>
+        - Input space definition.
+        - <u>Known insufficiencies of the AI system and third parties SW used.</u>
+        - AI component or AI system architecture.
+        - <u>Data and data collection design specification.</u>
+        - Dataset requirements and design specifications.
+        - Dataset verification and validation reports.
+        - <u>Dataset safety analysis report.</u>
+        - AI system verification and validation reports.
+        - <u>AI system safety analysis report.</u>
+        - <!-- .element: class="fragment" data-fragment-index="1" --> <b>Re-evaluate and change for all the lifecycle of the system</b>
+        ---
+        ### ISO/PAS 8800
+        - For being certified ISO/PAS 8800 compliant need to satisfy all the safety requirements (or at least have a strong justification if some requirement is not satisfied). <!-- .element: class="fragment" data-fragment-index="1" -->
+        - But same guidelines may greatly improve all the AI ecosystem! <!-- .element: class="fragment" data-fragment-index="2" -->
+          - There is no shame in a (possibly) unsafe AI system!  <!-- .element: class="fragment" data-fragment-index="3" -->
+          - <!-- .element: class="fragment" data-fragment-index="4" --> Just attach all the documentation and <u>clearly state</u> how the system may fail and in which occasions.
+          - Also include untested scenarios (e.g. I only tested my ADS in right-hand drive countries). <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Minimize the risk of misuse of AI systems by third parties. <!-- .element: class="fragment" data-fragment-index="6" -->
+            - Will you use an online AI model to evaluate CVs if it is clearly stated that it may contain biases against women, blacks, minorities, etc.? <!-- .element: class="fragment" data-fragment-index="7" -->
+        ---
+        <section>
+
+          ## Bonus: AI Democratization
+        </section>
+        <section>
+
+          ### Who owns AI?
+          - AI needs (a big) infrastructure: <!-- .element: class="fragment" data-fragment-index="1" -->
+            - The algorithm is just a small part of the product. <!-- .element: class="fragment" data-fragment-index="2" -->
+            - Computational capabilities (computational power and memory) are fundamental. <!-- .element: class="fragment" data-fragment-index="3" -->
+            - Only the biggest companies have the workforce to maintain a solid infrastructure. <!-- .element: class="fragment" data-fragment-index="4" -->
+              - Substantial advantage over smaller companies or academia. <!-- .element: class="fragment" data-fragment-index="5" -->
+        </section>
+        <section>
+
+          ### Who owns AI?
+          - AI needs (a lot of) data:
+            - Data is essential to reproduce results. <!-- .element: class="fragment" data-fragment-index="1" -->
+            - Data is often more important than algorithm (who owns data?). <!-- .element: class="fragment" data-fragment-index="2" -->
+            - Big tech companies have the possibility to own or acquire a huge amount of data. <!-- .element: class="fragment" data-fragment-index="3" -->
+              - Substantial advantage over smaller companies or academia. <!-- .element: class="fragment" data-fragment-index="4" -->
+        </section>
+        <section>
+        
+        ### The myth of AI Democratization
+        - AI big companies claim to be democratic:
+          - Sharing their research (e.g. arXiv). <!-- .element: class="fragment" data-fragment-index="1" -->
+          - Sharing their code (e.g. github). <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Sharing their frameworks (e.g. Tensorflow). <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Sharing their infrastructure (?) (e.g. colab). <!-- .element: class="fragment" data-fragment-index="4" -->
+        
+        >  <!-- .element: class="fragment" data-fragment-index="5" --> [...] at an increasing scale, consumers have greater access to use and purchase technologically sophisticated products, <span style="color:#44AFF6">as well as to participate meaningfully in the development of these products.
+        </section>
+        <section>
+        
+          ### The myth of AI Democratization
+          <img src="./img/ceobiden.jpg" height="500px">
+
+          White House meeting on the threat of AI - May 5, 2023  <!-- .element: class="smaller" -->
+        </section>
+        <section>
+
+          <img src="./img/altman1.png" height="200px">
+
+          The Guardian - May 16, 2023 <!-- .element: class="smaller" -->
+
+          <img class="fragment" data-fragment-index="1" src="./img/altman2.png" height="200px">
+
+          The Verge - May 25, 2023 <!-- .element: class="smaller fragment" data-fragment-index="1" -->
+        </section>
+        <section>
+        
+          ### The myth of AI Democratization
+          - AI is currently owned by few companies
+            - They have access to a huge amount of data. <!-- .element: class="fragment" data-fragment-index="1" -->
+            - They attract top AI scientists (huge salaries, freedom). <!-- .element: class="fragment" data-fragment-index="2" -->
+            - They have the power to transform research ideas into products. <!-- .element: class="fragment" data-fragment-index="3" -->
+        </section>
+        <section>
+
+          ### Why a democratic AI is important
+          - Avoid monopolies. <!-- .element: class="fragment" data-fragment-index="1" -->
+          - <!-- .element: class="fragment" data-fragment-index="2" --> Democratization means that everyone gets the <span style="color:#44AFF6">opportunities and benefits of artificial intelligence.</span> 
+          - Openness in AI development is proved to be beneficial to the development of better technologies. <!-- .element: class="fragment" data-fragment-index="3" -->
+        </section>
+        <section>
+
+          ### AI ownership
+          - Who owns the outputs produced by genAI? Are outputs of AI models copyrightable? <!-- .element: class="fragment" data-fragment-index="1" -->
+
+          <img src="./img/aiart.png" height="150"> <!-- .element: class="fragment" data-fragment-index="2" -->
+
+          - What about code? <!-- .element: class="fragment" data-fragment-index="3" -->
+          - What kind of license applies to ChatGPT generated code is still not clear. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Legally, the implications of using ChatGPT generated code in commercial product are still unknown. <!-- .element: class="fragment" data-fragment-index="5" -->
+        </section>
+        ---
+        <section>
+
+          ## Bonus: AI and Climate Change 
+        </section>
+        <section>
+
+          ### Climate change
+          - What is the carbon footprint of training a large AI model?
+            - <!-- .element: class="fragment" data-fragment-index="1" --> A <a href="https://arxiv.org/pdf/2104.10350">2021 paper</a> from Google estimates that a single training of GPT-3 emits ~552,000kg of CO$_2$.
+              - GPT-4 is estimated to be more than 4x the size of GPT-3. <!-- .element: class="fragment" data-fragment-index="2" -->
+              - We takes into account HW improvement, so a 2x multiplier is applied → ~1,104,000kg of CO$_2$.  <!-- .element: class="fragment" data-fragment-index="3" -->
+              - GPT-4 is trained for more than 100 days, while GPT-3 only for 14 days, so another 7x multiplier is applied → 7,728,000kg of CO$_2$.  <!-- .element: class="fragment" data-fragment-index="4" -->
+        </section>
+        <section>
+
+          ### Climate change
+          - But this is only one single training!
+            - Let's assume at least 100 explorative training averaging 0.2x the last one. <!-- .element: class="fragment" data-fragment-index="1" -->
+            - 7,728,000 + (7,728,000 $\cdot$ 0.2 $\cdot$ 100) = 162,288,000kg of CO$_2$. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - And what about deployment? <!-- .element: class="fragment" data-fragment-index="3" -->
+            - OpenAI claims to constantly run 30,000 NVidia A100 GPUs, 300W each. <!-- .element: class="fragment" data-fragment-index="4" -->
+            - <!-- .element: class="fragment" data-fragment-index="5" --> Suppose 70% average utilization for one year → 55,188,000kWh of energy, equal to 21,718,000kg of CO$_2$ emission (<a href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator">source</a>).
+          - Total = 184,006,000kg of emitted CO$_2$. <!-- .element: class="fragment" data-fragment-index="6" -->
+        </section>
+        <section>
+
+          ### Climate change
+          - To make that into perspective: 184,006,000kg of CO<sub>2</sub> emission are the same as:
+            - 42,920 gasoline-powered passenger vehicles driven for one year.  <!-- .element: class="fragment" data-fragment-index="1" -->
+            - 162,505 electric-powered passenger vehicles driven for one year.  <!-- .element: class="fragment" data-fragment-index="2" -->
+            - 92,712,741kg of coal burned. <!-- .element: class="fragment" data-fragment-index="3" -->
+            - 38,346 homes' electricity use for one year. <!-- .element: class="fragment" data-fragment-index="4" -->
+            - 55 wind turbines running for a year. <!-- .element: class="fragment" data-fragment-index="5" -->
+            - Carbon sequestred from 747km$^2$ of US forests. <!-- .element: class="fragment" data-fragment-index="6" -->
+        </section>
+        <section>
+
+          ### Climate change
+          <img src="./img/carbonmap.png" height="400">
+        </section>
+        <section>
+
+          ### Climate change
+          - But here we only calculated training and deployment stages, the full carbon emission of a ML model is composed of [all these phases](https://www.sciencedirect.com/science/article/pii/S2095809924002315): 
+            - ML R&D <!-- .element: class="fragment" data-fragment-index="1" -->
+            - Hardware manufacturing (material extraction?) <!-- .element: class="fragment" data-fragment-index="2" -->
+            - Global commercial logistics <!-- .element: class="fragment" data-fragment-index="3" -->
+            - Facility O&M <!-- .element: class="fragment" data-fragment-index="4" -->
+            - Massive data collection and management <!-- .element: class="fragment" data-fragment-index="5" -->
+            - Model training and fine-tuning <!-- .element: class="fragment" data-fragment-index="6" -->
+            - Deployment stage <!-- .element: class="fragment" data-fragment-index="7" -->
+            - Material recycling and waste disposal <!-- .element: class="fragment" data-fragment-index="8" -->
+        </section>
+        <section>
+
+          ### Climate change 
+          - But AI and ML are (fortunately) far for being a leading cause for climate change
+            - <!-- .element: class="fragment" data-fragment-index="1" --> In a month commercial airplanes emit at least 65x10$^9$kg of CO$_2$ (<a href="https://ourworldindata.org/grapher/monthly-co2-emissions-from-international-and-domestic-flights?time=2022-10-15..latest">source</a>).
+            - Many companies claims to use high percentages of renewable energy for their data centers. <!-- .element: class="fragment" data-fragment-index="2" -->
+            - But... <!-- .element: class="fragment" data-fragment-index="3" -->
+          
+          <img class="fragment" data-fragment-index="4" src="./img/googleenergy.png" height="100">
+
+          [The growing energy footprint of artificial intelligence](https://www.cell.com/joule/abstract/S2542-4351(23)00365-3) <!-- .element: class="fragment smaller" data-fragment-index="4" -->
+        </section>
+        <section>
+
+          ### Climate change
+          <img src="./img/gptcc.png" height="500">
+        </section>
+        ---
+        <!-- .slide: data-transition="slide-in fade-out" -->
+        ### To summarize
+        - The widespread adoption of AI in high risk applications pose significant safety risks. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - AI models may (and will) have unexpected bad outcomes.  <!-- .element: class="fragment" data-fragment-index="2" -->
+          - Bias on the data/model is a major enemy. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - It is often impossible to predict a priori all the possible bad outcomes. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - Malicious individuals may (and will) attack AI models and the data they are trained on. <!-- .element: class="fragment" data-fragment-index="5" -->
+        - We do not cover: <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Politics of AI. <!-- .element: class="fragment" data-fragment-index="7" -->
+        ---
+        <!-- .slide: data-transition="fade-in fade-out" -->
+        <img src="./img/politics.jpg" height="500">
+        ---
+        <!-- .slide: data-transition="fade-in fade-out" -->
+        ### To summarize
+        - The widespread adoption of AI in high risk applications pose significant safety risks.
+        - AI models may (and will) have unexpected bad outcomes.
+          - Bias on the data/model is a major enemy.
+          - It is often impossible to predict a priori all the possible bad outcomes.
+        - Malicious individuals may (and will) attack AI models and the data they are trained on. 
+        - We do not cover: 
+          - Politics of AI. 
+          - Explicitly malicious use of AI (military, population control, etc.). <!-- .element: class="fragment" data-fragment-index="1" -->
+          - The problem of AI evaluation and metrics. <!-- .element: class="fragment" data-fragment-index="2" -->
+        ---
+        <!-- .slide: data-transition="fade-in fade-out" -->
+        <img data-fragment-index="10" src="./img/metric1.jpg" height="500">
+        ---
+        <!-- .slide: data-transition="fade-in slide-out" -->
+        <img data-fragment-index="11" src="./img/metric2.jpg" height="500">
         ---
         <!-- .slide: data-auto-animate -->
-        ## To sum up
-        - Always think about the possible (ethical) problems of your AI system <!-- .element: class="fragment" data-fragment-index="1" -->
-        - Spend a lot of time to think about data, how it was acquired, how it was labeled, the level of generalization, ... <!-- .element: class="fragment" data-fragment-index="2" -->
-        - Do not fall for easy and fast enthusiasm: the possible bad outcomes are often hidden and difficult to spot. <!-- .element: class="fragment" data-fragment-index="3" -->
-        - Try to not become resistant, anti, or too critic to AI  <!-- .element: class="fragment" data-fragment-index="4" -->
-        - Be an advocate for ethical AI systems  <!-- .element: class="fragment" data-fragment-index="5" -->
-        - How AI take decisions is often totally different from how humans reason and think! <!-- .element: class="fragment" data-fragment-index="6" -->
+        ### My personal advice
+        - Always think about the possible safety problems of your AI system. <!-- .element: class="fragment" data-fragment-index="1" -->
+          - From data aquisition to deployment (and beyond!). <!-- .element: class="fragment" data-fragment-index="2" -->
+        - Invest time analyzing training data, how and who acquired it, how it is stored, possible biases, ... <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Do not fall for easy and fast enthusiasm: the possible bad outcomes are often hidden and difficult to spot. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - On the other hand, try to not become resistant, anti, or too critic of AI.  <!-- .element: class="fragment" data-fragment-index="5" -->
+        - And always remember that: <!-- .element: class="fragment" data-fragment-index="6" -->
+        
+        __AIs are f*****g LAZY!__ <!-- .element: class="fragment" data-fragment-index="7" -->
+
+        Note: example of 2023 summer conference Bertinoro
         ---
         <!-- .slide: data-auto-animate data-background-color="red" -->
-        - How AI take decisions is often totally different from how humans reason and think! <!-- .element: class="no-dot bigger" -->
+        AIs are f*****g LAZY! <!-- .element: class="bigger" -->
 
         Note: 
         AI only see what we give to it. 
 
         Stop saying that AI is like a child, AI is not something of this world, he don't understand anything apart from optmizing the metric we give to it. 
         ---
-        
-        <section>
-          <img src="./img/thatsall_white.png" height="300px">
+        <!-- .slide: data-auto-animate -->
+        <img src="./img/thatsall_white.png" height="300px">
+        ---
+        <!-- .slide: data-auto-animate" -->
+        Questions? <!-- .element: class="bigger" --> 
 
-          <p class="fragment" data-fragment-index="2">Questions?</p>
-        </section>
-        <section>
-          <h2>Extra: Politics of AI</h2>
-          <ul>
-            <li class="fragment" data-fragment-index="1">AI big companies claim to be democratic</li>
-            <ul>
-              <li class="fragment" data-fragment-index="2">Sharing their research (e.g. arXiv).</li>
-              <li class="fragment" data-fragment-index="3">Sharing their code (e.g. github).</li>
-              <li class="fragment" data-fragment-index="4">Sharing their frameworks (e.g. Tensorflow).</li>
-              <li class="fragment" data-fragment-index="5">Sharing their infrastructure (?) (e.g. colab).</li>
-            </ul>
-          </ul>
-          <blockquote class="fragment" data-fragment-index="6" >
-            [...] at an increasing scale, consumers have greater access to use and purchase technologically sophisticated products, as well as to <span style="color: #44AFF6;"><b>participate meaningfully in the development of these products.</b></span>
-          </blockquote>
-        </section>
-        <section>
-          <img src="./img/ceobiden.jpg" height="500px">
-
-          <p class="smaller">White House meeting on the threat of AI - May 5, 2023</p>
-        </section>
-        <section>
-          <img src="./img/altman1.png" height="200px">
-
-          <p class="smaller">The Guardian - May 16, 2023</p>
-
-          <img class="fragment" data-fragment-index="1" src="./img/altman2.png" height="200px">
-
-          <p class="fragment smaller" data-fragment-index="1">The Verge - May 25, 2023</p>
-        </section>
-        <section>
-          <h3>Why AI democracy is important</h3>
-            <ul>
-              <li class="fragment" data-fragment-index="1">Avoid monopolies.</li>
-              <li class="fragment" data-fragment-index="2">Openness in AI development is proved to be beneficial to the development of better technologies.</li>
-              <li class="fragment" data-fragment-index="3">Democratization means that <span class="fragment highlight-blue" data-fragment-index="4">everyone gets the opportunities and benefits of artificial intelligence.</span></li>
-            </ul>
-        </section>
+        Discussion? <!-- .element: class="bigger" --> 
         ---
         <!-- .slide: class="title-slide-lol" -->
         ## Introduction to AI Ethics 
@@ -408,7 +859,7 @@
 
         You can find this slides at: <!-- .element: class="smaller grey italic" --> 
         <br>
-        [https://ggraffieti.github.io/slides_aiethics_bio_ieee](https://ggraffieti.github.io/slides_aiethics_bio_ieee/)
+        [https://ggraffieti.github.io/slides_aiethics_DL](https://ggraffieti.github.io/slides_aiethics_DL/)
       </textarea>
       </section>
     </div>
@@ -417,6 +868,7 @@
   <script src="plugin/notes/notes.js"></script>
   <script src="plugin/markdown/markdown.js"></script>
   <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/math/math.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -427,7 +879,7 @@
       slideNumber: 'c',
       
       // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
     });
   </script>
 </body>
