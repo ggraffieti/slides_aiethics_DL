@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="350" viewBox="0 0 700 350" role="img" aria-labelledby="title desc">
+  <title id="title">The alignment problem</title>
+  <desc id="desc">Infographic: an AI system optimizes a proxy objective that can diverge from human goals, creating an alignment gap.</desc>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .font { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+      .h1 { font-size: 20px; font-weight: 900; fill: #ffffff; letter-spacing: 0.02em; }
+      .card { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.18); stroke-width: 2; }
+      .good { stroke: #22c55e; }
+      .bad { stroke: #ef4444; }
+      .label { font-size: 13px; font-weight: 900; fill: #ffffff; }
+      .muted { font-size: 11px; fill: rgba(255,255,255,0.62); }
+      .iconCircle { fill: rgba(255,255,255,0.10); stroke: rgba(255,255,255,0.75); stroke-width: 2; }
+      .iconStroke { stroke: #ffffff; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .arrowGood { stroke: rgba(34,197,94,0.9); stroke-width: 3; fill: none; }
+      .arrowBad { stroke: rgba(239,68,68,0.9); stroke-width: 3; fill: none; }
+      .gap { stroke: rgba(255,255,255,0.35); stroke-width: 2; stroke-dasharray: 6 6; }
+    ]]></style>
+    <marker id="headGood" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="rgba(34,197,94,0.9)"/>
+    </marker>
+    <marker id="headBad" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="rgba(239,68,68,0.9)"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <g class="font">
+    <text class="h1" x="350" y="40" text-anchor="middle">THE ALIGNMENT PROBLEM</text>
+
+    <!-- Center system -->
+    <g transform="translate(320,140)" filter="url(#shadow)">
+      <rect class="card" x="0" y="0" width="60" height="60" rx="16"/>
+      <g transform="translate(30,30)">
+        <rect x="-10" y="-10" width="20" height="20" rx="5" fill="none" stroke="#ffffff" stroke-width="2"/>
+        <path class="iconStroke" d="M -18 -6 H -10 M -18 0 H -10 M -18 6 H -10 M 10 -6 H 18 M 10 0 H 18 M 10 6 H 18"/>
+      </g>
+      <text class="muted" x="30" y="78" text-anchor="middle">AI system</text>
+    </g>
+
+    <!-- Human goals (top-right) -->
+    <g transform="translate(430,78)" filter="url(#shadow)">
+      <rect class="card good" x="0" y="0" width="220" height="82" rx="18"/>
+      <g transform="translate(30,41)">
+        <circle class="iconCircle" cx="0" cy="0" r="12"/>
+        <!-- target icon -->
+        <circle cx="0" cy="0" r="7" fill="none" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="0" cy="0" r="2" fill="#ffffff"/>
+      </g>
+      <text class="label" x="60" y="38">Human goals</text>
+      <text class="muted" x="60" y="58">intended behavior</text>
+    </g>
+
+    <!-- Proxy objective (bottom-left) -->
+    <g transform="translate(50,218)" filter="url(#shadow)">
+      <rect class="card bad" x="0" y="0" width="240" height="82" rx="18"/>
+      <g transform="translate(30,41)">
+        <circle class="iconCircle" cx="0" cy="0" r="12"/>
+        <!-- gauge icon -->
+        <path class="iconStroke" d="M -8 6 A 10 10 0 0 1 8 6"/>
+        <path class="iconStroke" d="M 0 6 L 6 -2"/>
+      </g>
+      <text class="label" x="60" y="38">Proxy objective</text>
+      <text class="muted" x="60" y="58">reward / metric optimized</text>
+    </g>
+
+    <!-- Arrows -->
+    <path class="arrowGood" d="M 380 150 Q 460 90 520 90" marker-end="url(#headGood)"/>
+    <path class="arrowBad" d="M 320 190 Q 250 250 170 260" marker-end="url(#headBad)"/>
+
+    <!-- Alignment gap -->
+    <line class="gap" x1="300" y1="175" x2="400" y2="175"/>
+    <g transform="translate(350,170)">
+      <circle class="iconCircle" cx="0" cy="0" r="12"/>
+      <path class="iconStroke" d="M 0 -7 L 7 7 H -7 Z"/>
+    </g>
+    <text class="muted" x="350" y="208" text-anchor="middle">alignment gap</text>
+  </g>
+</svg>
