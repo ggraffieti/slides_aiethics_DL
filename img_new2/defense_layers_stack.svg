@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img" aria-labelledby="title desc">
+  <title id="title">Layered defenses for adversarial ML</title>
+  <desc id="desc">Stack diagram showing data-level, model-level, adversarial, and system-level defense layers, emphasizing that no single layer is sufficient.</desc>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .font { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+      .h1 { font-size: 18px; font-weight: 850; fill: #ffffff; letter-spacing: 0.04em; }
+      .h2 { font-size: 14.8px; font-weight: 820; fill: #ffffff; }
+      .body { font-size: 12.2px; font-weight: 560; fill: rgba(255,255,255,0.90); }
+      .muted { font-size: 11.2px; fill: rgba(255,255,255,0.62); }
+      .pill { fill: rgba(255,255,255,0.10); stroke: rgba(255,255,255,0.28); stroke-width: 2; }
+      .card { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.18); stroke-width: 2; }
+      .layer { stroke: rgba(255,255,255,0.22); stroke-width: 2; }
+      .sep { stroke: rgba(255,255,255,0.14); stroke-width: 1.5; }
+      .tag { font-size: 11px; font-weight: 850; letter-spacing: 0.08em; fill: rgba(255,255,255,0.88); }
+
+      .d0 { fill: rgba(251,146,60,0.18); }
+      .d1 { fill: rgba(68,175,246,0.18); }
+      .d2 { fill: rgba(34,197,94,0.16); }
+      .d3 { fill: rgba(168,85,247,0.18); }
+    ]]></style>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <g class="font">
+    <!-- Header -->
+    <g filter="url(#shadow)">
+      <rect class="pill" x="250" y="18" width="500" height="58" rx="14"/>
+      <text class="h1" x="500" y="50" text-anchor="middle">DEFENSES MUST BE LAYERED</text>
+      <text class="muted" x="500" y="68" text-anchor="middle">Data + model + adversarial testing + system engineering</text>
+    </g>
+
+    <!-- Stack card -->
+    <g transform="translate(130,105)" filter="url(#shadow)">
+      <rect class="card" x="0" y="0" width="740" height="330" rx="18"/>
+
+      <!-- Layers -->
+      <g transform="translate(40,32)">
+        <!-- Data layer -->
+        <rect class="layer d0" x="0" y="0" width="660" height="70" rx="16"/>
+        <text class="tag" x="18" y="28">DATA-LEVEL</text>
+        <text class="body" x="18" y="52">- provenance, audits, filtering, anomaly detection, robust stats</text>
+
+        <!-- Model layer -->
+        <rect class="layer d1" x="0" y="80" width="660" height="70" rx="16"/>
+        <text class="tag" x="18" y="108">MODEL-LEVEL</text>
+        <text class="body" x="18" y="132">- regularization, calibration, DP, uncertainty estimation</text>
+
+        <!-- Adversarial layer -->
+        <rect class="layer d2" x="0" y="160" width="660" height="70" rx="16"/>
+        <text class="tag" x="18" y="188">ADVERSARIAL</text>
+        <text class="body" x="18" y="212">- adversarial training, red-teaming, robustness tests, cert limits</text>
+
+        <!-- System layer -->
+        <rect class="layer d3" x="0" y="240" width="660" height="70" rx="16"/>
+        <text class="tag" x="18" y="268">SYSTEM-LEVEL</text>
+        <text class="body" x="18" y="292">- redundancy (fusion), runtime monitors, safe fallback, ODD gating</text>
+      </g>
+
+      <line class="sep" x1="40" y1="286" x2="700" y2="286"/>
+      <text class="muted" x="40" y="314">Security principle: assume one layer fails; prevent single-point-of-failure outcomes.</text>
+    </g>
+  </g>
+</svg>
+
