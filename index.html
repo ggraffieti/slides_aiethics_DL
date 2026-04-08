@@ -22,6 +22,9 @@
     <div class="slides">
       <section data-markdown data-separator-notes="^Note:">
         <textarea data-template>
+        <!-- ============================================================ -->
+        <!-- SECTION 0: TITLE + WHO I AM + COMPANY                        -->
+        <!-- ============================================================ -->
         <section class="title-slide-lol">
         
         ## Introduction to AI ~~Ethics~~ Safety 
@@ -64,8 +67,8 @@
         - Research division of Ambarella on self-driving cars:
           - 90+ people only in Parma. <!-- .element: class="fragment" data-fragment-index="1" -->
           - ~1,000 worldwide (US, TW, IT, CN, DE, KR, ...). <!-- .element: class="fragment" data-fragment-index="2" -->
-          - On self-driving cars sofware, our competitors are Tesla, Wayve, Waymo, Cariad, etc.  <!-- .element: class="fragment" data-fragment-index="3" -->
-          - On self-driving cars hardware, our competitors are Nvidia, Mobileye, etc. (?) <!-- .element: class="fragment" data-fragment-index="4" -->
+          - On self-driving cars sofware, our competitors include Tesla, Wayve, Waymo, Cariad, etc.  <!-- .element: class="fragment" data-fragment-index="3" -->
+          - On self-driving cars hardware, our competitors include Nvidia, Mobileye, etc.  <!-- .element: class="fragment" data-fragment-index="4" -->
         ---
         ### Ambarella - Vislab
         - <!-- .element: class="fragment" data-fragment-index="1" --> <a href="https://www.youtube.com/watch?v=eDP5J1-QKf8">1998 1,000 miles</a> (2,000+ km) on Italian highways with autonomous steering. First time in the world with only passive sensors. 
@@ -77,7 +80,7 @@
         - <!-- .element: class="fragment" data-fragment-index="4" --> <a href="https://www.youtube.com/watch?v=X0jJ5BZWWIo">2013 PROUD</a>: 13km in Parma fully autonomous (L4). 
         - <!-- .element: class="fragment" data-fragment-index="5" --> <u>2015: Acquisition by Ambarella</u>. 
         - <!-- .element: class="fragment" data-fragment-index="6" --> 2020: Full autonomous driving demo @ CES 2020 Las Vegas. 
-        - <!-- .element: class="fragment" data-fragment-index="7" --> <a href="https://www.youtube.com/watch?v=xhZfGCwU-GY">2022-onwards</a>: autonomous driving L4 in all environment with a single low power chip (no GPU, no high end CPU). 
+        - <!-- .element: class="fragment" data-fragment-index="7" --> <a href="https://www.youtube.com/watch?v=xhZfGCwU-GY">2022-onwards</a>: autonomous driving L2+ to L4 in all environments with a <b>single low power chip</b> (no GPU, no high end CPU). 
         ---
         <section>
           <iframe width="1120" height="630" src="https://www.youtube.com/embed/x1glAcRP1TM?t=28" VQ=hd1080 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -87,8 +90,8 @@
         - What we do:
           - State-of-the-art research on autonomous driving. <!-- .element: class="fragment" data-fragment-index="1" -->
           - Only company in Italy (and one of the very few in Europe) to be allowed to test and drive in any road, at any time, with any traffic condition. <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Both DL-based and classical approach to vehicle control, sensing, vision, etc. <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Sensing only based on cameras (1/2 stereo + 5 mono / 2 mono) + radars. <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Mainly DL-based approaches to sensing and control, classical approach mainly in vehicle control. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Sensing only based on cameras (long/short range, stereo/mono) + radars. <!-- .element: class="fragment" data-fragment-index="4" -->
         ---
         ### Ambarella - Vislab
         - What we offer:
@@ -103,8 +106,23 @@
             - [careers-it@ambarella.com](mailto:careers@ambarella.com) <!-- .element: class="fragment" data-fragment-index="8" -->
             - [enascimbeni@ambarella.com](mailto:enascimbeni@ambarella.com) <!-- .element: class="fragment" data-fragment-index="8" -->
         ---
-        ### Some auto-promotion
-        <img src="./img/minerva.jpg" height="620px">
+        <!-- .slide: data-auto-animate -->
+        <div style="width:100%; height:700px; overflow:hidden; border-radius:14px;">
+          <h3>A bit of self-promotion</h3>
+          <img
+               data-id="minervaZoom"
+               src="./img/minerva.jpg"
+               style="max-width:none; max-height:none; height:85%; position:relative; left:0px; top:0px;" />
+        </div>
+        ---
+        <!-- .slide: data-auto-animate -->
+        <div style="width:100%; height:700px; overflow:hidden; border-radius:14px;">
+          <h3>A bit of self-promotion</h3>
+          <img
+               data-id="minervaZoom"
+               src="./img/minerva.jpg"
+               style="max-width:none; max-height:none; height:350%; position:relative; left:-800px; top:-1310px;" />
+        </div>
         ---
         <img src="./img/cropped-AIforPeople-logo-full-2.png" height="180px">
         
@@ -113,17 +131,38 @@
         ## Overview
         - AI Safety Introduction: Why and How. <!-- .element: class="fragment" data-fragment-index="1" -->
         - Let's get political: why we should care about AI regulations? <!-- .element: class="fragment" data-fragment-index="2" -->
-        - AI learns from data...but what data? <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Bias. <!-- .element: class="fragment" data-fragment-index="4" -->
-        - AI under attack. <!-- .element: class="fragment" data-fragment-index="5" -->
-          - Attacks on Data. <!-- .element: class="fragment" data-fragment-index="6" -->
-          - Attacks on Models. <!-- .element: class="fragment" data-fragment-index="7" -->
-        - Foundational Models and Their Use. <!-- .element: class="fragment" data-fragment-index="8" -->
-        - An Introduction to Countermeasures. <!-- .element: class="fragment" data-fragment-index="9" -->
-          - ISO/PAS 8800. <!-- .element: class="fragment" data-fragment-index="10" -->
+          - The Politics of AI Regulation. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - AI Regulations: the EU AI Act. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - AI learns from data...but what data? <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Bias. <!-- .element: class="fragment" data-fragment-index="6" --> 
+        - AI under attack. <!-- .element: class="fragment" data-fragment-index="7" -->
+          - Attacks on Data. <!-- .element: class="fragment" data-fragment-index="8" -->
+          - Attacks on Models. <!-- .element: class="fragment" data-fragment-index="9" -->
+          - LLM-Specific Risks. <!-- .element: class="fragment" data-fragment-index="10" -->
+        - Foundational Models and Their Use. <!-- .element: class="fragment" data-fragment-index="11" -->
+        - An Introduction to Countermeasures. <!-- .element: class="fragment" data-fragment-index="12" -->
+          - ISO/PAS 8800. <!-- .element: class="fragment" data-fragment-index="13" -->
         ---
+        ### Quick warm-up (60s)
+        <div class="callout poll">
+          <span class="tag">Poll</span><span class="time">30s</span>
+          <p class="mini">Hands up: have you deployed an ML model in production?</p>
+          <ul class="mini">
+            <li>never</li>
+            <li>course project / small demo</li>
+            <li>internship / work</li>
+          </ul>
+        </div>
+        <div class="callout activity" style="margin-top:0.6em">
+          <span class="tag">Think</span><span class="time">30s</span>
+          <p class="mini">What is the <b>most fragile</b> part of an ML system: data, model, deployment, or humans/process?</p>
+        </div>
+        ---
+        <!-- ============================================================ -->
+        <!-- SECTION 2: WHY AI SAFETY                                     -->
+        <!-- ============================================================ -->
         ## Why AI safety and not AI ethics?
-        - The ethical aspects and challenges of AI are nowadays almost common knowledge (even the Pope talked abut them). <!-- .element: class="fragment" data-fragment-index="1" -->
+        - The ethical aspects and challenges of AI are nowadays almost common knowledge. <!-- .element: class="fragment" data-fragment-index="1" -->
         - The misuse or the criminal use of AI is well documented and well known by the general public. <!-- .element: class="fragment" data-fragment-index="2" --> 
         - AI Safety is a pretty recent buzzword that also encompass: <!-- .element: class="fragment" data-fragment-index="3" -->
           - Possible attacks on an ethically developed AI. <!-- .element: class="fragment" data-fragment-index="4" -->
@@ -132,82 +171,242 @@
           - Focus on safety, a more concrete and measurable quality than ethics. <!-- .element: class="fragment" data-fragment-index="7" -->
         ---
         <section>
-
           ## Why AI safety?
-          <a href="https://colab.research.google.com/drive/11J0UQC42BCXhXl6pjj68m2a9oNQgqKWS?usp=sharing" target="_blank">Demo!</a>
-        </section>
-        <section>
+          <div class="callout quiz">
+            <span class="tag">Demo (prediction first)</span><span class="time">60s</span>
+            <p class="mini"><b>Before we run it:</b> what will happen if we add a tiny perturbation (FGSM) to an image?</p>
+            <ul class="mini">
+              <li>A) Top-1 stays stable until ε is large</li>
+              <li>B) Top-1 can flip at surprisingly small ε</li>
+              <li>C) It depends on the model and preprocessing</li>
+            </ul>
+            <p class="fragment mini"><b>Expected:</b> B/C — often flips earlier than intuition.</p>
+          </div>
 
-          We ran a clinical trial on some cancer patients, and we collected data on those who benefited from the treatment.
-
-          We want to develop an ML model that, given the data of a new patient, will predict whether the patient will benefit from the new treatment. <!-- .element: class="fragment" data-fragment-index="1" -->
-        </section>
-        <section>
-          
-          1. What model should I use?
-              - Classification problem -> classifier? <!-- .element: class="fragment" data-fragment-index="1" -->
-              -  Do we have all the information to trace a boundary between the two classes? <!-- .element: class="fragment" data-fragment-index="2" -->
-              - Is the information we have <i>complete</i>?</li> <!-- .element: class="fragment" data-fragment-index="3" -->
-
-          <aside class="notes">
-            Classification problem -> classifier, but I don't have complete indormation!
-            <br>
-            Discriminative models have an intrisic bias inside them for having complete information (being able to trace a boundary between the data starting from input data). 
-            <br/>
-            I dont know if I can correctly classify data with the input features I have.
-          </aside>
-        </section>
-        <section data-auto-animate>
-          <img src="./img/points.svg" height="400">
-        </section>
-        <section data-auto-animate>
-          <img src="./img/border.svg" height="400">
-
-          Ideas? <!-- .element: class="fragment" data-fragment-index="1" -->
-        </section>
-        <section data-auto-animate>
-          <img src="./img/distributions.svg" height="600">
-        </section>
-        <section data-auto-animate>
-          <img src="./img/onlyone.svg" height="500">
-
-          Examples of generative models? <!-- .element: class="fragment" data-fragment-index="1" -->
-          <aside class="notes">
-            Back to the demo
-          </aside>
-        </section>
-        <section>
-          
-          1. What model should I use?
-              - Classification problem -> classifier?
-              - Do we have all the information to trace a boundary between the two classes?
-              - Is the information we have <i>complete</i>?
-          2. Is the data safe to use? <!-- .element: class="fragment" data-fragment-index="1" --> 
-              - How, who, where the data is collected? <!-- .element: class="fragment" data-fragment-index="2" -->
-              - Is the data biased, inaccurate, mislabeled, imbalanced, etc? <!-- .element: class="fragment" data-fragment-index="3" -->
-              - Does the data contain private information? <!-- .element: class="fragment" data-fragment-index="4" -->
-              - Is the data physically safe? <!-- .element: class="fragment" data-fragment-index="5" --> 
-                - Is the data obtained from trusted sources? <!-- .element: class="fragment" data-fragment-index="6" -->
-                - Is the data stored safely? Is the data protected from unathorized alteration? <!-- .element: class="fragment" data-fragment-index="7" -->
-              - Does the data contains poison, backdoors, adversarial examples, etc? <!-- .element: class="fragment" data-fragment-index="8" -->
+          <p class="mini" style="margin-top:0.7em">
+            Notebook: <a href="./demo_new/demo_fgsm_adversarial.ipynb" target="_blank">demo_new/demo_fgsm_adversarial.ipynb</a>
+          </p>
         </section>
         ---
+        <!-- ============================================================ -->
+        <!-- SECTION 3: AI REGULATIONS                                    -->
+        <!-- ============================================================ -->
+        ## AI Regulations
+        ---
+        ### Why Regulate AI?
+        - AI is increasingly used in high-risk domains: healthcare, criminal justice, hiring, autonomous driving. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Most AI systems are opaque: users cannot understand why a decision was made. <!-- .element: class="fragment" data-fragment-index="2" -->
+        - AI operates across borders, but laws are national. <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Without regulation, the incentive is to move fast and break things. <!-- .element: class="fragment" data-fragment-index="4" -->
+
+        Note:
+        Self-driving cars are a perfect example: they cross borders, make life-or-death decisions, and use opaque deep learning models.
+        ---
+        ### The EU AI Act
+        - <!-- .element: class="fragment" data-fragment-index="1" --> First comprehensive AI law in the world. Entered into force <b>1 Aug 2024</b>.
+        - Risk-based approach: AI systems classified into four tiers: <!-- .element: class="fragment" data-fragment-index="2" -->
+          - <!-- .element: class="fragment" data-fragment-index="3" --> <b>Minimal risk</b>: e.g. spam filters, AI in games, etc. 
+          - <!-- .element: class="fragment" data-fragment-index="4" --> <b>Limited risk</b>: transparency obligations, e.g. chatbots, deepfakes, etc. 
+          - <!-- .element: class="fragment" data-fragment-index="5" --> <b>High risk</b>: RMS, DG, human oversight, ect., e.g. healthcare, hiring, <i>autonomous driving</i>, etc.
+          - <!-- .element: class="fragment" data-fragment-index="6" --> <b>Unacceptable risk</b>: prohibited (but with some exceptions), e.g. scoring systems, mass biometric surveillance, manipulation, etc.
+        
+        
+        <div class="smaller fragment" data-fragment-index="7">
+          <br>
+          <a href="https://commission.europa.eu/news-and-media/news/ai-act-enters-force-2024-08-01_en" target="_blank">European Commission</a> · <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/eu-ai-act-implementation-timeline" target="_blank">Implementation timeline</a> · <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng" target="_blank">EUR-Lex 2024/1689</a> 
+        </div>
+        
+
+        Note:
+        Autonomous driving requires risk management systems, data governance, human oversight, and conformity assessment under the EU AI Act.
+        ---
+        ### EU AI Act - Penalties
+        | Violation | Max Fine |
+        |---|---|
+        | Prohibited AI practices | €35M or **7%** global turnover |
+        | High-risk system violations | €15M or **3%** global turnover |
+        | Incorrect information to authorities | €7.5M or **1%** global turnover |
+
+        [EUR-Lex 2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng) <!-- .element: class="smaller" -->
+
+        Note:
+        These are the highest per-category, whichever is greater applies. For startup or small companies, the fines the lower of the two amounts.
+        ---
+        ### Global Regulatory Fragmentation
+        - <!-- .element: class="fragment" data-fragment-index="1" --> <b>EU</b>: Risk-based regulation (EU AI Act). 
+        - <!-- .element: class="fragment" data-fragment-index="2" --> <b>US</b>: Executive orders + NIST frameworks (voluntary). 
+        - <!-- .element: class="fragment" data-fragment-index="3" --> <b>China</b>: Algorithm regulation + mandatory registration. 
+        - Self-driving example: Waymo in London/UK (Europe) highlights fragmented approvals across jurisdictions (EU member states vs UK vs US). <!-- .element: class="fragment" data-fragment-index="4" -->
+
+
+        <div class="smaller fragment" data-fragment-index="7">
+          <br>
+          <a href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final" target="_blank">NIST AI 100-2 E2025</a> · <a href="https://waymo.com/waymo-in-uk" target="_blank">Waymo in the UK</a> 
+        </div>
+
+        Note:
+        The UK is not in the EU; "Europe" often implies multiple overlapping regimes (EU AI Act + member-state rules + UK-specific approvals).
+        ---
+        ### Checkpoint: Politics of regulation (3 min)
+        <div class="callout poll">
+          <span class="tag">Poll</span><span class="time">30s</span>
+          <p>Hands up: which is the <b>biggest</b> practical failure mode of AI regulation?</p>
+          <ul class="mini">
+            <li>A) Rules are unclear</li>
+            <li>B) Enforcement is weak</li>
+            <li>C) Fines are too small vs profit</li>
+            <li>D) Regulatory capture / lobbying</li>
+          </ul>
+        </div>
+        ---
+        <div class="callout activity" style="margin-top:0.6em">
+          <span class="tag">Think–Pair–Share</span><span class="time">90s</span>
+          <p class="mini"><b>Prompt:</b> “If you were designing enforcement for high-risk AI in self-driving, what would you measure and audit?”</p>
+          <ul class="mini">
+            <li>What evidence is easy to fake?</li>
+            <li>What evidence is hard to fake?</li>
+          </ul>
+        </div>
+
+        Note:
+        Facilitation: 30s hands-up → 90s pair talk → 60s quiz reveal.
+        Debrief: “Policy” is part of safety engineering: incentives + audits + measurable evidence.
+        ---
+        <!-- ============================================================ -->
+        <!-- SECTION 3b: POLITICS OF AI REGULATION                        -->
+        <!-- ============================================================ -->
+        ## The Politics of AI Regulation
+        #### Why Regulations Alone May Not Be Enough
+        ---
+        ### Fines as Cost of Doing Business
+        - <!-- .element: class="fragment" data-fragment-index="1" --> Big Tech paid <b>$8.2B</b> in fines in 2024. 
+        - <!-- .element: class="fragment" data-fragment-index="2" --> They could cover it in <b>under 3 weeks</b> of free cash flow: 
+          - <!-- .element: class="fragment" data-fragment-index="3" --> Amazon: $57M fine = <b>< 1 day</b> 
+          - <!-- .element: class="fragment" data-fragment-index="4" --> Meta: $1.46B = <b>10 days</b> 
+          - <!-- .element: class="fragment" data-fragment-index="5" --> Google: $2.97B = <b>17 days</b> 
+        - <!-- .element: class="fragment" data-fragment-index="6" --> If expected profit > sanction, rational actors will break the rules. 
+
+        <div class="smaller fragment" data-fragment-index="7">
+          <br>
+          <a href="https://proton.me/blog/big-tech-pays-fines-under-3-weeks" target="_blank">Proton Big Tech Fines Tracker</a> 
+        </div>
+        ---
+        ### Case Study: Clearview AI
+        - <!-- .element: class="fragment" data-fragment-index="1" --> Facial recognition company scraped <b>billions</b> of images from social media without consent. 
+        - <!-- .element: class="fragment" data-fragment-index="2" --> Received <b>$100M+</b> in EU GDPR fines (Netherlands €30.5M, France, Greece, Italy, UK). 
+        - Reports indicate Clearview disputed the decisions and enforcement across borders remains difficult. <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Criminal complaint filed only in October 2025. <!-- .element: class="fragment" data-fragment-index="4" -->
+
+        <div class="smaller fragment" data-fragment-index="7">
+          <br>
+          <a href="https://www.autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-on-clearview-because-of-illegal-data-collection-for-facial-recognition" target="_blank">Dutch DPA</a> · <a href="https://noyb.eu/en/criminal-complaint-against-facial-recognition-company-clearview-ai" target="_blank">Noyb</a> · <a href="https://www.theregister.com/2025/10/28/noyb_criminal_charges_clearview" target="_blank">The Register</a> 
+        </div>
+        ---
+        ### Case Study: Cruise Cover-Up
+        - <!-- .element: class="fragment" data-fragment-index="1" --> Oct 2023: Cruise robotaxi struck and <b>dragged a pedestrian 20 feet</b> in San Francisco. 
+        - <!-- .element: class="fragment" data-fragment-index="2" --> Company deliberately <b>withheld the dragging video</b> from NHTSA. 
+        - <!-- .element: class="fragment" data-fragment-index="3" --> Result: <span>$</span>500K criminal penalty, <span>$</span>1.5M NHTSA fine, CEO resigned, operations temporarily suspended. 
+        - <!-- .element: class="fragment" data-fragment-index="4" --> Total fines <b>< $2.5M</b> vs. <b>billions</b> in valuation. Is that a deterrent? 
+
+        <div class="smaller fragment" data-fragment-index="7">
+          <br>
+          <a href="https://www.sfgate.com/tech/article/cruise-fine-criminal-cover-up-19920343.php" target="_blank">SFGate</a> · <a href="https://www.reuters.com/business/autos-transportation/how-gms-cruise-robotaxi-tech-failures-led-it-drag-pedestrian-20-feet-2024-01-26/" target="_blank">Reuters</a> 
+        </div>
+        ---
+        ### Copyright as Calculated Risk
+        - <!-- .element: class="fragment" data-fragment-index="1" --> Anthropic: <b>$1.5B</b> settlement for training on pirated books (~$3K/book). 
+        - <!-- .element: class="fragment" data-fragment-index="2" --> OpenAI and Meta face similar lawsuits -- all knowingly used "shadow libraries" (LibGen, etc.). 
+        - <!-- .element: class="fragment" data-fragment-index="3" --> The economics: train on stolen data first, settle later, <b>still profitable</b>. 
+
+        <div class="smaller fragment" data-fragment-index="7">
+          <br>
+          <a href="https://news.bloomberglaw.com/class-action/record-1-5-billion-ai-copyright-pact-sets-bar-for-openai-meta" target="_blank">Bloomberg Law</a> 
+        </div>
+        ---
+        ### Other problems with regulations
+        - Lobbying: Big Tech spends millions to influence regulations. <!-- .element: class="fragment" data-fragment-index="1" -->
+          - <!-- .element: class="fragment" data-fragment-index="1" --> Meta: <b>$6.5M</b> lobbying spend in Q4 2025 alone. 
+          - <!-- .element: class="fragment" data-fragment-index="2" --> Google and Microsoft lobbied to <b>remove</b> "large-scale illegal discrimination" from EU AI Act systemic risks.
+        - Revolving Doors. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - <!-- .element: class="fragment" data-fragment-index="4" --> <b>36+</b> people moved from UK tech regulators/government to Big Tech firms. 
+          - Former FCC Chair Ajit Pai → CEO of CTIA (top wireless lobbying org). <!-- .element: class="fragment" data-fragment-index="5" -->
+
+        <div class="smaller fragment" data-fragment-index="7">
+          <br>
+          <a href="https://corporateeurope.org/en/2025/04/eu-under-heavy-big-tech-pressure-weaken-rules-advanced-ai" target="_blank">Corporate Europe Observatory</a> · <a href="https://www.axios.com/2026/01/21/meta-big-tech-lobbying-spending-q4" target="_blank">Axios</a> · <a href="https://www.tortoisemedia.com/2025/04/03/public-officials-joining-tech-firms-raise-fears-of-unregulated-revolving-door" target="_blank">Tortoise Media</a> 
+        </div>
+        
+
+        Note:
+        Axios cites official US lobbying disclosures (quarterly). CEO provides EU-side reporting on lobbying pressure during AI Act / Code of Practice discussions.
+        FCC = US Federal Communications Commission, CTIA = Cellular Telecommunications & Internet Association (trade association for the wireless industry).
+        ---
+        <img src="./img/ceobiden.jpg" height="500px">
+
+          White House meeting on the threat of AI - May 5, 2023  <!-- .element: class="smaller" -->
+        ---
+        ### Regulations Crush Small Players
+        - Fixed compliance costs hit startups harder than incumbents (legal, audits, documentation). <!-- .element: class="fragment" data-fragment-index="1" -->
+        - <!-- .element: class="fragment" data-fragment-index="2" --> Harvard Kennedy School analysis: a 200% increase in fixed compliance costs can swing an AI startup margin from +13% to <b>-7%</b>.
+        - <!-- .element: class="fragment" data-fragment-index="3" --> Patchwork: <b>1,000+</b> AI-related bills introduced in US states in 2025 alone. 
+        - Self-driving example: safety cases + data governance can be existential for an ADS startup. <!-- .element: class="fragment" data-fragment-index="4" -->
+
+        <div class="smaller fragment" data-fragment-index="7">
+          <br>
+          <a href="https://studentreview.hks.harvard.edu/why-compliance-costs-of-ai-commercialization-maybe-holding-start-ups-back/" target="_blank">HKS Student Policy Review</a> · <a href="http://www.lawfareblog.com/article/1-000-ai-bills--time-for-congress-to-get-serious-about-preemption" target="_blank">Lawfare</a> · <a href="https://www.cato.org/commentary/ai-privacy-rules-meant-big-tech-could-hurt-small-businesses-most" target="_blank">Cato</a> 
+        </div>
+        ---
+        ### Checkpoint: Regulation → Engineering reality (3 min)
+        <div class="callout activity">
+          <span class="tag">Think–Pair–Share</span><span class="time">90s</span>
+          <p class="mini"><b>Prompt:</b> “Fines are not always enforcement.” In self-driving, what <b>non-monetary</b> levers change behavior?</p>
+          <ul class="mini">
+            <li>type-approval / certification gates</li>
+            <li>mandatory incident reporting + audits</li>
+            <li>recall powers / operating license suspension</li>
+          </ul>
+        </div>
+        ---
+        ### Checkpoint: Regulation → Engineering reality (3 min)
+        <div class="callout quiz" style="margin-top:0.6em">
+          <span class="tag">Quiz</span><span class="time">60s</span>
+          <p class="mini"><b>Question:</b> A company can “ignore” fines if enforcement can’t reach them. What’s the general fix?</p>
+          <ul class="mini">
+            <li>A) Bigger fines only</li>
+            <li>B) Cross-border enforcement + market-access controls</li>
+            <li>C) Voluntary guidelines</li>
+          </ul>
+          <p class="fragment mini"><b>Answer:</b> B) market access + enforceable controls (plus audits/recalls).</p>
+        </div>
+
+        Note:
+        Keep it short and energetic before entering the Bias section. Tie back to “safety cases” and evidence.
+        ---
+        <!-- ============================================================ -->
+        <!-- SECTION 4: DATA SAFETY - BIAS                                -->
+        <!-- ============================================================ -->
         ## Data safety - Bias
+
+        <a href="https://colab.research.google.com/drive/11J0UQC42BCXhXl6pjj68m2a9oNQgqKWS?usp=sharing" target="_blank" class="fragment fade-in">Demo!</a> 
         ---
         ### Biases in the real world
         <img src="./img/medical_care.png"  height="300"> <!-- .element: class="fragment" data-fragment-index="1" -->
-        <p class="fragment" data-fragment-index="1">Hint: <span class="fragment custom blur">think about how US healthcare works.</span></p>
+        <p class="fragment" data-fragment-index="1">Hint: <br> <span class="fragment custom blur">Label used: past healthcare access (easy to measure) <br> But access ≠ need (inequality distort the proxy)</span></p>
         ---
         ### Biases in the real world
         <img src="./img/amazon_women.png"  height="300">
-        <p>Hint: <span class="fragment custom blur">think about gender representation inside tech jobs.</span></p>
+        <p>Hint: <br> <span class="fragment custom blur">The model learns “what worked before” <br/> If history is biased, the model can automate the bias</span></p>
         ---
-        ### Biases in the real world
-        <img src="./img/biasUK.png"  height="300">
-        
-        What is the worst thing they could have said?
-        
-        <blockquote class="fragment custom blur">Government departments, ..., been reluctant to disclose more about their use of AI, citing concerns that to do so could allow bad actors to manipulate systems.</blockquote></p>
+        ### Bias in Self-Driving Cars
+        - <!-- .element: class="fragment" data-fragment-index="1" --> Pedestrian detectors are <b>28-31% less likely</b> to detect darker-skinned people. 
+        - <!-- .element: class="fragment" data-fragment-index="2" --> Detection accuracy for adults is <b>19.62% higher</b> than for children. 
+        - <!-- .element: class="fragment" data-fragment-index="3" --> Bias <b>worsens at night</b>: undetected dark-skinned pedestrians rise from <b>7.14%</b> (day) to <b>9.86%</b> (night). 
+        - Root cause: imbalanced training data. <!-- .element: class="fragment" data-fragment-index="4" -->
+
+        <div class="smaller fragment" data-fragment-index="7">
+          <br>
+          <a href="https://www.kcl.ac.uk/news/driverless-cars-worse-at-detecting-children-and-darker-skinned-pedestrians-say-scientists" target="_blank">King's College London</a> 
+        </div>
         ---
         ## Well, can we fix this right?
         ### How? <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -239,18 +438,27 @@
         #### Spoiler: yes <!-- .element: class="fragment" data-fragment-index="1" -->
         ---
         ### Let's make a test
-        Tell me a random integer between 1 and 10. <!-- .element: class="fragment" data-fragment-index="1" -->
-
-        How the distribution of answers should look like? <!-- .element: class="fragment" data-fragment-index="2" -->
+        Write dowm (or think about) a random integer between 1 and 10. <!-- .element: class="fragment" data-fragment-index="1" -->
+        <div class="callout poll fragment" data-fragment-index="2">
+          <span class="tag">Warm-up poll</span><span class="time">30s</span>
+          <p class="mini">Hands up: who picked <b>7</b> or <b>3</b>?</p>
+          <p class="muted mini">Humans are not uniform RNGs; we have biases.</p>
+        </div>
         ---
         <img src="./img/human_random.jpg" height="600px">
         ---
-        ### Now let's ask chatGPT
-        <img class="fragment fade-in" data-fragment-index="1" src="./img/random_gpt_ans.png" height="150px">
-        <br/>
-        <img class="fragment fade-in" data-fragment-index="2" src="./img/random_gpt_number.png" height="150px">
-
-        What if we ask chatGPT that question many times? <!-- .element: class="fragment smaller" data-fragment-index="3" -->
+        ### Now let's ask ChatGPT
+        Many times... <!-- .element: class="fragment" data-fragment-index="1" -->
+        <div class="callout quiz fragment" data-fragment-index="2">
+          <span class="tag">Prediction</span><span class="time">45s</span>
+          <p class="mini">Will an LLM produce a <b>uniform</b> distribution when asked for random integers?</p>
+          <ul class="mini">
+            <li>A) Yes, it samples randomly by default</li>
+            <li>B) No, it imitates human-like patterns</li>
+            <li>C) Maybe, it always outputs the same sequence of numbers</li>
+          </ul>
+          <p class="fragment mini"><b>Answer:</b> Usually B — it often mirrors patterns.</p>
+        </div>
         ---
         <div class="r-stack">
         <img class="fragment fade-out" data-fragment-index="1" src="./img/random_gpt_paper.jpg" width="70%"> 
@@ -272,40 +480,17 @@
 
         [Dialect prejudice predicts AI decisions about people's character, employability, and criminality](https://arxiv.org/abs/2403.00742) <!-- .element: class="smaller" -->
         ---
-        ### The main enemy: bias 
-        > <!-- .element: class="fragment" data-fragment-index="1" --> "the action of supporting or opposing a particular person or thing in an unfair way, because of allowing personal opinions to influence your judgment."
-        - Bias is not always unwanted:  <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Used to perceive possible dangers by almost all animals. <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Pareidolia. <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Basis of Bayesian Statistics (degree of belief). <!-- .element: class="fragment" data-fragment-index="5" -->
-          - Bias may be essential to ML and humans for decision making. <!-- .element: class="fragment" data-fragment-index="6" -->
-
-        Note:
-        Example of noise from bush, stick vs snake. 
-
-        If we were totally bias free, we would not take decision at all! We must evaluate all possible possibilities (even the most remote ones)
-        ---
-        ### (Bad) Biases are in everyday life!
-        <div class="two-c-container" data-markdown>
-          <div class="two-c-col-l">
-
-          - Beauty bias <!-- .element: class="fragment" data-fragment-index="1" -->
-          - Halo/Horns effect <!-- .element: class="fragment" data-fragment-index="2" -->
-          - Conformity bias <!-- .element: class="fragment" data-fragment-index="3" --> 
-          - Status quo bias <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Authority bias <!-- .element: class="fragment" data-fragment-index="5" -->
-          - Idiosyncratic bias <!-- .element: class="fragment" data-fragment-index="6" -->
-          - ... <!-- .element: class="fragment" data-fragment-index="7" -->
-          </div>
-          <div class="two-c-col-r" data-markdown>
-            <img src="./img/women.png"> <!-- .element: class="fragment" data-fragment-index="8" -->
-          </div>
+        ### And even more covertly
+        <div class="callout activity">
+          <span class="tag">Class discussion</span><span class="time">60s</span>
+          <p class="mini"><b>Question:</b> If a model infers dialect, what else can it infer (region, wealth, ethnicity)?</p>
+          <p class="muted mini">This is why “removing sensitive attributes” often fails: proxies remain.</p>
         </div>
-        Note:
-        Idiosyncratic bias: occurs when managers evaluate skills they're not good at highly. Conversely, they rate others lower for skills they're great at. In other words, managers weigh their performance evaluations toward their own personal eccentricities.
         ---
-        ### (Bad) Biases are in everyday life!
-        <img src="./img/face.jpg" height="300">
+        <div class="callout takeaway">
+          <span class="tag">Takeaway</span>
+          <p class="mini">LLMs often produce “random-looking” text that is <b>statistically structured</b>—which matters for security, sampling, and evaluation.</p>
+        </div>
         ---
         <!-- .slide: data-auto-animate -->
         ### How to deal with bias
@@ -326,6 +511,28 @@
             - Computing attention to detect biases.  <!-- .element: class="fragment" data-fragment-index="6" -->  
               [Visualizing and Understanding Convolutional Networks](https://link.springer.com/chapter/10.1007/978-3-319-10590-1_53) <!-- .element: class="fragment smaller" data-fragment-index="6" -->
           - And semi-supervised learining / pseudo-labels?  <!-- .element: class="fragment" data-fragment-index="7" -->
+        ---
+        ### Checkpoint: Bias (3 min)
+        <div class="callout poll">
+          <span class="tag">Poll</span><span class="time">30s</span>
+          <p class="mini">If you must pick one for self-driving perception, what do you prioritize?</p>
+          <ul class="mini">
+            <li>A) minimize worst-case errors (tail risk)</li>
+            <li>B) maximize average accuracy</li>
+            <li>C) equalize error rates across groups</li>
+          </ul>
+          <p class="fragment mini"><b>Answer:</b> A — minimizing worst-case errors (tail risk) is more important than maximizing average accuracy.</p>
+        </div>
+        ---
+        ### Checkpoint: Bias (3 min)
+        <div class="callout activity" data-fragment-index="1">
+          <span class="tag">Pair exercise</span><span class="time">90s</span>
+          <p class="mini"><b>Design a mitigation:</b> pick one bias source (data, labels, sensors) and propose a concrete fix.</p>
+          <p class="muted mini">Share 1 idea with the room.</p>
+        </div>
+
+        Note:
+        Debrief: bias isn’t “ethics-only” — it’s a measurable safety issue (missed detections, night conditions, subgroups).
         ---
         <!-- .slide: data-auto-animate data-transition="zoom-in slide-out" -->
         Questions? <!-- .element: class="bigger" --> 
