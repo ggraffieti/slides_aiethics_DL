@@ -1,0 +1,138 @@
+<section>
+
+  ## Why AI safety?
+  <a href="https://colab.research.google.com/drive/11J0UQC42BCXhXl6pjj68m2a9oNQgqKWS?usp=sharing" target="_blank">Demo!</a>
+</section>
+<section>
+
+  We ran a clinical trial on some cancer patients, and we collected data on those who benefited from the treatment.
+
+  We want to develop an ML model that, given the data of a new patient, will predict whether the patient will benefit from the new treatment. <!-- .element: class="fragment" data-fragment-index="1" -->
+</section>
+<section>
+  
+  1. What model should I use?
+      - Classification problem -> classifier? <!-- .element: class="fragment" data-fragment-index="1" -->
+      -  Do we have all the information to trace a boundary between the two classes? <!-- .element: class="fragment" data-fragment-index="2" -->
+      - Is the information we have <i>complete</i>?</li> <!-- .element: class="fragment" data-fragment-index="3" -->
+
+  <aside class="notes">
+    Classification problem -> classifier, but I don't have complete indormation!
+    <br>
+    Discriminative models have an intrisic bias inside them for having complete information (being able to trace a boundary between the data starting from input data). 
+    <br/>
+    I dont know if I can correctly classify data with the input features I have.
+  </aside>
+</section>
+<section data-auto-animate>
+  <img src="./img/points.svg" height="400">
+</section>
+<section data-auto-animate>
+  <img src="./img/border.svg" height="400">
+
+  Ideas? <!-- .element: class="fragment" data-fragment-index="1" -->
+</section>
+<section data-auto-animate>
+  <img src="./img/distributions.svg" height="600">
+</section>
+<section data-auto-animate>
+  <img src="./img/onlyone.svg" height="500">
+
+  Examples of generative models? <!-- .element: class="fragment" data-fragment-index="1" -->
+  <aside class="notes">
+    Back to the demo
+  </aside>
+</section>
+<section>
+  
+  1. What model should I use?
+      - Classification problem -> classifier?
+      - Do we have all the information to trace a boundary between the two classes?
+      - Is the information we have <i>complete</i>?
+  2. Is the data safe to use? <!-- .element: class="fragment" data-fragment-index="1" --> 
+      - How, who, where the data is collected? <!-- .element: class="fragment" data-fragment-index="2" -->
+      - Is the data biased, inaccurate, mislabeled, imbalanced, etc? <!-- .element: class="fragment" data-fragment-index="3" -->
+      - Does the data contain private information? <!-- .element: class="fragment" data-fragment-index="4" -->
+      - Is the data physically safe? <!-- .element: class="fragment" data-fragment-index="5" --> 
+        - Is the data obtained from trusted sources? <!-- .element: class="fragment" data-fragment-index="6" -->
+        - Is the data stored safely? Is the data protected from unathorized alteration? <!-- .element: class="fragment" data-fragment-index="7" -->
+      - Does the data contains poison, backdoors, adversarial examples, etc? <!-- .element: class="fragment" data-fragment-index="8" -->
+</section>
+
+
+
+
+
+
+---
+### The main enemy: bias 
+> <!-- .element: class="fragment" data-fragment-index="1" --> "the action of supporting or opposing a particular person or thing in an unfair way, because of allowing personal opinions to influence your judgment."
+- Bias is not always unwanted:  <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Used to perceive possible dangers by almost all animals. <!-- .element: class="fragment" data-fragment-index="3" -->
+  - Pareidolia. <!-- .element: class="fragment" data-fragment-index="4" -->
+  - Basis of Bayesian Statistics (degree of belief). <!-- .element: class="fragment" data-fragment-index="5" -->
+  - Bias may be essential to ML and humans for decision making. <!-- .element: class="fragment" data-fragment-index="6" -->
+
+Note:
+Example of noise from bush, stick vs snake. 
+
+If we were totally bias free, we would not take decision at all! We must evaluate all possible possibilities (even the most remote ones)
+---
+### (Bad) Biases are in everyday life!
+<div class="two-c-container" data-markdown>
+  <div class="two-c-col-l">
+
+  - Beauty bias <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Halo/Horns effect <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Conformity bias <!-- .element: class="fragment" data-fragment-index="3" --> 
+  - Status quo bias <!-- .element: class="fragment" data-fragment-index="4" -->
+  - Authority bias <!-- .element: class="fragment" data-fragment-index="5" -->
+  - Idiosyncratic bias <!-- .element: class="fragment" data-fragment-index="6" -->
+  - ... <!-- .element: class="fragment" data-fragment-index="7" -->
+  </div>
+  <div class="two-c-col-r" data-markdown>
+    <img src="./img/women.png"> <!-- .element: class="fragment" data-fragment-index="8" -->
+  </div>
+</div>
+Note:
+Idiosyncratic bias: occurs when managers evaluate skills they're not good at highly. Conversely, they rate others lower for skills they're great at. In other words, managers weigh their performance evaluations toward their own personal eccentricities.
+---
+### (Bad) Biases are in everyday life!
+<img src="./img/face.jpg" height="300">
+---
+
+
+
+### Let's pause a bit, and think about humans now 
+- Humans are not perfect decision making machines <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Juror decision are affected by sport results  <!-- .element: class="fragment" data-fragment-index="2" -->
+    - [Emotional Judges and Unlucky Juveniles](https://www.nber.org/papers/w22611?utm_campaign=ntw&utm_medium=email&utm_source=ntw) <!-- .element: class="fragment smaller" data-fragment-index="2" -->
+  - Self-driving cars may look scary, but: <!-- .element: class="fragment" data-fragment-index="3" -->
+    - [1.19M people die every year by crashes, 1st cause of death for people under 30](https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries) <!-- .element: class="fragment smaller" data-fragment-index="3" -->
+- What about human-AI collaboration? <!-- .element: class="fragment" data-fragment-index="4" -->
+  - What if AI is right 99.999% of the time?  <!-- .element: class="fragment" data-fragment-index="5" -->
+  - What if AI is so convincing that persuade the human to take the wrong decision? <!-- .element: class="fragment" data-fragment-index="6" -->
+
+Note: 
+Example of the nerdy friends in high school who always get 10
+
+---
+<div class="r-stack"> 
+  <img src="./img/airCanada.png">
+</div>
+---
+<img src="./img/hopper.jpg" height="500">
+
+[https://futurism.com/top-google-result-edward-hopper-ai-generated-fake](https://futurism.com/top-google-result-edward-hopper-ai-generated-fake)  <!-- .element: class="fragment smaller" data-fragment-index="1" -->
+---
+<!-- .slide: data-transition="slide-in fade-out" -->
+<img src="./img/AIpersuasive.png">
+
+> "We found that participants who debated GPT-4 with access to their personal information had 81.7% higher odds of increased agreement with their opponents compared to participants who debated humans." <!-- .element: class="fragment smaller" data-fragment-index="1" -->
+
+
+
+
+
+
+

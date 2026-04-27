@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+  <title id="title">Attack surface in an autonomous driving pipeline</title>
+  <desc id="desc">End-to-end autonomous driving pipeline from data collection and labeling to training, deployment, runtime sensing, and planning/control, with highlighted attack points at each stage.</desc>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .font { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+      .h1 { font-size: 18px; font-weight: 850; fill: #ffffff; letter-spacing: 0.04em; }
+      .h2 { font-size: 14.6px; font-weight: 820; fill: #ffffff; }
+      .body { font-size: 12.2px; font-weight: 560; fill: rgba(255,255,255,0.90); }
+      .muted { font-size: 11.2px; fill: rgba(255,255,255,0.62); }
+      .card { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.18); stroke-width: 2; }
+      .stage { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.22); stroke-width: 2.2; }
+      .pill { fill: rgba(255,255,255,0.10); stroke: rgba(255,255,255,0.28); stroke-width: 2; }
+      .sep { stroke: rgba(255,255,255,0.14); stroke-width: 1.5; }
+      .arrow { stroke: rgba(255,255,255,0.70); stroke-width: 2.2; fill: none; }
+      .iconStroke { stroke: #ffffff; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+
+      .po { stroke: #fb923c; }
+      .poFill { fill: rgba(251,146,60,0.22); }
+      .ev { stroke: #ef4444; }
+      .evFill { fill: rgba(239,68,68,0.22); }
+      .pr { stroke: #44AFF6; }
+      .prFill { fill: rgba(68,175,246,0.22); }
+      .sys { stroke: #a855f7; }
+      .sysFill { fill: rgba(168,85,247,0.20); }
+    ]]></style>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(255,255,255,0.80)"/>
+    </marker>
+  </defs>
+
+  <g class="font">
+    <!-- Header -->
+    <g filter="url(#shadow)">
+      <rect class="pill" x="250" y="18" width="600" height="58" rx="14"/>
+      <text class="h1" x="550" y="50" text-anchor="middle">ATTACK SURFACE IN AUTONOMOUS DRIVING</text>
+      <text class="muted" x="550" y="68" text-anchor="middle">Attacks can target data, models, interfaces, sensors, and system integration</text>
+    </g>
+
+    <!-- Pipeline stages -->
+    <g transform="translate(40,110)" filter="url(#shadow)">
+      <!-- Stage boxes -->
+      <rect class="stage" x="0" y="0" width="170" height="72" rx="16"/>
+      <rect class="stage" x="190" y="0" width="170" height="72" rx="16"/>
+      <rect class="stage" x="380" y="0" width="170" height="72" rx="16"/>
+      <rect class="stage" x="570" y="0" width="170" height="72" rx="16"/>
+      <rect class="stage" x="760" y="0" width="170" height="72" rx="16"/>
+      <rect class="stage" x="950" y="0" width="170" height="72" rx="16"/>
+
+      <text class="h2" x="85" y="30" text-anchor="middle">Data</text>
+      <text class="muted" x="85" y="50" text-anchor="middle">collection</text>
+
+      <text class="h2" x="275" y="30" text-anchor="middle">Labeling</text>
+      <text class="muted" x="275" y="50" text-anchor="middle">+ curation</text>
+
+      <text class="h2" x="465" y="30" text-anchor="middle">Training</text>
+      <text class="muted" x="465" y="50" text-anchor="middle">+ tuning</text>
+
+      <text class="h2" x="655" y="30" text-anchor="middle">Deployment</text>
+      <text class="muted" x="655" y="50" text-anchor="middle">+ updates</text>
+
+      <text class="h2" x="845" y="30" text-anchor="middle">Runtime</text>
+      <text class="muted" x="845" y="50" text-anchor="middle">sensing</text>
+
+      <text class="h2" x="1035" y="30" text-anchor="middle">Planning</text>
+      <text class="muted" x="1035" y="50" text-anchor="middle">+ control</text>
+
+      <!-- Arrows between stages -->
+      <path class="arrow" d="M 170 36 L 190 36" marker-end="url(#arrowHead)"/>
+      <path class="arrow" d="M 360 36 L 380 36" marker-end="url(#arrowHead)"/>
+      <path class="arrow" d="M 550 36 L 570 36" marker-end="url(#arrowHead)"/>
+      <path class="arrow" d="M 740 36 L 760 36" marker-end="url(#arrowHead)"/>
+      <path class="arrow" d="M 930 36 L 950 36" marker-end="url(#arrowHead)"/>
+
+      <!-- Attack markers -->
+      <!-- Poisoning at data/label/train -->
+      <circle class="po" cx="28" cy="12" r="7" fill="rgba(251,146,60,0.28)"/>
+      <circle class="po" cx="218" cy="12" r="7" fill="rgba(251,146,60,0.28)"/>
+      <circle class="po" cx="408" cy="12" r="7" fill="rgba(251,146,60,0.28)"/>
+
+      <!-- Supply chain / backdoor at training+deployment -->
+      <circle class="sys" cx="520" cy="12" r="7" fill="rgba(168,85,247,0.24)"/>
+      <circle class="sys" cx="710" cy="12" r="7" fill="rgba(168,85,247,0.24)"/>
+
+      <!-- Evasion / physical at runtime -->
+      <circle class="ev" cx="788" cy="12" r="7" fill="rgba(239,68,68,0.28)"/>
+      <circle class="ev" cx="902" cy="12" r="7" fill="rgba(239,68,68,0.28)"/>
+
+      <!-- Privacy/extraction at runtime interface -->
+      <circle class="pr" cx="872" cy="60" r="7" fill="rgba(68,175,246,0.28)"/>
+    </g>
+
+    <!-- Runtime stack -->
+    <g transform="translate(120,225)">
+      <rect class="card" x="0" y="0" width="860" height="140" rx="18" filter="url(#shadow)"/>
+      <text class="h2" x="24" y="32">Runtime components (simplified)</text>
+      <text class="muted" x="24" y="52">Where perception errors can propagate into unsafe actions</text>
+
+      <g transform="translate(24,74)">
+        <rect class="pill" x="0" y="0" width="250" height="46" rx="14"/>
+        <text class="body" x="125" y="28" text-anchor="middle">Perception (vision models)</text>
+        <rect class="pill" x="290" y="0" width="250" height="46" rx="14"/>
+        <text class="body" x="415" y="28" text-anchor="middle">Sensor fusion (cam/LiDAR/radar)</text>
+        <rect class="pill" x="580" y="0" width="250" height="46" rx="14"/>
+        <text class="body" x="705" y="28" text-anchor="middle">Planning &amp; control</text>
+
+        <path class="arrow" d="M 250 23 L 290 23" marker-end="url(#arrowHead)"/>
+        <path class="arrow" d="M 540 23 L 580 23" marker-end="url(#arrowHead)"/>
+      </g>
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(110,392)" filter="url(#shadow)">
+      <rect class="card" x="0" y="0" width="880" height="96" rx="18"/>
+      <text class="h2" x="24" y="32">Legend: common attack families</text>
+
+      <g transform="translate(24,48)">
+        <rect class="pill poFill" x="0" y="0" width="210" height="36" rx="999"/>
+        <text class="body" x="105" y="23" text-anchor="middle">Poisoning (training-time)</text>
+
+        <rect class="pill prFill" x="230" y="0" width="220" height="36" rx="999"/>
+        <text class="body" x="340" y="23" text-anchor="middle">Privacy / extraction (API)</text>
+
+        <rect class="pill evFill" x="470" y="0" width="180" height="36" rx="999"/>
+        <text class="body" x="560" y="23" text-anchor="middle">Evasion (inputs)</text>
+
+        <rect class="pill sysFill" x="670" y="0" width="180" height="36" rx="999"/>
+        <text class="body" x="760" y="23" text-anchor="middle">Supply chain</text>
+      </g>
+    </g>
+  </g>
+</svg>
+

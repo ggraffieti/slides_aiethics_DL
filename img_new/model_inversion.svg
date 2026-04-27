@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="250" viewBox="0 0 800 250" role="img" aria-labelledby="title desc">
+  <title id="title">Model inversion flow</title>
+  <desc id="desc">Infographic: target classifier outputs predictions, attacker optimizes to reconstruct training data.</desc>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .font { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+      .h1 { font-size: 16px; font-weight: 900; fill: #ffffff; letter-spacing: 0.02em; }
+      .node { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.18); stroke-width: 2; }
+      .model { stroke: #44AFF6; }
+      .opt { stroke: #fb923c; }
+      .danger { stroke: #ef4444; }
+      .label { font-size: 12.5px; font-weight: 800; fill: rgba(255,255,255,0.92); }
+      .muted { font-size: 11px; fill: rgba(255,255,255,0.62); }
+      .iconCircle { fill: rgba(255,255,255,0.10); stroke: rgba(255,255,255,0.75); stroke-width: 2; }
+      .iconStroke { stroke: #ffffff; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .arrow { stroke: rgba(255,255,255,0.78); stroke-width: 2.2; fill: none; }
+    ]]></style>
+    <marker id="arrowHead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="rgba(255,255,255,0.78)"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.0" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <g class="font">
+    <text class="h1" x="400" y="40" text-anchor="middle">MODEL INVERSION</text>
+
+    <g filter="url(#shadow)">
+      <!-- Target classifier -->
+      <g transform="translate(40,86)">
+        <rect class="node model" x="0" y="0" width="170" height="78" rx="16"/>
+        <g transform="translate(22,39)">
+          <circle class="iconCircle" cx="0" cy="0" r="12"/>
+          <rect x="-6" y="-6" width="12" height="12" rx="3" fill="none" stroke="#ffffff" stroke-width="2"/>
+          <path class="iconStroke" d="M -6 0 H 6"/>
+        </g>
+        <text class="label" x="110" y="38" text-anchor="middle">Target classifier</text>
+        <text class="muted" x="110" y="58" text-anchor="middle">black-box outputs</text>
+      </g>
+
+      <!-- Outputs -->
+      <g transform="translate(250,86)">
+        <rect class="node" x="0" y="0" width="170" height="78" rx="16"/>
+        <g transform="translate(22,39)">
+          <circle class="iconCircle" cx="0" cy="0" r="12"/>
+          <!-- vector bars -->
+          <path class="iconStroke" d="M -6 6 V -2 M 0 6 V -6 M 6 6 V 2"/>
+        </g>
+        <text class="label" x="110" y="38" text-anchor="middle">Predictions</text>
+        <text class="muted" x="110" y="58" text-anchor="middle">probability vector</text>
+      </g>
+
+      <!-- Optimization -->
+      <g transform="translate(460,86)">
+        <rect class="node opt" x="0" y="0" width="170" height="78" rx="16"/>
+        <g transform="translate(22,39)">
+          <circle class="iconCircle" cx="0" cy="0" r="12"/>
+          <!-- loop arrow -->
+          <path class="iconStroke" d="M -5 1 A 6 6 0 1 0 5 -1"/>
+          <path class="iconStroke" d="M 5 -1 L 6 -6"/>
+        </g>
+        <text class="label" x="110" y="32" text-anchor="middle">Optimization</text>
+        <text class="muted" x="110" y="52" text-anchor="middle">search / StyleGAN</text>
+      </g>
+
+      <!-- Reconstructed -->
+      <g transform="translate(670,70)">
+        <rect class="node danger" x="0" y="0" width="110" height="110" rx="16"/>
+        <g transform="translate(55,40)">
+          <circle class="iconCircle" cx="0" cy="0" r="12"/>
+          <!-- face placeholder -->
+          <circle cx="0" cy="8" r="12" fill="none" stroke="#ffffff" stroke-width="2"/>
+          <circle cx="-4" cy="6" r="1.6" fill="#ffffff"/>
+          <circle cx="4" cy="6" r="1.6" fill="#ffffff"/>
+        </g>
+        <text class="label" x="55" y="82" text-anchor="middle">Reconstructed</text>
+        <text class="muted" x="55" y="102" text-anchor="middle">training data</text>
+      </g>
+
+      <!-- Arrows -->
+      <path class="arrow" d="M 210 125 H 250" marker-end="url(#arrowHead)"/>
+      <path class="arrow" d="M 420 125 H 460" marker-end="url(#arrowHead)"/>
+      <path class="arrow" d="M 630 125 H 670" marker-end="url(#arrowHead)"/>
+    </g>
+  </g>
+</svg>

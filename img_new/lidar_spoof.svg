@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="300" viewBox="0 0 800 300" role="img" aria-labelledby="title desc">
+  <title id="title">LiDAR spoofing: phantom points</title>
+  <desc id="desc">Before/after point cloud infographic: clean point cloud vs spoofed point cloud with injected phantom obstacle cluster.</desc>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .font { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+      .h1 { font-size: 16px; font-weight: 900; fill: #ffffff; letter-spacing: 0.02em; }
+      .panel { fill: rgba(255,255,255,0.05); stroke: rgba(255,255,255,0.16); stroke-width: 2; }
+      .frame { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.14); stroke-width: 2; }
+      .label { font-size: 12px; font-weight: 800; fill: rgba(255,255,255,0.92); }
+      .muted { font-size: 11px; fill: rgba(255,255,255,0.62); }
+      .arrow { stroke: rgba(255,255,255,0.78); stroke-width: 2.2; fill: none; }
+      .good { stroke: rgba(34,197,94,0.95); }
+      .bad { stroke: rgba(239,68,68,0.95); }
+    ]]></style>
+    <marker id="arrowHead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="rgba(255,255,255,0.78)"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.0" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <g class="font">
+    <text class="h1" x="400" y="40" text-anchor="middle">LiDAR SPOOFING (PHANTOM POINTS)</text>
+
+    <!-- Left panel -->
+    <g transform="translate(50,70)" filter="url(#shadow)">
+      <rect class="panel" x="0" y="0" width="300" height="200" rx="18"/>
+      <text class="label" x="20" y="30">Clean point cloud</text>
+      <rect class="frame" x="20" y="44" width="260" height="136" rx="14"/>
+
+      <!-- point cloud dots -->
+      <g fill="rgba(255,255,255,0.45)">
+        <circle cx="60" cy="160" r="1.6"/><circle cx="78" cy="150" r="1.4"/><circle cx="95" cy="155" r="1.2"/>
+        <circle cx="120" cy="148" r="1.4"/><circle cx="145" cy="152" r="1.2"/><circle cx="165" cy="158" r="1.4"/>
+        <circle cx="195" cy="150" r="1.2"/><circle cx="210" cy="156" r="1.4"/><circle cx="232" cy="152" r="1.2"/>
+        <circle cx="70" cy="120" r="1.2"/><circle cx="92" cy="112" r="1.2"/><circle cx="112" cy="118" r="1.0"/>
+        <circle cx="190" cy="120" r="1.2"/><circle cx="210" cy="114" r="1.2"/><circle cx="235" cy="118" r="1.0"/>
+      </g>
+
+      <!-- real obstacle cluster -->
+      <g fill="rgba(68,175,246,0.75)">
+        <circle cx="150" cy="120" r="2.0"/><circle cx="158" cy="116" r="1.8"/><circle cx="162" cy="124" r="1.8"/>
+        <circle cx="146" cy="126" r="1.6"/><circle cx="155" cy="130" r="1.6"/><circle cx="168" cy="120" r="1.6"/>
+      </g>
+      <rect x="132" y="106" width="48" height="38" rx="10" fill="none" class="good" stroke-width="2.5"/>
+      <text class="muted" x="156" y="100" text-anchor="middle" fill="rgba(255,255,255,0.80)">car</text>
+    </g>
+
+    <!-- Arrow -->
+    <path class="arrow" d="M 380 170 H 420" marker-end="url(#arrowHead)"/>
+
+    <!-- Right panel -->
+    <g transform="translate(450,70)" filter="url(#shadow)">
+      <rect class="panel" x="0" y="0" width="300" height="200" rx="18"/>
+      <text class="label" x="20" y="30">Spoofed point cloud</text>
+      <rect class="frame" x="20" y="44" width="260" height="136" rx="14"/>
+
+      <!-- baseline dots -->
+      <g fill="rgba(255,255,255,0.45)">
+        <circle cx="60" cy="160" r="1.6"/><circle cx="78" cy="150" r="1.4"/><circle cx="95" cy="155" r="1.2"/>
+        <circle cx="120" cy="148" r="1.4"/><circle cx="145" cy="152" r="1.2"/><circle cx="165" cy="158" r="1.4"/>
+        <circle cx="195" cy="150" r="1.2"/><circle cx="210" cy="156" r="1.4"/><circle cx="232" cy="152" r="1.2"/>
+        <circle cx="70" cy="120" r="1.2"/><circle cx="92" cy="112" r="1.2"/><circle cx="112" cy="118" r="1.0"/>
+        <circle cx="190" cy="120" r="1.2"/><circle cx="210" cy="114" r="1.2"/><circle cx="235" cy="118" r="1.0"/>
+      </g>
+
+      <!-- real obstacle cluster -->
+      <g fill="rgba(68,175,246,0.75)">
+        <circle cx="150" cy="120" r="2.0"/><circle cx="158" cy="116" r="1.8"/><circle cx="162" cy="124" r="1.8"/>
+        <circle cx="146" cy="126" r="1.6"/><circle cx="155" cy="130" r="1.6"/><circle cx="168" cy="120" r="1.6"/>
+      </g>
+      <rect x="132" y="106" width="48" height="38" rx="10" fill="none" class="good" stroke-width="2.5"/>
+
+      <!-- injected phantom cluster -->
+      <g fill="rgba(239,68,68,0.85)">
+        <circle cx="210" cy="96" r="2.0"/><circle cx="220" cy="90" r="1.8"/><circle cx="228" cy="98" r="1.8"/>
+        <circle cx="214" cy="104" r="1.6"/><circle cx="224" cy="106" r="1.6"/><circle cx="236" cy="94" r="1.6"/>
+      </g>
+      <rect x="196" y="82" width="58" height="44" rx="10" fill="none" class="bad" stroke-width="2.8"/>
+      <text class="muted" x="225" y="78" text-anchor="middle" fill="rgba(255,255,255,0.80)">phantom</text>
+    </g>
+  </g>
+</svg>
