@@ -28,6 +28,9 @@
 .reveal ul ul {
   list-style-type: "▶  ";
 }
+.sec-smaller {
+  font-size: 0.9em;
+}
 .smaller {
   font-size: 0.7em;
 }

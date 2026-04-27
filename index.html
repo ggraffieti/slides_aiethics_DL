@@ -896,6 +896,9 @@
           </ul>
         </div>
         ---
+        <!-- ============================================================ -->
+        <!-- SECTION 8: COUNTERMEASURES                                   -->
+        <!-- ============================================================ -->
         ## How to Build Safe AI
         ---
         ### The long and winding road
@@ -909,21 +912,181 @@
           - Mind that every phase of AI development is important to the overall safety! <!-- .element: class="fragment" data-fragment-index="8" -->
             - From design to data acqusition, to development to end of life! <!-- .element: class="fragment" data-fragment-index="9" -->
         ---
-        ### How to Improve Safety of AIs
-        - <!-- .element: class="fragment" data-fragment-index="1" --> If it's possible use explainable AI models <span class="fragment" data-fragment-index="2">(spoiler: often not possible).</span> 
-        - <!-- .element: class="fragment" data-fragment-index="3" --> Use at least 2 <u>totally different</u> AI models in safety critical applications. 
-          - Different data used to train them, different model architectures, different outputs, etc.  <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Validate the output of each of them with one another.   <!-- .element: class="fragment" data-fragment-index="5" -->
-        - Simulate before deploying.  <!-- .element: class="fragment" data-fragment-index="6" -->
+        ### How to Improve Safety of AI
+        - <!-- .element: class="fragment" data-fragment-index="1" --> If it's possible <u>use explainable AI models</u> <span class="fragment" data-fragment-index="2">(spoiler: often not possible).</span> 
+        - <!-- .element: class="fragment" data-fragment-index="3" --> Use <u>majority voting</u> or <u>models ensemble</u> in safety critical applications.
+          - Different data used to train them, different model architectures, different inputs, etc.  <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Current trend → multi-model distillation.   <!-- .element: class="fragment" data-fragment-index="5" -->
+        - <!-- .element: class="fragment" data-fragment-index="6" --> <u>Simulate</u> before deploying.  
           - Use simulations or simulated data to test the behavior of the model, especially in corner cases.  <!-- .element: class="fragment" data-fragment-index="7" -->
-          - If possile use human actions/decision to calibrate the model.   <!-- .element: class="fragment" data-fragment-index="8" -->
-        - Use adversarial models to find out flaws, biases and backdoors in the model.  <!-- .element: class="fragment" data-fragment-index="9" -->
-        - Explore model attention to understand possible biases.  <!-- .element: class="fragment" data-fragment-index="10" -->
+          - If possile use human to calibrate the model → alignment.   <!-- .element: class="fragment" data-fragment-index="8" -->
+        - <!-- .element: class="fragment" data-fragment-index="9" --> <u>Use adversarial models</u> to find out flaws, biases and backdoors in the model.  
+        - <!-- .element: class="fragment" data-fragment-index="10" --> <u>Explore model attention</u> to understand possible biases.
+        - <!-- .element: class="fragment" data-fragment-index="11" --> <u>Follow norms and guidelines</u> (e.g. ISO/PAS 8800) for AD.
 
         Note: 
-        2 models -> example amba-aur
+        2 models -> example amba double stack
 
         simulation -> self driving car system active but without control, to check with the driver decision real time. 
+        ---
+        <section>
+          <h3>AI safety as a process</h3>
+          <ul>
+            <li>The safety of an AI system is not only a matter of designing and training the model:</li>
+            <ul>
+              <li class="fragment data-fragment-index=1">How the data is collecter, stored, accessed, etc.</li>
+              <li class="fragment data-fragment-index=2">How the train/validation/testing set are built.</li>
+              <li class="fragment data-fragment-index=3">Design choices (discriminative vs generative, white/grey/black box, etc.).</li>
+              <li class="fragment data-fragment-index=4">How the training is performed, how the model is evaluated, etc.</li>
+              <li class="fragment data-fragment-index=5">Where and how the model is deployed.</li>
+              <li class="fragment data-fragment-index=6">Who can access the model and how.</li>
+              <li class="fragment data-fragment-index=7">Ability to detect and react to security incidents.</li>
+            </ul>
+            <li class="fragment data-fragment-index=8">MLSecOps as an emerging trend and more and more requested figure.</li>
+          </ul>
+
+          <br>
+          <br>
+          <p class="fragment data-fragment-index=9">Slide down for more ⤵️</p>
+        </section>
+        <section>
+          <h3>MLSecOps / AI SafetyOps</h3>
+          <ul>
+            <li class="fragment data-fragment-index=1" >Safety is not a one-time checklist — it's a pipeline:</li>
+            <ul>
+              <li class="fragment data-fragment-index=2">Versioned <b>data</b> and <b>models</b></li>
+              <li class="fragment data-fragment-index=3">Automated evaluation gates (before release)</li>
+              <li class="fragment data-fragment-index=4">Secure artifacts and supply chain controls</li>
+              <li class="fragment data-fragment-index=5">Monitoring + incident response (after release)</li>
+            </ul>
+            <li class="fragment data-fragment-index=6">Data Lineage and Governance</li>
+            <ul>
+              <li class="fragment data-fragment-index=7">Dataset versioning (what changed, when, and why?)</li>
+              <li class="fragment data-fragment-index=8">Provenance: source, licensing, and consent (especially for web-scale data)</li>
+              <li class="fragment data-fragment-index=9">Labeling guidelines + audits (reduce silent label noise)</li>
+              <li class="fragment data-fragment-index=10">Access control + checksums (tamper-evidence)</li>
+            </ul>
+          </ul>
+        </section>
+        <section>
+          <h3>Model Registry & Artifact Security</h3>
+          <ul>
+            <li class="fragment data-fragment-index=1" >Treat models as <b>code artifacts</b> (they can carry malware or backdoors)</li>
+            <li class="fragment data-fragment-index=2">Prefer safe formats (e.g., <b>safetensors</b> vs unsafe pickle)</li>
+            <li class="fragment data-fragment-index=3">Sign + hash models + track SBOM-like metadata for ML assets</li>
+            <li class="fragment data-fragment-index=4">Scan third-party models before use → sandbox model loading</li>
+          </ul>
+        </section>
+        <section>
+          <h3>MLSecOps during development and deployment</h3>
+          <ul>
+            <li class="fragment data-fragment-index=1" >Evaluation Gates (Development)</li>
+            <ul>
+              <li class="fragment data-fragment-index=2"> Accuracy is necessary but not sufficient — test the <b>tail</b> and the <b>worst case</b></li>
+              <li class="fragment data-fragment-index=3">Robustness: adversarial, corruption, OOD, real-world stress tests</li>
+              <li class="fragment data-fragment-index=4">Privacy: membership inference / inversion risk checks</li>
+              <li class="fragment data-fragment-index=5">Safety: scenario simulation + red-team playbooks</li>
+            </ul>
+            <li class="fragment data-fragment-index=6">Deployment Controls (Reduce Blast Radius)</li>
+            <ul>
+              <li class="fragment data-fragment-index=7">Canary releases + staged rollout</li>
+              <li class="fragment data-fragment-index=8">Fast rollback (model registry + pinned dependencies)</li>
+              <li class="fragment data-fragment-index=9">Rate limits and abuse detection (prevents extraction / DoS</li>
+              <li class="fragment data-fragment-index=10">Human override / safe-state fallbacks in safety-critical systems</li>
+            </ul>
+          </ul>
+        </section>
+        <section>
+          <h3>MLSecOps after deployment</h3>
+          <ul>
+            <li class="fragment data-fragment-index=1" >Monitoring (Post-Deployment)</li>
+            <ul>
+              <li class="fragment data-fragment-index=2">Data drift + concept drift detection</li>
+              <li class="fragment data-fragment-index=3">Safety KPIs: e.g. for AD: near-misses, disengagements, false braking events, etc.</li>
+              <ul>
+                <li class="fragment data-fragment-index=4">When our cars are in autonomous mode ~30-40GB/min of registered data.</li>
+              </ul>
+              <li class="fragment data-fragment-index=5">Security KPIs: prompt injection attempts, tool-abuse signals, anomalous query patternss</li>
+            </ul>
+            <li class="fragment data-fragment-index=6">Incident Response for AI Systems</li>
+            <ul>
+              <li class="fragment data-fragment-index=7">Detect → contain → eradicate → recover (classic IR)</li>
+              <li class="fragment data-fragment-index=8">Preserve evidence (logs, model versions, prompts, retrieved docs)</li>
+              <li class="fragment data-fragment-index=9">Patch: data filters, tool isolation, model updates, policy changes </li>
+              <li class="fragment data-fragment-index=10">Postmortems + regression tests so the same failure can't recur silently in subsequent versions</li>
+            </ul>
+          </ul>
+        </section>
+        <section class="sec-smaller">
+          <h3>Some examples</h3>
+          <ul>
+            <li class="fragment data-fragment-index=1" >Differential Privacy</li>
+            <ul>
+              <li class="fragment data-fragment-index=2">Add <b>calibrated noise</b> to protect individual data points during training.</li>
+              <ul>
+                <li class="fragment data-fragment-index=3"><b>DP-SGD</b>: differentially private stochastic gradient descent.</li>
+              </ul>
+              <li class="fragment data-fragment-index=4">Trade-off: privacy vs. model accuracy.</li>
+            </ul>
+            <li class="fragment data-fragment-index=5">Hardware (sensors) Redundancy and Fusion</li>
+            <ul>
+              <li class="fragment data-fragment-index=6">If possble use multiple and totally different sensor types: camera, radar, LiDAR, ultrasonics.</li>
+              <li class="fragment data-fragment-index=7">Cross-validation between sensors (e.g. same object seen by cameras and lidars).</li>
+              <li class="fragment data-fragment-index=8">Preserve evidence (logs, model versions, prompts, retrieved docs)</li>
+              <li class="fragment data-fragment-index=9">Radar may sees phantom object but camera doesn't → system can reason about it.</li>
+              <li class="fragment data-fragment-index=10">Analogy to the "2 different AI models" principle applied to hardware.</li>
+            </ul>
+          </ul>
+          
+          <br>
+          <br>
+          <div class="smaller fragment data-fragment-index=11">
+            <a href="https://dl.acm.org/doi/10.1145/2976749.2978318" target="_blank">DP-SDG original paper</a> 
+          </div>
+        </section>
+        <section class="sec-smaller">
+          <h3>Some examples (cont.)</h3>
+          <ul>
+            <li class="fragment data-fragment-index=1">AI Alignment</li>
+            <ul>
+              <li class="fragment data-fragment-index=2">The alignment problem: ensuring AI systems pursue <b>intended</b> human goals</li>
+              <li class="fragment data-fragment-index=3"><b>RLHF</b> (Reinforcement Learning from Human Feedback): trains reward models on human preferences.</li>
+              <li class="fragment data-fragment-index=4"><b>Constitutional AI</b> AI self-critique against explicit ethical principles.</li>
+              <li class="fragment data-fragment-index=5">It is not simple to align agents: e.g. in AD → minimize travel time vs. maximize safety vs. passenger comfort.</li>
+            </ul>
+            <li class="fragment data-fragment-index=6">Model Watermarking</li>
+            <ul>
+              <li class="fragment data-fragment-index=7">Detect AI-generated content and protect model from third-parties distillation.</li>
+              <li class="fragment data-fragment-index=8"><b>InvisMark</b> invisible watermarks for AI images, 97% bit accuracy under distortions.</li>
+              <li class="fragment data-fragment-index=9"><b>LLM watermarks</b> embed signatures in model's latent space.</li>
+            </ul>
+          </ul>
+          
+          <br>
+          <br>
+          <div class="smaller fragment data-fragment-index=10">
+            <a href="https://arxiv.org/abs/1706.03741" target="_blank">RLHF original paper</a> · <a href="https://proceedings.neurips.cc/paper/2020/hash/1f89885d556929e98d3ef9b86448f951-Abstract.html" target="_blank">modern RLHF </a> · <a href="https://arxiv.org/pdf/2212.08073" target="_blank">Constitutional AI paper</a> · <a href="https://mbrenndoerfer.com/writing/constitutional-ai-principles-critique-revision-cai-training" target="_blank">Constitutional AI blogpost</a> · <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Xu_InvisMark_Invisible_and_Robust_Watermarking_for_AI-Generated_Image_Provenance_WACV_2025_paper.pdf">InvisMark paper</a> · <a href="https://proceedings.mlr.press/v202/kirchenbauer23a.html">LLM watermarks</a> 
+          </div>
+        </section>
+        <section>
+          <h3>AI Red Teaming</h3>
+          <ul>
+            <li class="fragment data-fragment-index=1"><b>NIST AI RMF</b> framework: red-teaming as organizational governance requirement.</li>
+            <li class="fragment data-fragment-index=2">Diverse teams: technical AI security + domain expertise + ethical perspectives.</li>
+            <li class="fragment data-fragment-index=3">Separate team from development: red teamining is useless if the same people who developed AI also try to break it.</li>
+            <li class="fragment data-fragment-index=3"><b>Continuous</b> testing, not one-shot. Must evolve as attacks evolve.</li>
+            <li class="fragment data-fragment-index=4">At vislab: simulating critical conditions (sun glare, heavy rain, unusual pedestrian behavior, unusial car behavior, etc.)</li>
+            <ul>
+              <li class="fragment data-fragment-index=5"><b>Note:</b> not all simulators can be used! Only simulators with <b>certified</b> sensors and vehicle behavior simulation are accepted!</li>
+            </ul>
+          </ul>
+
+          <br>
+          <br>
+          <div class="smaller fragment data-fragment-index=10">
+            <a href="https://www.nist.gov/blogs/caisi-research-blog/insights-ai-agent-security-large-scale-red-teaming-competition" target="_blank">NIST CAISI</a>
+          </div>
+        </section>
         ---
         ### How to Improve Safety of AIS - ISO/PAS 8800
         - Standard ISO that regulates "Road vehicles — Safety and Artificial Intelligence".  <!-- .element: class="fragment" data-fragment-index="1" -->
