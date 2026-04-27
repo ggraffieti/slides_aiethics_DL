@@ -827,10 +827,28 @@
         ---
         ### Model inversion
         - Using the AI model outputs to infer parameters, architecture, and even the data it was trained on.  <!-- .element: class="fragment" data-fragment-index="1" -->
-        - Access to the model internal structure is not necessary. <!-- .element: class="fragment" data-fragment-index="2" -->
-        - Methods are mainly divided into:  <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Query-based: using specifically crafted input to produce model output that reveals information about model structure and parameters.  <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Membership inference attack: given a specific input, determine if a similar input was used in training just by analyzing the output.  <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Also used to "distill" a model from a publicly available AI API. <!-- .element: class="fragment" data-fragment-index="2""-->
+        - Access to the model internal structure is not necessary. <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Methods are mainly divided into:  <!-- .element: class="fragment" data-fragment-index="4" -->
+          - Query-based: using specifically crafted input to produce model output that reveals information about model structure and parameters.  <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Membership inference attack: given a specific input, determine if a similar input was used in training just by analyzing the output.  <!-- .element: class="fragment" data-fragment-index="6" -->
+
+        <br/>
+        <br/>
+        <div class="smaller fragment" data-fragment-index="7">
+          <a href="https://www.winston.com/en/insights-news/is-ai-distillation-by-deepseek-ip-theft" target="_blank">Winston&Strawn</a>
+        </div>
+        ---
+        ### Model Extraction
+        - Step-by-step: <!-- .element: class="fragment" data-fragment-index="1" -->
+          1. Find the inference API endpoint. <!-- .element: class="fragment" data-fragment-index="2" -->
+          2. Query with crafted inputs. <!-- .element: class="fragment" data-fragment-index="3" -->
+          3. Collect input-output pairs (shadow dataset). <!-- .element: class="fragment" data-fragment-index="4" -->
+          4. Train a clone model. <!-- .element: class="fragment" data-fragment-index="5" -->
+          5. <!-- .element: class="fragment" data-fragment-index="6" --> Achieve <b>95%</b> fidelity. 
+        - <!-- .element: class="fragment" data-fragment-index="7" --> Cost: <b>$500-5,000</b>. Time: <b>1-2 weeks</b>. 
+
+        [Praetorian](https://www.praetorian.com/blog/stealing-ai-models-through-the-api-a-practical-model-extraction-attack/) <!-- .element: class="smaller fragment" data-fragment-index="8" -->
         ---
         ### Membership attack
         <img src="./img/gptprivacy.png" height="150">
@@ -840,6 +858,43 @@
         Why be worried by chatGPT trained with private data? 
 
         Because it can be reconstructed!
+        ---
+        ### Other issues
+        - Deepfakes
+          - <!-- .element: class="fragment" data-fragment-index="1" --> Context: FBI IC3 reported <b>$16.6B</b> in US internet-crime losses in 2024. 
+          - Deepfakes video/voice lower the cost of impersonation and scale social engineering. <!-- .element: class="fragment" data-fragment-index="2" -->
+        - Hallucinations <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Models generate data that is realistic but wrong or fabricated. <!-- .element: class="fragment" data-fragment-index="4" -->
+            -  Incorrect recollection of training data. <!-- .element: class="fragment" data-fragment-index="5" -->
+            -  Incorrect knowledge in training data. <!-- .element: class="fragment" data-fragment-index="6" -->
+            -  Pure fabrication (no basis in training data). <!-- .element: class="fragment" data-fragment-index="7" -->
+          - <!-- .element: class="fragment" data-fragment-index="8" --> Even best models hallucinate <b>3-86%</b> depending on the task. 
+
+        <br/>
+        <br/>
+        <div class="smaller fragment" data-fragment-index="9">
+          <a href="https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf" target="_blank">FBI IC2 report</a> · <a href="https://aclanthology.org/2025.acl-long.71/" target="_blank">HALoGEN, ACL 2025</a>
+        </div>
+        ---
+        <div class="callout activity">
+          <span class="tag">Discussion</span><span class="time">60s</span>
+          <p class="mini"><b>Human-AI collaboration failure mode:</b> when should a human trust the model vs. override it?</p>
+          <ul class="mini">
+            <li>What signals increase trust incorrectly (fluency, confidence)?</li>
+            <li>What signals should drive override (models disagreement, uncertainty, OOD)?</li>
+          </ul>
+        </div>
+        ---
+        <!-- .slide: data-transition="slide-in fade-out" -->
+        <div class="callout activity">
+          <span class="tag">Class prompt</span><span class="time">60s</span>
+          <p class="mini"><b>Persuasion risk:</b> how should we handle AI that is optimized to convince?</p>
+          <ul class="mini">
+            <li>What guardrails do we need in high-stakes settings?</li>
+            <li>What decisions AI may take without human intervention?</li>
+            <li>What are the risks of AIs that always agree with us?</li>
+          </ul>
+        </div>
         ---
         ## How to Build Safe AI
         ---
