@@ -101,7 +101,7 @@
         - What we want? <!-- .element: class="fragment" data-fragment-index="5" -->
           - You! <!-- .element: class="fragment" data-fragment-index="6" -->
           - Opening for thesis, PhD, jobs! <!-- .element: class="fragment" data-fragment-index="7" -->
-          - If you are interested, contact me or <!-- .element: class="fragment" data-fragment-index="8" -->
+          - If you are interested, contact [me](mailto:ggraffieti@ambarella.com) or <!-- .element: class="fragment" data-fragment-index="8" -->
             - [careers-it@ambarella.com](mailto:careers@ambarella.com) <!-- .element: class="fragment" data-fragment-index="8" -->
             - [enascimbeni@ambarella.com](mailto:enascimbeni@ambarella.com) <!-- .element: class="fragment" data-fragment-index="8" -->
         ---
@@ -138,6 +138,9 @@
         - An Introduction to Countermeasures. <!-- .element: class="fragment" data-fragment-index="12" -->
           - ISO/PAS 8800. <!-- .element: class="fragment" data-fragment-index="13" -->
         ---
+        <!-- ============================================================ -->
+        <!-- SECTION 2: WHY AI SAFETY                                     -->
+        <!-- ============================================================ -->
         ### Quick warm-up (60s)
         <div class="callout poll">
           <span class="tag">Poll</span><span class="time">30s</span>
@@ -148,40 +151,28 @@
             <li>internship / work</li>
           </ul>
         </div>
-        <div class="callout activity" style="margin-top:0.6em">
+        <div class="callout activity fragment" style="margin-top:0.6em" data-fragment-index="1">
           <span class="tag">Think</span><span class="time">30s</span>
           <p class="mini">What is the <b>most fragile</b> part of an ML system: data, model, deployment, or humans/process?</p>
         </div>
         ---
-        <!-- ============================================================ -->
-        <!-- SECTION 2: WHY AI SAFETY                                     -->
-        <!-- ============================================================ -->
-        ## Why AI safety and not AI ethics?
-        - The ethical aspects and challenges of AI are now almost common knowledge. <!-- .element: class="fragment" data-fragment-index="1" -->
-        - The misuse or criminal use of AI is well documented and well known to the general public. <!-- .element: class="fragment" data-fragment-index="2" --> 
-        - AI Safety is a pretty recent buzzword that also encompasses: <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Possible attacks on an ethically developed AI. <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Safe use of third-party AI systems (e.g., ChatGPT and similar). <!-- .element: class="fragment" data-fragment-index="5" -->
-          - Good practices for AI development (from data collection to system decommissioning). <!-- .element: class="fragment" data-fragment-index="6" -->
-          - A focus on safety—a more concrete and measurable quality than ethics. <!-- .element: class="fragment" data-fragment-index="7" -->
-        ---
-        <section>
-          <h2>Why AI safety?</h2>
-          <div class="callout quiz">
-            <span class="tag">Demo (prediction first)</span><span class="time">60s</span>
-            <p class="mini"><b>Before we run it:</b> what will happen if we add a tiny perturbation (FGSM) to an image?</p>
-            <ul class="mini">
-              <li>A) Top-1 stays stable until ε is large</li>
-              <li>B) Top-1 can flip at surprisingly small ε</li>
-              <li>C) It depends on the model and preprocessing</li>
-            </ul>
-            <p class="fragment mini"><b>Expected:</b> B/C — often flips earlier than intuition.</p>
-          </div>
+        ## Why AI safety?
+        <div class="callout quiz">
+          <span class="tag">Demo</span><span class="time">5m</span>
+          <p class="mini"><b>Before we run it:</b> what is by far the most used AI?  <span class="fragment mini" data-fragment-index="1"><b>LLMs!</b></span></p>
+          <p class="mini fragment" data-fragment-index="2">What is the largest attack surface area? How can we easily attack them?</p>
+          <ul class="mini fragment" data-fragment-index="3">
+            <li>A) Classic “jailbreaks”: directly tell the model to ignore its system rules</li>
+            <li>B) Training-time attacks: poison the dataset / fine-tune a backdoor into the weights</li>
+            <li>C) Indirect prompt injection: hide instructions inside documents the model reads (emails/PDFs/web/RAG)</li>
+            <li>D) Model theft: query the model to reconstruct weights or extract the full system prompt</li>
+          </ul>
+          <p class="fragment mini" data-fragment-index="4"><b>Answer:</b> All correct! - But C is the most viable with limited resources.</p>
+        </div>
 
-          <p class="mini" style="margin-top:0.7em">
-            Notebook: <a href="./demo_new/demo_fgsm_adversarial.ipynb" target="_blank">demo_new/demo_fgsm_adversarial.ipynb</a>
-          </p>
-        </section>
+        <p class="mini fragment" data-fragment-index="5" style="margin-top:0.7em">
+          Notebook: <a href="./demo_new/indirect_injection/demo_indirect_injection_colab.ipynb" target="_blank">demo_new/indirect_injection/demo_indirect_injection_colab.ipynb</a>
+        </p>
         ---
         <!-- ============================================================ -->
         <!-- SECTION 3: AI REGULATIONS                                    -->
@@ -189,10 +180,10 @@
         ## AI Regulations
         ---
         ### Why Regulate AI?
-        - AI is increasingly used in high-risk domains: healthcare, criminal justice, hiring, autonomous driving. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - AI is increasingly used in high-risk domains: healthcare, criminal justice, hiring, autonomous driving, etc. <!-- .element: class="fragment" data-fragment-index="1" -->
         - Most AI systems are opaque: users cannot understand why a decision was made. <!-- .element: class="fragment" data-fragment-index="2" -->
-        - AI operates across borders, but laws are national. <!-- .element: class="fragment" data-fragment-index="3" -->
-        - Without regulation, the incentive is to move fast and break things. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - AI operates across borders, local (even national) laws are useless. <!-- .element: class="fragment" data-fragment-index="3" -->
+        - Without regulation, the incentive is to move fast following only profit, without considering the risks. <!-- .element: class="fragment" data-fragment-index="4" -->
 
         Note:
         Self-driving cars are a perfect example: they cross borders, make life-or-death decisions, and use opaque deep learning models.
@@ -204,9 +195,11 @@
           - <!-- .element: class="fragment" data-fragment-index="4" --> <b>Limited risk</b>: transparency obligations, e.g. chatbots, deepfakes, etc. 
           - <!-- .element: class="fragment" data-fragment-index="5" --> <b>High risk</b>: RMS, DG, human oversight, etc.; e.g. healthcare, hiring, <i>autonomous driving</i>, etc.
           - <!-- .element: class="fragment" data-fragment-index="6" --> <b>Unacceptable risk</b>: prohibited (but with some exceptions), e.g. scoring systems, mass biometric surveillance, manipulation, etc.
+        - <!-- .element: class="fragment" data-fragment-index="7" --> Penalties: up to <b>€35M or 7%</b> global turnover (prohibited practices).
+          - <!-- .element: class="fragment" data-fragment-index="8" --> Also non monetary penalties: <b>audits</b>, product <b>recall</b>, product <b>withdrawal</b> etc. → more difficult to enforce.
         
         
-        <div class="smaller fragment" data-fragment-index="7">
+        <div class="smaller fragment" data-fragment-index="9">
           <br>
           <a href="https://commission.europa.eu/news-and-media/news/ai-act-enters-force-2024-08-01_en" target="_blank">European Commission</a> · <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/eu-ai-act-implementation-timeline" target="_blank">Implementation timeline</a> · <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng" target="_blank">EUR-Lex 2024/1689</a> 
         </div>
@@ -215,107 +208,37 @@
         Note:
         Autonomous driving requires risk management systems, data governance, human oversight, and conformity assessment under the EU AI Act.
         ---
-        ### EU AI Act - Penalties
-        | Violation | Max Fine |
-        |---|---|
-        | Prohibited AI practices | €35M or **7%** global turnover |
-        | High-risk system violations | €15M or **3%** global turnover |
-        | Incorrect information to authorities | €7.5M or **1%** global turnover |
-
-        [EUR-Lex 2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng) <!-- .element: class="smaller" -->
-
-        Note:
-        These are the highest per-category; whichever is greater applies. For startups or small companies, the fine is the lower of the two amounts.
-        ---
-        ### Global Regulatory Fragmentation
-        - <!-- .element: class="fragment" data-fragment-index="1" --> <b>EU</b>: Risk-based regulation (EU AI Act). 
-        - <!-- .element: class="fragment" data-fragment-index="2" --> <b>US</b>: Executive orders + NIST frameworks (voluntary). 
-        - <!-- .element: class="fragment" data-fragment-index="3" --> <b>China</b>: Algorithm regulation + mandatory registration. 
-        - Self-driving example: Waymo in London/UK (Europe) highlights fragmented approvals across jurisdictions (EU member states vs UK vs US). <!-- .element: class="fragment" data-fragment-index="4" -->
-
-
-        <div class="smaller fragment" data-fragment-index="7">
-          <br>
-          <a href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final" target="_blank">NIST AI 100-2 E2025</a> · <a href="https://waymo.com/waymo-in-uk" target="_blank">Waymo in the UK</a> 
-        </div>
-
-        Note:
-        The UK is not in the EU; "Europe" often implies multiple overlapping regimes (EU AI Act + member-state rules + UK-specific approvals).
-        ---
-        ### Checkpoint: Politics of regulation (3 min)
-        <div class="callout poll">
-          <span class="tag">Poll</span><span class="time">30s</span>
-          <p>Hands up: which is the <b>biggest</b> practical failure mode of AI regulation?</p>
-          <ul class="mini">
-            <li>A) Rules are unclear</li>
-            <li>B) Enforcement is weak</li>
-            <li>C) Fines are too small vs profit</li>
-            <li>D) Regulatory capture / lobbying</li>
-          </ul>
-        </div>
-        ---
-        <div class="callout activity" style="margin-top:0.6em">
-          <span class="tag">Think–Pair–Share</span><span class="time">90s</span>
-          <p class="mini"><b>Prompt:</b> “If you were designing enforcement for high-risk AI in self-driving, what would you measure and audit?”</p>
-          <ul class="mini">
-            <li>What evidence is easy to fake?</li>
-            <li>What evidence is hard to fake?</li>
-          </ul>
-        </div>
-
-        Note:
-        Facilitation: 30s hands-up → 90s pair talk → 60s quiz reveal.
-        Debrief: “Policy” is part of safety engineering: incentives + audits + measurable evidence.
-        ---
-        <!-- ============================================================ -->
-        <!-- SECTION 3b: POLITICS OF AI REGULATION                        -->
-        <!-- ============================================================ -->
-        ## The Politics of AI Regulation
-        #### Why Regulations Alone May Not Be Enough
-        ---
         ### Fines as Cost of Doing Business
         - <!-- .element: class="fragment" data-fragment-index="1" --> Big Tech paid <b>$8.2B</b> in fines in 2024. 
         - <!-- .element: class="fragment" data-fragment-index="2" --> They could cover it in <b>under 3 weeks</b> of free cash flow: 
-          - <!-- .element: class="fragment" data-fragment-index="3" --> Amazon: $57M fine = <b>< 1 day</b> 
-          - <!-- .element: class="fragment" data-fragment-index="4" --> Meta: $1.46B = <b>10 days</b> 
-          - <!-- .element: class="fragment" data-fragment-index="5" --> Google: $2.97B = <b>17 days</b> 
-        - <!-- .element: class="fragment" data-fragment-index="6" --> If expected profit > sanction, rational actors will break the rules. 
+          - <!-- .element: class="fragment" data-fragment-index="3" --> Amazon: $57M fine = <b>< 1 day</b>, Meta: $1.46B = <b>10 days</b>, Google: $2.97B = <b>17 days</b> 
+          - <!-- .element: class="fragment" data-fragment-index="6" --> If expected profit > sanction, rational actors will break the rules. 
+        - Copyright as Calculated Risk <!-- .element: class="fragment" data-fragment-index="7" -->
+          - <!-- .element: class="fragment" data-fragment-index="8" --> Anthropic: <b>$1.5B</b> settlement for training on pirated books (~$3K/book) - <b>$300B</b> valuation at the time <b>$900B+</b> now. 
+          - <!-- .element: class="fragment" data-fragment-index="9" --> OpenAI and Meta face similar lawsuits - all knowingly used "shadow libraries" (LibGen, etc.). 
+          - <!-- .element: class="fragment" data-fragment-index="10" --> The economics: train on stolen data first, settle later, <b>still profitable</b>. 
+            - <!-- .element: class="fragment" data-fragment-index="11" --> Or better: <b>profit first, settle later</b>.
+        
 
-        <div class="smaller fragment" data-fragment-index="7">
+        <div class="smaller fragment" data-fragment-index="12">
           <br>
-          <a href="https://proton.me/blog/big-tech-pays-fines-under-3-weeks" target="_blank">Proton Big Tech Fines Tracker</a> 
+          <a href="https://proton.me/blog/big-tech-pays-fines-under-3-weeks" target="_blank">Proton Big Tech Fines Tracker</a> · <a href="https://news.bloomberglaw.com/class-action/record-1-5-billion-ai-copyright-pact-sets-bar-for-openai-meta" target="_blank">Bloomberg Law</a> 
         </div>
         ---
-        ### Case Study: Clearview AI
-        - <!-- .element: class="fragment" data-fragment-index="1" --> Facial recognition company scraped <b>billions</b> of images from social media without consent. 
-        - <!-- .element: class="fragment" data-fragment-index="2" --> Received <b>$100M+</b> in EU GDPR fines (Netherlands €30.5M, France, Greece, Italy, UK). 
-        - Reports indicate Clearview disputed the decisions and enforcement across borders remains difficult. <!-- .element: class="fragment" data-fragment-index="3" -->
-        - Criminal complaint filed only in October 2025. <!-- .element: class="fragment" data-fragment-index="4" -->
+        ### Case Studies
+        - Clearview AI (US Based) <!-- .element: class="fragment" data-fragment-index="1" -->
+          - <!-- .element: class="fragment" data-fragment-index="2" --> Facial recognition company scraped <b>billions</b> of images from social media without consent. 
+          - <!-- .element: class="fragment" data-fragment-index="3" --> Received <b>€100M+</b> in EU GDPR fines across multiple countries. 
+          - <!-- .element: class="fragment" data-fragment-index="4" --> Enforcement across borders is slow/contested → fines alone don't guarantee compliance.
+        - Cruise <!-- .element: class="fragment" data-fragment-index="5" -->
+          - <!-- .element: class="fragment" data-fragment-index="6" --> Oct 2023: Cruise robotaxi struck and <b>dragged a pedestrian 20 feet</b> in San Francisco. 
+          - <!-- .element: class="fragment" data-fragment-index="7" --> Company deliberately <b>withheld the dragging video</b> from NHTSA. 
+          - <!-- .element: class="fragment" data-fragment-index="8" --> Total fines <b>< $2.5M</b> vs. <b>billions</b> in valuation. Is that a deterrent? 
+          - <!-- .element: class="fragment" data-fragment-index="9" --> But CEO and leadership forced to resign, and operations suspended → <b>non-monetary</b> levers matter more than fines.
 
-        <div class="smaller fragment" data-fragment-index="7">
+        <div class="smaller fragment" data-fragment-index="10">
           <br>
-          <a href="https://www.autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-on-clearview-because-of-illegal-data-collection-for-facial-recognition" target="_blank">Dutch DPA</a> · <a href="https://noyb.eu/en/criminal-complaint-against-facial-recognition-company-clearview-ai" target="_blank">Noyb</a> · <a href="https://www.theregister.com/2025/10/28/noyb_criminal_charges_clearview" target="_blank">The Register</a> 
-        </div>
-        ---
-        ### Case Study: Cruise Cover-Up
-        - <!-- .element: class="fragment" data-fragment-index="1" --> Oct 2023: Cruise robotaxi struck and <b>dragged a pedestrian 20 feet</b> in San Francisco. 
-        - <!-- .element: class="fragment" data-fragment-index="2" --> Company deliberately <b>withheld the dragging video</b> from NHTSA. 
-        - <!-- .element: class="fragment" data-fragment-index="3" --> Result: <span>$</span>500K criminal penalty, <span>$</span>1.5M NHTSA fine, CEO resigned, operations temporarily suspended. 
-        - <!-- .element: class="fragment" data-fragment-index="4" --> Total fines <b>< $2.5M</b> vs. <b>billions</b> in valuation. Is that a deterrent? 
-
-        <div class="smaller fragment" data-fragment-index="7">
-          <br>
-          <a href="https://www.sfgate.com/tech/article/cruise-fine-criminal-cover-up-19920343.php" target="_blank">SFGate</a> · <a href="https://www.reuters.com/business/autos-transportation/how-gms-cruise-robotaxi-tech-failures-led-it-drag-pedestrian-20-feet-2024-01-26/" target="_blank">Reuters</a> 
-        </div>
-        ---
-        ### Copyright as Calculated Risk
-        - <!-- .element: class="fragment" data-fragment-index="1" --> Anthropic: <b>$1.5B</b> settlement for training on pirated books (~$3K/book). 
-        - <!-- .element: class="fragment" data-fragment-index="2" --> OpenAI and Meta face similar lawsuits -- all knowingly used "shadow libraries" (LibGen, etc.). 
-        - <!-- .element: class="fragment" data-fragment-index="3" --> The economics: train on stolen data first, settle later, <b>still profitable</b>. 
-
-        <div class="smaller fragment" data-fragment-index="7">
-          <br>
-          <a href="https://news.bloomberglaw.com/class-action/record-1-5-billion-ai-copyright-pact-sets-bar-for-openai-meta" target="_blank">Bloomberg Law</a> 
+          <a href="https://www.autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-on-clearview-because-of-illegal-data-collection-for-facial-recognition" target="_blank">Dutch DPA</a> · <a href="https://noyb.eu/en/criminal-complaint-against-facial-recognition-company-clearview-ai" target="_blank">Noyb</a> · <a href="https://www.theregister.com/2025/10/28/noyb_criminal_charges_clearview" target="_blank">The Register</a> · <a href="https://www.sfgate.com/tech/article/cruise-fine-criminal-cover-up-19920343.php" target="_blank">SFGate</a> · <a href="https://www.reuters.com/business/autos-transportation/how-gms-cruise-robotaxi-tech-failures-led-it-drag-pedestrian-20-feet-2024-01-26/" target="_blank">Reuters</a> 
         </div>
         ---
         ### Other problems with regulations
@@ -329,7 +252,7 @@
           - <!-- .element: class="fragment" data-fragment-index="8" --> <b>36+</b> people moved from UK tech regulators/government to Big Tech firms. 
           - Former FCC Chair Ajit Pai → CEO of CTIA. <!-- .element: class="fragment" data-fragment-index="9" -->
 
-        <div class="smaller fragment" data-fragment-index="7">
+        <div class="smaller fragment" data-fragment-index="10">
           <br>
           <a href="https://corporateeurope.org/en/2025/04/eu-under-heavy-big-tech-pressure-weaken-rules-advanced-ai" target="_blank">Corporate Europe Observatory</a> · <a href="https://www.axios.com/2026/01/21/meta-big-tech-lobbying-spending-q4" target="_blank">Axios</a> · <a href="https://www.tortoisemedia.com/2025/04/03/public-officials-joining-tech-firms-raise-fears-of-unregulated-revolving-door" target="_blank">Tortoise Media</a> · <a href="https://www.nytimes.com/2026/03/30/technology/trump-states-ai-gavin-newsom-california.html" target="_blank">NY Times</a> 
         </div>
@@ -338,54 +261,26 @@
         Axios cites official US lobbying disclosures (quarterly). CEO provides EU-side reporting on lobbying pressure during AI Act / Code of Practice discussions.
         FCC = US Federal Communications Commission, CTIA = Cellular Telecommunications & Internet Association (trade association for the wireless industry).
         ---
-        <img src="./img/ceobiden.jpg" height="500px">
-
-        White House meeting on the threat of AI - May 5, 2023  <!-- .element: class="smaller" -->
-        ---
-        ### Regulations Crush Small Players
-        - Fixed compliance costs hit startups harder than incumbents (legal, audits, documentation). <!-- .element: class="fragment" data-fragment-index="1" -->
-        - <!-- .element: class="fragment" data-fragment-index="2" --> Harvard Kennedy School analysis: a 200% increase in fixed compliance costs can swing an AI startup margin from +13% to <b>-7%</b>.
-        - <!-- .element: class="fragment" data-fragment-index="3" --> Patchwork: <b>1,000+</b> AI-related bills introduced in US states in 2025 alone. 
-        - Self-driving example: safety cases + data governance can be existential for an ADS startup. <!-- .element: class="fragment" data-fragment-index="4" -->
-
-        <div class="smaller fragment" data-fragment-index="7">
-          <br>
-          <a href="https://studentreview.hks.harvard.edu/why-compliance-costs-of-ai-commercialization-maybe-holding-start-ups-back/" target="_blank">HKS Student Policy Review</a> · <a href="http://www.lawfareblog.com/article/1-000-ai-bills--time-for-congress-to-get-serious-about-preemption" target="_blank">Lawfare</a> · <a href="https://www.cato.org/commentary/ai-privacy-rules-meant-big-tech-could-hurt-small-businesses-most" target="_blank">Cato</a> 
-        </div>
-        ---
-        ### Regulations are (usually) ill-written
-        >In NY state, starting in January 2027, model makers that have revenue of over $500 million must observe strict protocols to block users from creating bioweapons, autonomous hacking tools, or AIs that potentially cause severe harm.
-
-        What about Coding agents? <!-- .element: class="fragment" data-fragment-index="1" -->
-
-        What about self-driving cars? <!-- .element: class="fragment" data-fragment-index="2" -->
-
-        <div class="smaller fragment" data-fragment-index="7">
-          <br>
-          <a href="https://www.wiley.law/alert-New-York-Finalizes-RAISE-Act-for-Frontier-AI-Models-Law-Takes-Effect-January-1-2027" target="_blank">Wiley</a> · <a href="https://www.globalpolicywatch.com/2025/12/new-york-governor-signs-frontier-ai-safety-legislation" target="_blank">Global Policy Watch</a> 
-        </div>
-        ---
-        ### Checkpoint: Regulation → Engineering reality (3 min)
-        <div class="callout activity">
-          <span class="tag">Think–Pair–Share</span><span class="time">90s</span>
-          <p class="mini"><b>Prompt:</b> “Fines are not always enforcement.” In self-driving, what <b>non-monetary</b> levers change behavior?</p>
+        ### Checkpoint: AI government (2 min)
+        <div class="callout poll">
+          <span class="tag">Hands up</span><span class="time">30s</span>
+          <p class="mini">In high-risk AI, what changes behavior most?</p>
           <ul class="mini">
-            <li>type-approval / certification gates</li>
-            <li>mandatory incident reporting + audits</li>
-            <li>recall powers / operating license suspension</li>
+            <li>A) bigger fines</li>
+            <li>B) audits + incident reporting</li>
+            <li>C) market-access controls (certification, license suspension, recalls)</li>
           </ul>
+          <p class="fragment mini"><b>Expected:</b> B/C — enforcement is evidence + access, not just money.</p>
         </div>
         ---
-        ### Checkpoint: Regulation → Engineering reality (3 min)
         <div class="callout quiz" style="margin-top:0.6em">
-          <span class="tag">Quiz</span><span class="time">60s</span>
-          <p class="mini"><b>Question:</b> A company can “ignore” fines if enforcement can’t reach them. What’s the general fix?</p>
+          <span class="tag">Discussion</span><span class="time">90s</span>
+          <p class="mini"><b>Government of AI:</b> Which world do you prefer?</p>
           <ul class="mini">
-            <li>A) Bigger fines only</li>
-            <li>B) Cross-border enforcement + market-access controls</li>
-            <li>C) Voluntary guidelines</li>
+            <li>A) <b>Highly regulated</b> AI → slower progress, fewer benefits, lower risk</li>
+            <li>B) <b>Unregulated</b> AI → maximum progress, maximum benefits… and maximum downsides</li>
           </ul>
-          <p class="fragment mini"><b>Answer:</b> B) market access + enforceable controls (plus audits/recalls).</p>
+          <p class="fragment mini"><b>Takeaway:</b> This is the core political tension: <b>precaution vs acceleration</b> — and <b>who</b> gets the benefits vs the harms.</p>
         </div>
 
         Note:
@@ -520,7 +415,7 @@
               [Visualizing and Understanding Convolutional Networks](https://link.springer.com/chapter/10.1007/978-3-319-10590-1_53) <!-- .element: class="fragment smaller" data-fragment-index="6" -->
           - What about semi-supervised learning / pseudo-labels? <!-- .element: class="fragment" data-fragment-index="7" -->
         ---
-        ### Checkpoint: Bias (3 min)
+        ### Checkpoint: Bias (5 min)
         <div class="callout poll">
           <span class="tag">Poll</span><span class="time">30s</span>
           <p class="mini">If you must pick one for self-driving perception, what do you prioritize?</p>
@@ -534,9 +429,9 @@
         ---
         ### Checkpoint: Bias (3 min)
         <div class="callout activity" data-fragment-index="1">
-          <span class="tag">Pair exercise</span><span class="time">90s</span>
-          <p class="mini"><b>Design a mitigation:</b> pick one bias source (data, labels, sensors) and propose a concrete fix.</p>
-          <p class="muted mini">Share 1 idea with the room.</p>
+          <span class="tag">Pair exercise</span><span class="time">5m</span>
+          <p class="mini"><b>Design a mitigation:</b> pick one bias that you experience (beauty, halo, conformity, authority, etc.) and think how AI can learn it. <br> Think of a possible mitigation strategy.</p>
+          <p class="muted mini">Share your idea with the room and discuss the pros and cons.</p>
         </div>
 
         Note:
@@ -588,9 +483,8 @@
           - Poisoning  <!-- .element: class="fragment" data-fragment-index="2" -->
           - Backdoor insertion <!-- .element: class="fragment" data-fragment-index="3" -->
           - Mislabeling <!-- .element: class="fragment" data-fragment-index="4" -->
-          - Deliberate model failure  <!-- .element: class="fragment" data-fragment-index="5" -->
-          - ... <!-- .element: class="fragment" data-fragment-index="6" -->
-        - Common goal: making the resulting model unusable, weak, attackable, or exploitable. <!-- .element: class="fragment" data-fragment-index="7" -->
+          - ... <!-- .element: class="fragment" data-fragment-index="5" -->
+        - Common goal: making the resulting model unusable, weak, attackable, or exploitable. <!-- .element: class="fragment" data-fragment-index="6" -->
         ---
         ### Adversarial examples - real world
         <img src="img/signs.webp">
@@ -647,22 +541,64 @@
         ### Data Poisoning
         - The data used to train a model can be slowly poisoned with biases, false information, or new data that skews the model's decisions, etc.
         - Particularly effective on large models: <!-- .element: class="fragment" data-fragment-index="1" -->
-          - They are often (sometimes even always) trained continually using online data. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - They are often trained continually using online data. <!-- .element: class="fragment" data-fragment-index="2" -->
           - Changing online data (e.g., Wikipedia articles) or inserting new poisoned data online (e.g., on social media) is easier than altering “classical” training databases. <!-- .element: class="fragment" data-fragment-index="3" -->
           - Bots can greatly spread false information or biased data on social media. <!-- .element: class="fragment" data-fragment-index="4" -->
           - Once biases/false information are inserted into a version of the model, it is extremely difficult to detect and remove them. <!-- .element: class="fragment" data-fragment-index="5" -->
         - Data poisoning can be untargeted (poisoning all models) or targeted (e.g., a company wants to poison a rival company's models). <!-- .element: class="fragment" data-fragment-index="6" -->
         ---
-        ### Data Poisoning: How It Works
-        - <!-- .element: class="fragment" data-fragment-index="1" --> <b>Label-flipping</b>: change 40% of "car" labels to "pedestrian" → model confuses cars for pedestrians. 
-          - Need access to the training dataset. <!-- .element: class="fragment" data-fragment-index="2" -->
-        - <!-- .element: class="fragment" data-fragment-index="3" --> <b>Clean-label</b>: only <b>~50</b> poisoned images needed for transfer learning attacks.
-          - No access to the training dataset, we can poison online data. <!-- .element: class="fragment" data-fragment-index="4" -->
-          - We can use bots to spread the poisoned data online. <!-- .element: class="fragment" data-fragment-index="5" -->
-          - <!-- .element: class="fragment" data-fragment-index="6" -->  E.g. <a href="https://arxiv.org/pdf/2310.13828" target="_blank">Nightshade</a>
-        - In general: <!-- .element: class="fragment" data-fragment-index="7" --> 
-          - Global accuracy stays high → hard to detect.  <!-- .element: class="fragment" data-fragment-index="8" -->
-          - Poisoned data is often indistinguishable from real data. <!-- .element: class="fragment" data-fragment-index="9" -->
+        <section>
+          <h3>Data Poisoning: How It Works</h3>
+          <ul>
+            <li class="fragment" data-fragment-index="1"><b>Label-flipping</b>: change 40% of "car" labels to "pedestrian" → model confuses cars for pedestrians.</li>
+            <ul>
+              <li class="fragment" data-fragment-index="2">Need access to the training dataset.</li>
+            </ul>
+            <li class="fragment" data-fragment-index="3"><b>Clean-label</b>: only <b>~50</b> poisoned images needed for transfer learning attacks.</li>
+            <ul>
+              <li class="fragment" data-fragment-index="4">No access to the training dataset, we can poison online data.</li>
+              <li class="fragment" data-fragment-index="5">We can use bots to spread the poisoned data online.</li>
+              <li class="fragment" data-fragment-index="6">E.g. <a href="https://arxiv.org/pdf/2310.13828" target="_blank">Nightshade</a></li>
+            </ul>
+            <li class="fragment" data-fragment-index="7">In general:</li>
+            <ul>
+              <li class="fragment" data-fragment-index="8">Global accuracy stays high → hard to detect.</li>
+              <li class="fragment" data-fragment-index="9">Poisoned data is often indistinguishable from real data.</li>
+            </ul>
+          </ul>
+        </section>
+        <section class="text-xs">
+          <h3>Nightshade</h3>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Developed to defend artists copyright against genAI models.</li>
+            <li class="fragment" data-fragment-index="2">Strenghts:</li>
+            <ul>
+              <li class="fragment" data-fragment-index="3">Few images needed to poison even a large model.</li>
+              <li class="fragment" data-fragment-index="4">Poisoned images are indistinguishable from real images.</li>
+            </ul>
+          </ul>
+
+          <br/>
+          <br/>
+
+          <h4 class="fragment" data-fragment-index="5">How it works:</h4>
+          <ul>
+            <li class="fragment" data-fragment-index="5">Take a target image $x_t$ that you want to poison (e.g. dog) and use the target model to generate an anchor image $x^a$ (e.g. cat).</li>
+            <li class="fragment" data-fragment-index="6">Use even a different feature extractor $F$ to minimize the following loss: $$ \min_\delta \text{Dist}(F(x_t + \delta), F(x^a)),\ \text{subject to} \ \delta < p  $$</li>
+            <li class="fragment" data-fragment-index="7">$x_t$ is now poisoned with $x^a$ features, and since $x^a$ was generated by the target model, the poisoned image have the maximum possible destructive power during the model training.</li>
+          </ul>
+
+        </section>
+        <section>
+        <h3>Nightshade</h3>
+
+        <img src="img/nightshade1.webp">
+        </section>
+        <section>
+        <h3>Nightshade</h3>
+
+        <img src="img/nightshade2.webp" height="500px">
+        </section>
         ---
         ### Backdoor Insertion
         - The training data is altered in order to insert a backdoor in the model. <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -698,7 +634,7 @@
         ### Reflections on Trusting Trust
         - Think about an AI model that generates code. <!-- .element: class="fragment" data-fragment-index="1" -->
         - What if this model is poisoned or contains a backdoor and outputs malicious code if a special input is provided? <!-- .element: class="fragment" data-fragment-index="2" -->
-        - <!-- .element: class="fragment" data-fragment-index="3" --> What if that input is <i>"give me the code to build another AI that generates programming code"</i>? 
+        - <!-- .element: class="fragment" data-fragment-index="3" --> What if one of the backdoors is to reproduce all the backdoors of the model if the input is simila to: <i>"write me the code to train another AI that generates programming code"</i>? 
         - <!-- .element: class="fragment" data-fragment-index="4" --> Trojan horses hidden <b>only</b> in the <s>compiled code</s> model parameters? 
         ---
          <!-- .slide: data-transition="zoom-in slide-out" -->
@@ -791,22 +727,6 @@
         <div class="smaller fragment" data-fragment-index="6">
           <a href="https://www.knostic.ai/blog/context-window-poisoning-coding-assistants" target="_blank">Knostic.ai</a> · <a href="https://arxiv.org/pdf/2503.14281" target="_blank">Storek et al.</a> · <a href="https://arxiv.org/pdf/2505.06493" target="_blank">Li et al.</a>
         </div>
-        ---
-        ### Demo (prediction first): Poisoned PDF
-        <div class="callout activity">
-          <span class="tag">Demo</span><span class="time">2 min</span>
-          <p class="mini"><b>Before uploading:</b> what do you expect the LLM to do?</p>
-          <ul class="mini">
-            <li>1) Summarize visible text only</li>
-            <li>2) Include extra “recall + link” not visible in the PDF</li>
-          </ul>
-          <p class="fragment mini"><b>Expected:</b> 2) is possible — let's see if I did a good (or bad) job 😉</p>
-          <p class="muted mini">Presenter notes: <span class="kbd">demo_new/DEMO_NOTES.md</span></p>
-        </div>
-
-        Note:
-        Run: upload demo_new/demo_indirect_injection.pdf and ask for a summary.
-        Debrief: mitigation = treat retrieved docs as untrusted, delimit/quote, sandbox tools, human-confirm actions.
         ---
         <!-- .slide: data-transition="slide-in fade-out" -->
         ### MITM via Prompt Injection
@@ -1169,7 +1089,8 @@
           - Government use of AI. 
           - Explicitly unethical use of AI (military, population control, etc.). <!-- .element: class="fragment" data-fragment-index="1" -->
           - Funny legal problems, like theft of IP, data recoverability from models, etc. <!-- .element: class="fragment" data-fragment-index="2" -->
-          - The problem of AI evaluation and metrics. <!-- .element: class="fragment" data-fragment-index="3" -->
+          - Use of resources, energy, HW sold only to AI companies, etc.  <!-- .element: class="fragment" data-fragment-index="3" -->
+          - The problem of AI evaluation and metrics. <!-- .element: class="fragment" data-fragment-index="4" -->
         ---
         <!-- .slide: data-transition="fade-in fade-out" -->
         <img data-fragment-index="10" src="./img/metric1.jpg" height="500">
