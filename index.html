@@ -28,7 +28,7 @@
         <!-- ============================================================ -->
         <section class="title-slide-lol">
         
-        ## Introduction to AI ~~Ethics~~ Safety 
+        ## Introduction to AI Safety 
         Gabriele Graffieti
         
         ---- 
@@ -81,9 +81,9 @@
         - <!-- .element: class="fragment" data-fragment-index="6" --> 2020: Fully autonomous driving demo @ CES 2020 Las Vegas. 
         - <!-- .element: class="fragment" data-fragment-index="7" --> <a href="https://www.youtube.com/watch?v=xhZfGCwU-GY">2022 onward</a>: autonomous driving L2+ to L4 in all environments with a <b>single low power chip</b> (no GPU, no high end CPU). 
         ---
-        <video src="./videos/Vislab subtitles.mp4" width="100%" controls autoplay></video>
+        <video src="./videos/Vislab subtitles.mp4" width="100%" controls></video>
         ---
-        <video src="./videos/Amba-CAT.mp4" width="100%" controls autoplay></video>
+        <video src="./videos/Amba-CAT.mp4" width="100%" controls></video>
         ---
         <section>
           <iframe width="1120" height="630" src="https://www.youtube.com/embed/x1glAcRP1TM?t=28" VQ=hd1080 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -102,9 +102,9 @@
           - Ideas → development → deployment in T=0. <!-- .element: class="fragment" data-fragment-index="2" -->
           - Both industrial & academic research. <!-- .element: class="fragment" data-fragment-index="3" -->
           - (Very) competitive salary & a lot of benefits. <!-- .element: class="fragment" data-fragment-index="4" -->
-        - What we want? <!-- .element: class="fragment" data-fragment-index="5" -->
+        - What do we want? <!-- .element: class="fragment" data-fragment-index="5" -->
           - You! <!-- .element: class="fragment" data-fragment-index="6" -->
-          - Opening for thesis, PhD, jobs! <!-- .element: class="fragment" data-fragment-index="7" -->
+          - Openings for theses, PhDs, and jobs! <!-- .element: class="fragment" data-fragment-index="7" -->
           - <!-- .element: class="fragment" data-fragment-index="8" --> If you are interested, contact <a href="mailto:ggraffieti@ambarella.com">me</a> or
             - [careers-it@ambarella.com](mailto:careers@ambarella.com) <!-- .element: class="fragment" data-fragment-index="8" -->
             - [enascimbeni@ambarella.com](mailto:enascimbeni@ambarella.com) <!-- .element: class="fragment" data-fragment-index="8" -->
@@ -137,7 +137,7 @@
         - AI under attack. <!-- .element: class="fragment" data-fragment-index="7" -->
           - Attacks on Data. <!-- .element: class="fragment" data-fragment-index="8" -->
           - Attacks on Models. <!-- .element: class="fragment" data-fragment-index="9" -->
-          - Foundational Models and Their Use. <!-- .element: class="fragment" data-fragment-index="10" -->
+          - Foundation Models and Their Use. <!-- .element: class="fragment" data-fragment-index="10" -->
         - An Introduction to Countermeasures. <!-- .element: class="fragment" data-fragment-index="11" -->
           - ISO/PAS 8800. <!-- .element: class="fragment" data-fragment-index="12" -->
         ---
@@ -162,7 +162,7 @@
         ## Why AI safety?
         <div class="callout quiz">
           <span class="tag">Demo</span><span class="time">5m</span>
-          <p class="mini"><b>Before we run it:</b> what is by far the most used AI?  <span class="fragment mini" data-fragment-index="1"><b>LLMs!</b></span></p>
+          <p class="mini"><b>Before we run it:</b> what is by far the most widely used type of AI today?  <span class="fragment mini" data-fragment-index="1"><b>LLMs!</b></span></p>
           <p class="mini fragment" data-fragment-index="2">What is the largest attack surface area? How can we easily attack them?</p>
           <ul class="mini fragment" data-fragment-index="3">
             <li>A) Classic “jailbreaks”: directly tell the model to ignore its system rules</li>
@@ -186,7 +186,7 @@
         - AI is increasingly used in high-risk domains: healthcare, criminal justice, hiring, autonomous driving, etc. <!-- .element: class="fragment" data-fragment-index="1" -->
         - Most AI systems are opaque: users cannot understand why a decision was made. <!-- .element: class="fragment" data-fragment-index="2" -->
         - AI operates across borders: local (even national) laws are useless. <!-- .element: class="fragment" data-fragment-index="3" -->
-        - Without regulation the incentive is to move fast following only profit, without considering the risks. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - Without regulation, the incentive is to move fast and maximize profit, often ignoring the risks. <!-- .element: class="fragment" data-fragment-index="4" -->
 
         Note:
         Self-driving cars are a perfect example: they cross borders, make life-or-death decisions, and use opaque deep learning models.
@@ -247,7 +247,7 @@
         ### Other problems with regulations
         - Fragmentation of AI regulations across different countries and regions. <!-- .element: class="fragment" data-fragment-index="1" -->
           - <!-- .element: class="fragment" data-fragment-index="2" --> Slows down <b>progress</b> and <b>adoption</b>.
-          - <!-- .element: class="fragment" data-fragment-index="3" --> Benefits big players that can afford to <b>comply with multiple regulations</b>.
+          - <!-- .element: class="fragment" data-fragment-index="3" --> Benefits big players who can absorb the <b>costs across multiple jurisdictions</b>.
         - Lobbying: Big Tech spends millions to influence regulations. <!-- .element: class="fragment" data-fragment-index="4" -->
           - <!-- .element: class="fragment" data-fragment-index="5" --> Meta: <b>$6.5M</b> lobbying spend in Q4 2025 alone. 
           - <!-- .element: class="fragment" data-fragment-index="6" --> Google and Microsoft lobbied to <b>remove</b> "large-scale illegal discrimination" from EU AI Act systemic risks.
@@ -315,7 +315,7 @@
           <a href="https://www.kcl.ac.uk/news/driverless-cars-worse-at-detecting-children-and-darker-skinned-pedestrians-say-scientists" target="_blank">King's College London</a> 
         </div>
         ---
-        ## Well, can we fix this, right?
+        ## We can fix this, right?
         ### How? <!-- .element: class="fragment" data-fragment-index="1" -->
         ---
         ### First, we need to detect the problem!
@@ -327,7 +327,7 @@
         Note: 
         Example of badly calibrated cameras in self-driving cars.
         ---
-        ### But what if we remove all gender, ethnicity, or unwanted information from the data?
+        ### What if we simply remove gender, ethnicity, or other sensitive attributes from the data?
         - The AI system can infer them from remaining information! <!-- .element: class="fragment" data-fragment-index="1" -->
           - Gender from height/weight ratio. <!-- .element: class="fragment" data-fragment-index="2" -->
           - Ethnicity from specific disorders.  <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -401,7 +401,7 @@
         <!-- .slide: data-auto-animate -->
         ### How to deal with bias
         - <!-- .element: class="fragment" data-fragment-index="1" --> <a href="https://www.forbes.com/councils/forbestechcouncil/2025/03/13/the-impossible-dream-why-bias-free-ai-is-a-myth">The Impossible Dream: Why Bias-Free AI Is A Myth</a>
-        - Just thinking about and documenting the possible biases that AI models may have is a great step forward (we will discuss this later). <!-- .element: class="fragment" data-fragment-index="2" -->
+        - Simply anticipating and documenting potential biases is a major step forward (we will discuss this later). <!-- .element: class="fragment" data-fragment-index="2" -->
         - Concretely: <!-- .element: class="fragment" data-fragment-index="3" -->
         ---
         <!-- .slide: data-auto-animate data-transition="slide-in fade-out" -->
@@ -481,7 +481,7 @@
         - <!-- .element: class="fragment" data-fragment-index="6" --> <b>Humans & process</b>: social engineering, policy gaps, “automation bias”
         ---
         ### Attacks on data
-        - Even if the data is formally correct, it can be attacked by (malicious) third parties in different ways:
+        - Even if the data is initially clean, it can be compromised by malicious actors in several ways:
           - Adversarial attacks (real-world or hidden) <!-- .element: class="fragment" data-fragment-index="1" -->
           - Poisoning  <!-- .element: class="fragment" data-fragment-index="2" -->
           - Backdoor insertion <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -574,7 +574,7 @@
           <h3>Nightshade</h3>
           <ul>
             <li class="fragment" data-fragment-index="1">Developed to defend artists copyright against genAI models.</li>
-            <li class="fragment" data-fragment-index="2">Strenghts:</li>
+            <li class="fragment" data-fragment-index="2">Strengths:</li>
             <ul>
               <li class="fragment" data-fragment-index="3">Few images needed to poison even a large model.</li>
               <li class="fragment" data-fragment-index="4">Poisoned images are indistinguishable from real images.</li>
@@ -588,7 +588,7 @@
           <ul>
             <li class="fragment" data-fragment-index="5">Take a target image $x_t$ that you want to poison (e.g. dog) and use the target model to generate an anchor image $x^a$ (e.g. cat).</li>
             <li class="fragment" data-fragment-index="6">Use even a different feature extractor $F$ to minimize the following loss: $$ \min_\delta \text{Dist}(F(x_t + \delta), F(x^a)),\ \text{subject to} \ \delta < p  $$</li>
-            <li class="fragment" data-fragment-index="7">$x_t$ is now poisoned with $x^a$ features, and since $x^a$ was generated by the target model, the poisoned image have the maximum possible destructive power during the model training.</li>
+            <li class="fragment" data-fragment-index="7">$x_t$ is now poisoned with $x^a$ features, and since $x^a$ was generated by the target model, the poisoned image has the maximum possible destructive power during the model training.</li>
           </ul>
 
         </section>
@@ -637,7 +637,7 @@
         ### Reflections on Trusting Trust
         - Think about an AI model that generates code. <!-- .element: class="fragment" data-fragment-index="1" -->
         - What if this model is poisoned or contains a backdoor and outputs malicious code if a special input is provided? <!-- .element: class="fragment" data-fragment-index="2" -->
-        - <!-- .element: class="fragment" data-fragment-index="3" --> What if one of the backdoors is to reproduce all the backdoors of the model if the input is simila to: <i>"write me the code to train another AI that generates programming code"</i>? 
+        - <!-- .element: class="fragment" data-fragment-index="3" --> What if one of the backdoors is to reproduce all the backdoors of the model if the input is similar to: <i>"write me the code to train another AI that generates programming code"</i>? 
         - <!-- .element: class="fragment" data-fragment-index="4" --> Trojan horses hidden <b>only</b> in the <s>compiled code</s> model parameters? 
         ---
          <!-- .slide: data-transition="zoom-in slide-out" -->
@@ -651,7 +651,7 @@
         ## Model safety
         ### Reflections on Trusting ~~Trust~~ <br/> Who Builds Models
         ---
-        ### The rise of foundational models
+        ### The rise of foundation models
         - New AI paradigm: take a general large AI model and fine-tune it to your task. 
           - 🔝 Much better performance in almost all downstream tasks.  <!-- .element: class="fragment" data-fragment-index="1" -->
           - 🔝 Required data, compute, and training time are greatly reduced. <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -665,7 +665,7 @@
         ---
         <!-- .slide: data-auto-animate -->
         ### Do you trust who trains those models?
-        - What data is used for training is undisclosed. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - The training data is often undisclosed. <!-- .element: class="fragment" data-fragment-index="1" -->
           - It's highly likely they used private data they should not have used. <!-- .element: class="fragment" data-fragment-index="2" -->
         - We don't know what kind of biases/backdoors are hidden inside the models.   <!-- .element: class="fragment" data-fragment-index="3" -->
         - The models are so big and complex that trying to discover this information is often impossible.  <!-- .element: class="fragment" data-fragment-index="4" -->
@@ -694,7 +694,7 @@
         - Prompt engineering:  <!-- .element: class="fragment" data-fragment-index="1" -->
           - Process of carefully crafting input instructions to maximize the effectiveness and relevance of outputs from GenAI models. <!-- .element: class="fragment" data-fragment-index="2" -->
         - Malicious prompt engineering: <!-- .element: class="fragment" data-fragment-index="3" -->
-          - Using specific prompts or inserting token into regular prompt to: <!-- .element: class="fragment" data-fragment-index="4" -->
+            - Using specific prompts or inserting tokens into a regular prompt to: <!-- .element: class="fragment" data-fragment-index="4" -->
             - Overwrite the user's instructions with malicious ones. <!-- .element: class="fragment" data-fragment-index="5" -->
             - Force the model to yield incorrect or wrong information. <!-- .element: class="fragment" data-fragment-index="6" -->
             - Pollute the model's context, impacting every subsequent prompt. <!-- .element: class="fragment" data-fragment-index="7" -->
@@ -719,7 +719,7 @@
         </div>
         ---
         ### Context Poisoning
-        - Nowadays, every LLM uses the prompt + the context to generate the output. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Modern LLMs rely on both the prompt and the context to generate outputs. <!-- .element: class="fragment" data-fragment-index="1" -->
         - The context is the union of past interactions, system prompts, chain of thoughts, retrieved documents/data, user profile, etc. <!-- .element: class="fragment" data-fragment-index="2" -->
           - If the context is poisoned, the model will yield incorrect or wrong information in a very subtle and hardly detectable manner. <!-- .element: class="fragment" data-fragment-index="3" -->
           - All future interactions will be affected by the poisoned context, even if the prompts are legitimate. <!-- .element: class="fragment" data-fragment-index="4" -->
@@ -821,7 +821,7 @@
         ## How to Build Safe AI
         ---
         ### The long and winding road
-        - Building a 100% safe AI is impossible and beyond our control. <!-- .element: class="fragment" data-fragment-index="1" -->
+        - Building a 100% safe AI system is practically impossible. <!-- .element: class="fragment" data-fragment-index="1" -->
           - Biases hidden in the data, bad labeling, etc. <!-- .element: class="fragment" data-fragment-index="2" -->
           - Security flaws in HDDs where the data is stored, libraries/frameworks used, etc. <!-- .element: class="fragment" data-fragment-index="3" -->
           - Adversarial examples, model inversion, flawed third-party AIs, etc. <!-- .element: class="fragment" data-fragment-index="4" -->
@@ -831,8 +831,9 @@
           - Remember that every phase of AI development is important for overall safety! <!-- .element: class="fragment" data-fragment-index="8" -->
             - From design and data acquisition, to development, to end of life! <!-- .element: class="fragment" data-fragment-index="9" -->
         ---
+        <!-- .slide: class="sec-smaller" -->
         ### How to Improve Safety of AI
-        - <!-- .element: class="fragment" data-fragment-index="1" --> If possible, <u>use explainable AI models</u> <span class="fragment" data-fragment-index="2">(spoiler: often not possible).</span> 
+        - <!-- .element: class="fragment" data-fragment-index="1" --> <u>Use inherently interpretable AI models</u> <span class="fragment" data-fragment-index="2">(spoiler: often not feasible for complex tasks).</span> 
         - <!-- .element: class="fragment" data-fragment-index="3" --> Use <u>majority voting</u> or <u>model ensembles</u> in safety-critical applications.
           - Different data are used to train them, different model architectures, different inputs, etc. <!-- .element: class="fragment" data-fragment-index="4" -->
           - Current trend → multi-model distillation.   <!-- .element: class="fragment" data-fragment-index="5" -->
@@ -847,6 +848,30 @@
         2 models -> example amba double stack
 
         simulation -> self driving car system active but without control, to check with the driver decision real time. 
+        ---
+        ### Algorithmic Defenses
+        - <!-- .element: class="fragment" data-fragment-index="1" --> <b>Adversarial Training:</b>
+          - Train the model on adversarial examples, not just clean data. <!-- .element: class="fragment" data-fragment-index="2" -->
+          - <!-- .element: class="fragment" data-fragment-index="3" --> E.g., <a href="https://arxiv.org/pdf/1706.06083" target="_blank">PGD (Projected Gradient Descent)</a> training. Formulates training as a min-max optimization problem.
+          - Trade-off: often reduces standard accuracy on clean data. <!-- .element: class="fragment" data-fragment-index="4" -->
+        - <!-- .element: class="fragment" data-fragment-index="5" --> <b>Randomized Smoothing:</b>
+          - Add Gaussian noise to the input and take the majority vote over multiple noisy samples. <!-- .element: class="fragment" data-fragment-index="6" -->
+          - Provides provable robustness guarantees in $L_2$ norm. <!-- .element: class="fragment" data-fragment-index="7" -->
+        - <!-- .element: class="fragment" data-fragment-index="8" --> <b>Certified Robustness:</b>
+          - Mathematical guarantees that no attack within a certain bound (e.g., $\epsilon$-ball) can change the model's prediction. <!-- .element: class="fragment" data-fragment-index="9" -->
+          - Very computationally expensive and hard to scale to large models (like modern LLMs or Vision Transformers). <!-- .element: class="fragment" data-fragment-index="10" -->
+        ---
+        <!-- .slide: class="sec-smaller" -->
+        ### LLM-Specific Defenses
+        - <!-- .element: class="fragment" data-fragment-index="1" --> <b>Guardrail Models:</b>
+          - <!-- .element: class="fragment" data-fragment-index="2" --> Separate, smaller models (e.g., <a href="https://www.llama.com/docs/model-cards-and-prompt-formats/llama-guard-4/" target="_blank">Llama-Guard</a>) that act as a firewall. 
+          - They classify inputs (prompts) and outputs (responses) as safe or unsafe based on predefined policies. <!-- .element: class="fragment" data-fragment-index="3" -->
+        - <!-- .element: class="fragment" data-fragment-index="4" --> <b>Perplexity Filters:</b>
+          - Many prompt injections (especially automated ones) result in text with unusually high perplexity (it looks like gibberish to the model). <!-- .element: class="fragment" data-fragment-index="5" -->
+          - Filtering out high-perplexity prompts can stop many automated attacks. <!-- .element: class="fragment" data-fragment-index="6" -->
+        - <!-- .element: class="fragment" data-fragment-index="7" --> <b>Machine Unlearning:</b>
+          - Techniques to make a trained model "forget" specific data (e.g., copyrighted material, PII, or toxic knowledge) without retraining from scratch. <!-- .element: class="fragment" data-fragment-index="8" -->
+          - Crucial for complying with "Right to be Forgotten" regulations (GDPR). <!-- .element: class="fragment" data-fragment-index="9" -->
         ---
         <section>
           <h3>AI safety as a process</h3>
@@ -916,6 +941,25 @@
           </ul>
         </section>
         <section>
+          <h3>Evaluation Metrics for Safety</h3>
+          <ul>
+            <li class="fragment" data-fragment-index="1">Accuracy is not enough! We need metrics that capture safety and robustness.</li>
+            <li class="fragment" data-fragment-index="2"><b>Robust Accuracy:</b></li>
+            <ul>
+              <li class="fragment" data-fragment-index="3">The model's accuracy when evaluated exclusively on adversarial examples or corrupted data (e.g., <a href="https://arxiv.org/pdf/1903.12261" target="_blank">ImageNet-C</a>).</li>
+            </ul>
+            <li class="fragment" data-fragment-index="4"><b>Attack Success Rate (ASR):</b></li>
+            <ul>
+              <li class="fragment" data-fragment-index="5">The percentage of times an attacker successfully forces the model to make a specific mistake (target attack) or any mistake (untargeted attack).</li>
+            </ul>
+            <li class="fragment" data-fragment-index="6"><b>Expected Calibration Error (ECE):</b></li>
+            <ul>
+              <li class="fragment" data-fragment-index="7">Measures if the model's confidence matches its actual accuracy.</li>
+              <li class="fragment" data-fragment-index="8">A safe model should be <i>uncertain</i> when it is likely to be wrong. Overconfident wrong predictions are the most dangerous!</li>
+            </ul>
+          </ul>
+        </section>
+        <section>
           <h3>MLSecOps after deployment</h3>
           <ul>
             <li class="fragment data-fragment-index=1" >Monitoring (Post-Deployment)</li>
@@ -943,7 +987,7 @@
             <ul>
               <li class="fragment data-fragment-index=2">Add <b>calibrated noise</b> to protect individual data points during training.</li>
               <ul>
-                <li class="fragment data-fragment-index=3"><b>DP-SGD</b>: differentially private stochastic gradient descent.</li>
+                <li class="fragment data-fragment-index=3"><a href="https://arxiv.org/pdf/1607.00133" target="_blank"><b>DP-SGD</b>: differentially private stochastic gradient descent.</a></li>
               </ul>
               <li class="fragment data-fragment-index=4">Trade-off: privacy vs. model accuracy.</li>
             </ul>
@@ -956,12 +1000,6 @@
               <li class="fragment data-fragment-index=10">Analogy to the "2 different AI models" principle applied to hardware.</li>
             </ul>
           </ul>
-          
-          <br>
-          <br>
-          <div class="smaller fragment data-fragment-index=11">
-            <a href="https://dl.acm.org/doi/10.1145/2976749.2978318" target="_blank">DP-SGD original paper</a> 
-          </div>
         </section>
         <section class="sec-smaller">
           <h3>Some examples (cont.)</h3>
@@ -969,22 +1007,22 @@
             <li class="fragment data-fragment-index=1">AI Alignment</li>
             <ul>
               <li class="fragment data-fragment-index=2">The alignment problem: ensuring AI systems pursue <b>intended</b> human goals</li>
-              <li class="fragment data-fragment-index=3"><b>RLHF</b> (Reinforcement Learning from Human Feedback): trains reward models on human preferences.</li>
-              <li class="fragment data-fragment-index=4"><b>Constitutional AI</b> AI self-critique against explicit ethical principles.</li>
+              <li class="fragment data-fragment-index=3"><a href="https://arxiv.org/abs/1706.03741" target="_blank"><b>RLHF</b> (Reinforcement Learning from Human Feedback)</a> trains reward models on human preferences. (<a href="https://proceedings.neurips.cc/paper/2020/hash/1f89885d556929e98d3ef9b86448f951-Abstract.html" target="_blank">modern RLHF paper</a>)</li>
+              <li class="fragment data-fragment-index=4"><a href="https://arxiv.org/pdf/2212.08073" target="_blank"><b>Constitutional AI</b></a>: AI self-critiques against explicit ethical principles.</li>
               <li class="fragment data-fragment-index=5">It is not simple to align agents: e.g. in AD → minimize travel time vs. maximize safety vs. passenger comfort.</li>
             </ul>
             <li class="fragment data-fragment-index=6">Model Watermarking</li>
             <ul>
               <li class="fragment data-fragment-index=7">Detect AI-generated content and protect model from third-parties distillation.</li>
-              <li class="fragment data-fragment-index=8"><b>InvisMark</b> invisible watermarks for AI images, 97% bit accuracy under distortions.</li>
-              <li class="fragment data-fragment-index=9"><b>LLM watermarks</b> embed signatures in model's latent space.</li>
+              <li class="fragment data-fragment-index=8"><a href="https://openaccess.thecvf.com/content/WACV2025/papers/Xu_InvisMark_Invisible_and_Robust_Watermarking_for_AI-Generated_Image_Provenance_WACV_2025_paper.pdf" target="_blank"><b>InvisMark</b></a> invisible watermarks for AI images, 97% bit accuracy under distortions.</li>
+              <li class="fragment data-fragment-index=9"><a href="https://proceedings.mlr.press/v202/kirchenbauer23a.html" target="_blank"><b>LLM watermarks</b></a> embed signatures in model's latent space.</li>
             </ul>
           </ul>
           
           <br>
           <br>
           <div class="smaller fragment data-fragment-index=10">
-            <a href="https://arxiv.org/abs/1706.03741" target="_blank">RLHF original paper</a> · <a href="https://proceedings.neurips.cc/paper/2020/hash/1f89885d556929e98d3ef9b86448f951-Abstract.html" target="_blank">modern RLHF </a> · <a href="https://arxiv.org/pdf/2212.08073" target="_blank">Constitutional AI paper</a> · <a href="https://mbrenndoerfer.com/writing/constitutional-ai-principles-critique-revision-cai-training" target="_blank">Constitutional AI blogpost</a> · <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Xu_InvisMark_Invisible_and_Robust_Watermarking_for_AI-Generated_Image_Provenance_WACV_2025_paper.pdf">InvisMark paper</a> · <a href="https://proceedings.mlr.press/v202/kirchenbauer23a.html">LLM watermarks</a> 
+            <a href="https://mbrenndoerfer.com/writing/constitutional-ai-principles-critique-revision-cai-training" target="_blank">Constitutional AI blogpost</a>
           </div>
         </section>
         <section>
@@ -992,7 +1030,7 @@
           <ul>
             <li class="fragment data-fragment-index=1"><b>NIST AI RMF</b> framework: red-teaming as organizational governance requirement.</li>
             <li class="fragment data-fragment-index=2">Diverse teams: technical AI security + domain expertise + ethical perspectives.</li>
-            <li class="fragment data-fragment-index=3">Separate team from development: red teaming is useless if the same people who developed AI also try to break it.</li>
+            <li class="fragment data-fragment-index=3">Independence from development: red teaming is ineffective if the developers are the ones trying to break their own system.</li>
             <li class="fragment data-fragment-index=3"><b>Continuous</b> testing, not one-shot. Must evolve as attacks evolve.</li>
             <li class="fragment data-fragment-index=4">At Vislab: simulating critical conditions (sun glare, heavy rain, unusual pedestrian behavior, unusual car behavior, etc.)</li>
             <ul>
@@ -1009,7 +1047,7 @@
         <section>
           <h3>How to Improve Safety of AI - ISO/PAS 8800</h3>
           <ul>
-            <li class="fragment data-fragment-index=1">Standard ISO that regulates "Road vehicles — Safety and Artificial Intelligence".</li>
+            <li class="fragment data-fragment-index=1">ISO standard that regulates "Road vehicles — Safety and Artificial Intelligence".</li>
             <li class="fragment data-fragment-index=2">Published in Dec. 2024.</li>
             <li class="fragment data-fragment-index=3">Covers all uses of AI in road vehicles, from driving-assistance technologies to ADS (another ISO standard is currently under publication for ADS only).</li>
             <li class="fragment data-fragment-index=4">Many concepts can be applied 1:1 to any safety-critical domain.</li>
@@ -1052,15 +1090,15 @@
         <section>
           <h3>ISO/PAS 8800</h3>
           <ul>
-            <li class="fragment data-fragment-index=1">For being certified ISO/PAS 8800 compliant need to satisfy all the safety requirements (or at least have a strong justification if some requirement is not satisfied).</li>
-            <li class="fragment data-fragment-index=2">But same guidelines may greatly improve all the AI ecosystem!</li>
+            <li class="fragment data-fragment-index=1">To be certified ISO/PAS 8800 compliant, a system needs to satisfy all safety requirements (or at least have a strong justification if some requirement is not satisfied).</li>
+            <li class="fragment data-fragment-index=2">However, these guidelines can greatly improve the entire AI ecosystem!</li>
             <ul>
               <li class="fragment data-fragment-index=3">There is no shame in having a (possibly) unsafe AI system!</li>
               <li class="fragment data-fragment-index=4">Just attach all the documentation and <u>clearly state</u> how the system may fail and under which conditions.</li>
               <li class="fragment data-fragment-index=5">Also include untested scenarios (e.g. I only tested my ADS in right-hand drive countries).</li>
               <li class="fragment data-fragment-index=6">Minimize the risk of misuse of AI systems by third parties.</li>
               <ul>
-                <li class="fragment data-fragment-index=7">Would you use an online AI model to evaluate CVs if it is clearly stated that it may contain biases against women, blacks, minorities, etc.?</li>
+                <li class="fragment data-fragment-index=7">Would you use an online AI model to evaluate CVs if it is clearly stated that it may contain biases against women, people of color, or other minorities?</li>
               </ul>
             </ul>
           </ul>
@@ -1132,7 +1170,7 @@
         Discussion? <!-- .element: class="bigger" --> 
         ---
         <!-- .slide: class="title-slide-lol" -->
-        ## Introduction to AI ~~Ethics~~ Safety 
+        ## Introduction to AI Safety 
         Gabriele Graffieti
         
         ---- 
