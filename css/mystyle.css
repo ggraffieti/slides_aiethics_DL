@@ -1,5 +1,7 @@
 .fragment.blur {
     filter: blur(10px);
+    font-size: 0.8em;
+    font-family: 'monospace';
   }
   .fragment.blur.visible {
     filter: none;
@@ -25,6 +27,9 @@
 }
 .reveal ul ul {
   list-style-type: "▶  ";
+}
+.sec-smaller {
+  font-size: 0.9em;
 }
 .smaller {
   font-size: 0.7em;
@@ -80,3 +85,54 @@ i {
   font-style: italic !important;
 }
 
+.callout {
+  padding: 0.8em 1em;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  text-align: left;
+}
+.callout .tag {
+  display: inline-block;
+  font-size: 0.55em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25em 0.6em;
+  border-radius: 999px;
+  border: 1.5px solid currentColor;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 0.5em;
+}
+.callout .time {
+  float: right;
+  opacity: 0.8;
+  font-size: 0.75em;
+  font-weight: 700;
+}
+.callout p { margin: 0.25em 0; }
+.callout ul { margin: 0.35em 0 0.2em 1.1em; }
+.callout li { margin: 0.2em 0; }
+
+.callout.activity { border-color: rgba(68, 175, 246, 0.9); }
+.callout.activity .tag { color: #44AFF6; background: rgba(68, 175, 246, 0.12); }
+
+.callout.poll { border-color: rgba(34, 197, 94, 0.9); }
+.callout.poll .tag { color: #22c55e; background: rgba(34, 197, 94, 0.12); }
+
+.callout.quiz { border-color: rgba(245, 158, 11, 0.95); }
+.callout.quiz .tag { color: #f59e0b; background: rgba(245, 158, 11, 0.12); }
+
+.callout.takeaway { border-color: rgba(168, 85, 247, 0.95); }
+.callout.takeaway .tag { color: #a855f7; background: rgba(168, 85, 247, 0.12); }
+
+.mini { font-size: 0.85em; }
+.muted { opacity: 0.75; }
+.kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.8em;
+  padding: 0.12em 0.35em;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+}
