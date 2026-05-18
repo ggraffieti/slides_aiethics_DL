@@ -837,12 +837,14 @@
         - <!-- .element: class="fragment" data-fragment-index="3" --> Use <u>majority voting</u> or <u>model ensembles</u> in safety-critical applications.
           - Different data are used to train them, different model architectures, different inputs, etc. <!-- .element: class="fragment" data-fragment-index="4" -->
           - Current trend → multi-model distillation.   <!-- .element: class="fragment" data-fragment-index="5" -->
-        - <!-- .element: class="fragment" data-fragment-index="6" --> <u>Simulate</u> before deploying.  
-          - Use simulations or simulated data to test the behavior of the model, especially in corner cases.  <!-- .element: class="fragment" data-fragment-index="7" -->
-          - If possible, use humans to calibrate the model → alignment. <!-- .element: class="fragment" data-fragment-index="8" -->
-        - <!-- .element: class="fragment" data-fragment-index="9" --> <u>Use adversarial models</u> to find out flaws, biases and backdoors in the model.  
-        - <!-- .element: class="fragment" data-fragment-index="10" --> <u>Explore model attention</u> to understand possible biases.
-        - <!-- .element: class="fragment" data-fragment-index="11" --> <u>Follow norms and guidelines</u> (e.g. ISO/PAS 8800) for AD.
+        - <!-- .element: class="fragment" data-fragment-index="6" --> Use <u>guardrails</u> to enforce safety policies. 
+          - Both classic (metadata, regex, etc.) and AI-based (e.g. checking I/O with another model). <!-- .element: class="fragment" data-fragment-index="7" -->
+        - <!-- .element: class="fragment" data-fragment-index="8" --> <u>Simulate</u> before deploying.  
+          - Use simulations or simulated data to test the behavior of the model, especially in corner cases.  <!-- .element: class="fragment" data-fragment-index="9" -->
+          - If possible, use humans to calibrate the model → alignment. <!-- .element: class="fragment" data-fragment-index="10" -->
+        - <!-- .element: class="fragment" data-fragment-index="11" --> <u>Use adversarial models</u> to find out flaws, biases and backdoors in the model.  
+        - <!-- .element: class="fragment" data-fragment-index="12" --> <u>Explore model attention</u> to understand possible biases.
+        - <!-- .element: class="fragment" data-fragment-index="13" --> <u>Follow norms and guidelines</u> (e.g. ISO/PAS 8800) for AD.
 
         Note: 
         2 models -> example amba double stack
